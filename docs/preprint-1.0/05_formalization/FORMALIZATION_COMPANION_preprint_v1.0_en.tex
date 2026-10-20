@@ -1,0 +1,385 @@
+% Adapted from the author's public Erdos Paper IV v1.23 series_template.tex.
+% Layout provenance is recorded in 02_validation; the Markdown is semantic authority.
+\documentclass[english,11pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{fontspec}
+\setmainfont{lmroman10-regular.otf}[BoldFont=lmroman10-bold.otf,ItalicFont=lmroman10-italic.otf,BoldItalicFont=lmroman10-bolditalic.otf]
+\setsansfont{lmsans10-regular.otf}[BoldFont=lmsans10-bold.otf]
+\setmonofont{lmmono10-regular.otf}[Scale=MatchLowercase]
+\usepackage{amsmath,amssymb}
+\providecommand{\mathscr}{\mathcal}
+\usepackage[english]{babel}
+\usepackage{microtype,parskip}
+\usepackage{longtable,booktabs,array,calc}
+\usepackage{xcolor,xurl}
+\usepackage{hyperref,bookmark}
+\usepackage{etoolbox,needspace}
+\setcounter{secnumdepth}{-\maxdimen}
+\setlength{\emergencystretch}{3em}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\newcounter{none}
+\AtBeginEnvironment{longtable}{\Needspace{8\baselineskip}\small}
+\pretocmd{\section}{\Needspace{5\baselineskip}}{}{}
+\pretocmd{\subsection}{\Needspace{4\baselineskip}}{}{}
+\pretocmd{\subsubsection}{\Needspace{4\baselineskip}}{}{}
+\urlstyle{same}
+\hypersetup{pdftitle={Triangle decompositions II: Formalization and reproducibility companion},pdfauthor={Juan Pablo Traverso Gianini},
+pdflang={en-US},colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue}
+\title{Triangle decompositions II: Formalization and reproducibility companion}
+\author{Juan Pablo Traverso Gianini\\
+\small Independent researcher, Santiago, Chile\\
+\small \href{mailto:jtraverso@gmail.com}{jtraverso@gmail.com}\\
+\small ORCID: 0009-0003-6068-4096}
+\date{}
+\begin{document}
+\raggedbottom
+\maketitle
+\textbf{Companion to Paper II:} \emph{Triangle decompositions II: Robust absorption for typed triangles} {[}1{]}, preprint 1.0.
+
+\textbf{Preprint 1.0 --- 20 October 2026.}
+
+\textbf{DOI:} \url{https://doi.org/10.5281/zenodo.23502224}.
+
+Copyright © 2026 Juan Pablo Traverso Gianini. This document is licensed under \href{https://creativecommons.org/licenses/by/4.0/}{CC BY 4.0}.
+
+\subsection{1. Validated scope}\label{validated-scope}
+
+Three explicit targets were compiled in the aligned campaign: \texttt{Partitioned\allowbreak{}T\allowbreak{}riangle\allowbreak{}Absor\allowbreak{}ption.\allowbreak{}Paper\allowbreak{}I\allowbreak{}I.\allowbreak{}Core}, \texttt{Partitioned\allowbreak{}T\allowbreak{}riangle\allowbreak{}Absor\allowbreak{}ption.\allowbreak{}Paper\allowbreak{}I\allowbreak{}I.\allowbreak{}Families}, and \texttt{Partitioned\allowbreak{}T\allowbreak{}riangle\allowbreak{}Absor\allowbreak{}ption.\allowbreak{}Paper\allowbreak{}I\allowbreak{}I.\allowbreak{}Paper\allowbreak{}IAppl\allowbreak{}ications}. Their overlapping import closures contain 1,510 project modules. The campaign began with an empty project output directory and compiled every module from source; 623 were compiled in the Paper I phase and 887 in the Paper II phase. The pinned Mathlib cache was reused. The fifteen final axiom queries passed with only \texttt{propext}, \texttt{Classical.\allowbreak{}ch\allowbreak{}oice} and \texttt{Quot.\allowbreak{}sound}.
+
+The result includes actual existence certificates for the seventeen conserved families. It also includes the exhaustive census, the bridge from representatives to the construction library and transport back to the original labelling. Together these prove the typical-host property for every family of three-element multisets on four labels that uses every label and gives every label a forbidden partner. Neither a Latin producer nor membership in the catalogue is assumed in the final theorem.
+
+The completed local campaign is recorded as \texttt{PASS\_\allowbreak{}CLEAN\_\allowbreak{}A\allowbreak{}LIGNED\_\allowbreak{}BUILD\allowbreak{}}; it is not an independent reproduction. Revision v2 subsequently corrects author headers only and has status \texttt{PASS\_\allowbreak{}HEADER\_\allowbreak{}\allowbreak{}ONLY\_\allowbreak{}REVISIO\allowbreak{}N}; selected revision v4 has status \texttt{PASS\_\allowbreak{}README\_\allowbreak{}\allowbreak{}ONLY\_\allowbreak{}REVISIO\allowbreak{}N} and changes only the archive README and its manifest. Every proof-body byte is preserved. Historical receipts describe the sources before that correction, and the reversible verification in Section 5 reconstructs their exact bytes. No new Lean compilation is claimed for the corrected headers.
+
+
+\Needspace{9\baselineskip}
+\subsection{2. Frozen sources}\label{frozen-sources}
+
+The selected source archive is \texttt{PAPER\_\allowbreak{}II\_\allowbreak{}LEA\allowbreak{}N\_\allowbreak{}20261020\_\allowbreak{}A\allowbreak{}LIGNED\_\allowbreak{}v4.\allowbreak{}zi\allowbreak{}p}, at \href{https://github.com/jtraverso/nash-williams-triangle-decompositions-release/blob/d6d020982ebf3f3cd8c104b6befc6c094850b3e7/archives/PAPER_II_LEAN_20261020_ALIGNED_v4.zip}{the immutable source reference}. Its SHA-256 is:
+
+\texttt{677faa70\allowbreak{}a764\allowbreak{}44a0\allowbreak{}00b8c219\allowbreak{}\allowbreak{}2a45d0ab\allowbreak{}0e39\allowbreak{}f889\allowbreak{}9825c004\allowbreak{}\allowbreak{}fdf6cbe5\allowbreak{}2bb7\allowbreak{}55cc\allowbreak{}}.
+
+The archive contains 4,562 files and its \texttt{SHA256SUMS.\allowbreak{}t\allowbreak{}xt} checks 4,561 entries. The unchanged campaign report \texttt{evidence/\allowbreak{}ver\allowbreak{}ification.\allowbreak{}js\allowbreak{}on} has SHA-256:
+
+\texttt{8b609b17\allowbreak{}4b9f\allowbreak{}1608\allowbreak{}6c2faf24\allowbreak{}\allowbreak{}3e2cb828\allowbreak{}d34c\allowbreak{}4110\allowbreak{}f220e595\allowbreak{}\allowbreak{}56482610\allowbreak{}f519\allowbreak{}ce59\allowbreak{}}.
+
+The toolchain is exactly \texttt{leanprover/\allowbreak{}l\allowbreak{}ean4:v4.\allowbreak{}35.\allowbreak{}0\allowbreak{}-\allowbreak{}rc3}. Mathlib is pinned to \texttt{c55e6e78\allowbreak{}6f49\allowbreak{}471c\allowbreak{}72fbddbe\allowbreak{}\allowbreak{}c5415808\allowbreak{}896a\allowbreak{}ec1e\allowbreak{}}; the lock file and \texttt{evidence/\allowbreak{}env\allowbreak{}ironment.\allowbreak{}jso\allowbreak{}n} identify its supporting packages.
+
+The clean predecessor is \texttt{PAPER\_\allowbreak{}II\_\allowbreak{}LEA\allowbreak{}N\_\allowbreak{}20261020\_\allowbreak{}A\allowbreak{}LIGNED\_\allowbreak{}v1}, SHA-256 \texttt{2ed5e683\allowbreak{}dae4\allowbreak{}ff9a\allowbreak{}b4a24187\allowbreak{}\allowbreak{}957dbd2f\allowbreak{}b3ec\allowbreak{}18d0\allowbreak{}4e7236c8\allowbreak{}\allowbreak{}8dd4c6c3\allowbreak{}8ac0\allowbreak{}79b7\allowbreak{}}. Revision v2 adds 1,352 missing author headers, corrects 59 surname spellings and retains 99 already correct headers. All 1,510 project Lean files identify Juan Pablo Traverso Gianini and Apache-2.0. \texttt{LICENSE} and \texttt{source/\allowbreak{}LICEN\allowbreak{}SE} supply that licence for original packaging materials and project sources. The nine dependency licence texts in \texttt{dependencies\allowbreak{}/\allowbreak{}licenses/\allowbreak{}} are retained unchanged. Revisions v3--v4 correct the README's paper title, UTF-8 typography and scope of historical note references; its other 4,560 files are byte-identical to v2, including all sources, attribution data, licences and evidence.
+
+The earlier Paper II closure contained 1,511 modules. Alignment replaces the import and query for \texttt{Four\allowbreak{}Colour\allowbreak{}Co\allowbreak{}nsumer\allowbreak{}Stage8\allowbreak{}4} in \texttt{Paper\allowbreak{}IApplic\allowbreak{}ations} with the bridge used by Paper I. The old closure loses \texttt{Four\allowbreak{}Colour\allowbreak{}Co\allowbreak{}nsumer\allowbreak{}Stage8\allowbreak{}4} and \texttt{Four\allowbreak{}Class\allowbreak{}Gra\allowbreak{}ph\allowbreak{}Consumer\allowbreak{}St\allowbreak{}age80} and gains \texttt{Paper\allowbreak{}II.\allowbreak{}Four\allowbreak{}\allowbreak{}Colour\allowbreak{}Applic\allowbreak{}ation}; all other common source files are identical except the entry file's import and query. Before the author-header revision, the relocated module was byte-for-byte the former \texttt{Request\allowbreak{}Proje\allowbreak{}ct.\allowbreak{}NW18.\allowbreak{}Four\allowbreak{}\allowbreak{}Colour\allowbreak{}Paper\allowbreak{}I\allowbreak{}I} from the original Paper I freeze. In the selected archive its body remains identical, while its author header is corrected. Its namespace and theorem statements are unchanged. \texttt{evidence/\allowbreak{}ALI\allowbreak{}GNMENT\_\allowbreak{}MANIF\allowbreak{}EST.\allowbreak{}json} records the alignment.
+
+Paper I now selects \texttt{PAPER\_\allowbreak{}I\_\allowbreak{}LEAN\allowbreak{}\_\allowbreak{}20261020\_\allowbreak{}AL\allowbreak{}IGNED\_\allowbreak{}v3}, with 1,070 modules and six final queries from the same aligned campaign. Its 623 shared modules and this archive use the same proof bodies and corrected headers. Each paper retains its own closure, receipts and entry queries.
+
+
+\Needspace{9\baselineskip}
+\subsection{3. Correspondence and entry points}\label{correspondence-and-entry-points}
+
+Here \texttt{PTA} abbreviates \texttt{Partitioned\allowbreak{}T\allowbreak{}riangle\allowbreak{}Absor\allowbreak{}ption} for reading; the sources do not define that alias.
+
+{\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{0.30\linewidth}>{\raggedright\arraybackslash}p{\dimexpr0.70\linewidth-2\tabcolsep\relax}@{}}
+\toprule\noalign{}
+Written result & Declaration \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Property (2.7) & \texttt{PTA.\allowbreak{}Blowup\allowbreak{}B.\allowbreak{}\allowbreak{}Keevash\allowbreak{}Typed\allowbreak{}\allowbreak{}Spec} \\
+Theorem A & \texttt{Padded\allowbreak{}Genera\allowbreak{}l.\allowbreak{}Real\allowbreak{}Invers\allowbreak{}e.\allowbreak{}keevash\allowbreak{}Typ\allowbreak{}ed\allowbreak{}Spec\_\allowbreak{}of\_\allowbreak{}th\allowbreak{}ree\allowbreak{}Step\allowbreak{}Links\allowbreak{}} \\
+Theorem B & \texttt{PTA.\allowbreak{}Blowup\allowbreak{}B.\allowbreak{}\allowbreak{}teorema\allowbreak{}B\_\allowbreak{}of\_\allowbreak{}\allowbreak{}keevash} \\
+Balanced deduction & \texttt{PTA.\allowbreak{}Blowup\allowbreak{}B.\allowbreak{}\allowbreak{}teorema\allowbreak{}B\_\allowbreak{}bal\allowbreak{}anced} \\
+Corollary 4.2 & \texttt{Padded\allowbreak{}Genera\allowbreak{}l.\allowbreak{}Real\allowbreak{}Invers\allowbreak{}e.\allowbreak{}nearly\allowbreak{}Comp\allowbreak{}lete\_\allowbreak{}F123} \\
+Idealized F1/F2 & \texttt{Padded\allowbreak{}Genera\allowbreak{}l.\allowbreak{}Real\allowbreak{}Invers\allowbreak{}e.\allowbreak{}idealized\_\allowbreak{}\allowbreak{}F12} \\
+Theorem C & \texttt{PTA.\allowbreak{}Blowup\allowbreak{}B.\allowbreak{}\allowbreak{}F0Direct.\allowbreak{}the\allowbreak{}orem146\_\allowbreak{}orde\allowbreak{}red} \\
+Lemma SC & \texttt{PTA.\allowbreak{}Blowup\allowbreak{}B.\allowbreak{}\allowbreak{}Lemma\allowbreak{}SC.\allowbreak{}abso\allowbreak{}rber\_\allowbreak{}one\allowbreak{}Part\allowbreak{}} \\
+Physical realization & \texttt{PTA.\allowbreak{}Blowup\allowbreak{}B.\allowbreak{}\allowbreak{}Latin\allowbreak{}Core.\allowbreak{}Ro\allowbreak{}ot\allowbreak{}Physical\allowbreak{}Re\allowbreak{}finer.\allowbreak{}exists\allowbreak{}\_\allowbreak{}refiner} \\
+Physical producer & \texttt{PTA.\allowbreak{}Blowup\allowbreak{}B.\allowbreak{}\allowbreak{}Latin\allowbreak{}Core.\allowbreak{}Ph\allowbreak{}ysical\allowbreak{}Produc\allowbreak{}er.\allowbreak{}physical\allowbreak{}C\allowbreak{}yc\allowbreak{}Refiner3} \\
+Seventeen certificates & \texttt{PTA.\allowbreak{}Blowup\allowbreak{}B.\allowbreak{}\allowbreak{}Latin\allowbreak{}Core.\allowbreak{}Co\allowbreak{}nserved17.\allowbreak{}al\allowbreak{}l\_\allowbreak{}family\_\allowbreak{}cer\allowbreak{}tificates} \\
+Seventeen conclusions & \texttt{PTA.\allowbreak{}Blowup\allowbreak{}B.\allowbreak{}\allowbreak{}Latin\allowbreak{}Core.\allowbreak{}Co\allowbreak{}nserved17.\allowbreak{}al\allowbreak{}l\_\allowbreak{}typed\_\allowbreak{}spec\allowbreak{}s} \\
+Representative construction & \texttt{PTA.\allowbreak{}Blowup\allowbreak{}B.\allowbreak{}\allowbreak{}keevash\allowbreak{}Typed\allowbreak{}\allowbreak{}Spec\_\allowbreak{}of\_\allowbreak{}clos\allowbreak{}ed765} \\
+Exact classification & \texttt{PTA.\allowbreak{}Blowup\allowbreak{}B.\allowbreak{}\allowbreak{}Finite\allowbreak{}Census\allowbreak{}.\allowbreak{}census\_\allowbreak{}comp\allowbreak{}lete} \\
+Number of representatives & \texttt{PTA.\allowbreak{}Blowup\allowbreak{}B.\allowbreak{}\allowbreak{}Finite\allowbreak{}Census\allowbreak{}.\allowbreak{}representat\allowbreak{}ive\allowbreak{}Masks\_\allowbreak{}car\allowbreak{}d} \\
+Catalogue bridge & \texttt{PTA.\allowbreak{}Blowup\allowbreak{}B.\allowbreak{}\allowbreak{}Finite\allowbreak{}Census\allowbreak{}.\allowbreak{}representat\allowbreak{}ive\_\allowbreak{}closed76\allowbreak{}5} \\
+Theorem D & \texttt{PTA.\allowbreak{}Blowup\allowbreak{}B.\allowbreak{}\allowbreak{}Finite\allowbreak{}Census\allowbreak{}.\allowbreak{}keevash\allowbreak{}Type\allowbreak{}d\allowbreak{}Spec\_\allowbreak{}of\_\allowbreak{}adm\allowbreak{}issible} \\
+\end{longtable}
+}
+
+\texttt{Keevash\allowbreak{}Typed\allowbreak{}\allowbreak{}Spec} is a definition, not an axiom attributed to Keevash. Theorem D's conclusion retains the host hypotheses in (2.7). It does not claim a decomposition for every integrally divisible graph. The real inverse retains local profiles as well as global type totals. Theorem C counts ordered disagreements; the manuscript's unordered edit cost is half that count.
+
+\texttt{Core}, \texttt{Families} and \texttt{Paper\allowbreak{}IApplic\allowbreak{}ations} have four, seven and four final queries respectively. These are the exact audited targets; a default \texttt{lake build} or single umbrella target was not the validation command. Internal module names are retained to preserve the validated sources.
+
+The table is a source correspondence, not a list of fifteen individual axiom queries. Additional per-module queries appear in the historical logs. In particular, \texttt{teorema\allowbreak{}B\_\allowbreak{}bal\allowbreak{}anced} has a successful module receipt in \texttt{Blowup\allowbreak{}B/\allowbreak{}Teor\allowbreak{}ema\allowbreak{}BBalanced\allowbreak{}.\allowbreak{}lean}, but is absent from both the fifteen final queries and the recorded Paper II phase query list. Its source compiles; this companion does not claim a separate final axiom audit of that declaration.
+
+The name \texttt{Keevash\allowbreak{}Typed\allowbreak{}\allowbreak{}Spec} records the intended graph-level interface. \texttt{Blowup\allowbreak{}B/\allowbreak{}Keev\allowbreak{}ash\allowbreak{}Bridge.\allowbreak{}le\allowbreak{}an} defines it and proves conditional consumers; it does not import a formalization of Keevash's labelled-complex Theorem 3.1. \texttt{is\allowbreak{}Int\allowbreak{}Div\_\allowbreak{}iff\allowbreak{}\_\allowbreak{}phys\allowbreak{}Div\_\allowbreak{}uni\allowbreak{}form}, in \texttt{Blowup\allowbreak{}B/\allowbreak{}Unif\allowbreak{}orm.\allowbreak{}lean}, assumes \texttt{Is\allowbreak{}Complete\allowbreak{}Bl\allowbreak{}owup} and \texttt{Reps p 5}. Its scope is therefore a complete allowed host with five representatives per class. It cannot establish the corresponding lattice identification for an arbitrary host in (2.7). Section 2.3 of the manuscript records the comparison and this limitation; no equivalence with the general labelled theorem is claimed.
+
+The four-colour query in \texttt{Paper\allowbreak{}IApplic\allowbreak{}ations} is now \texttt{Nash\allowbreak{}Williams\allowbreak{}18.\allowbreak{}Paper\allowbreak{}II.\allowbreak{}m\allowbreak{}argin\_\allowbreak{}four\_\allowbreak{}c\allowbreak{}olour\_\allowbreak{}decomp\allowbreak{}osition}, the bridge to \texttt{nearly\allowbreak{}Comple\allowbreak{}te\_\allowbreak{}F123} used by Paper I. Its proof dependency audit requires this bridge and excludes the former consumer. The two papers now certify the same four-colour interface, within their separate entry closures.
+
+
+\Needspace{9\baselineskip}
+\subsection{4. Census and conserved families}\label{census-and-conserved-families}
+
+The finite proof uses a reversible encoding of twenty triangle types and twenty-six boxes determined by forbidden partners. Coverage certificates provide actual permutations of labels. Minimality proves uniqueness of the representative. \texttt{census\_\allowbreak{}compl\allowbreak{}ete} combines these facts into an exact classification with 765 representatives.
+
+The construction predicate need not itself be invariant under every permutation. The final proof transports the established typical-host property along the inverse permutation; it does not infer catalogue membership for the original labelling. All 28 bridge modules compiled in the complete closure.
+
+For the conserved families, the proof supplies core and non-core certificates at a common scale before applying the splitting transfer. The physical reserve and catalogue are fixed before the residue. Weights count all catalogue occurrences of each arc, and the degree bound concerns total directed degree. Python generated candidate certificates; Lean checked coverage, uniqueness and transfer. The census bridge uses no \texttt{native\_\allowbreak{}decid\allowbreak{}e} or new mathematical axiom.
+
+
+\Needspace{9\baselineskip}
+\subsection{5. Reproduction and evidence}\label{reproduction-and-evidence}
+
+For a static check, extract the selected archive and run from its root:
+
+\texttt{python tools\allowbreak{}/\allowbreak{}verify\_\allowbreak{}attr\allowbreak{}ibution.\allowbreak{}py}
+
+This checks all current source hashes, reconstructs the exact historical sources from \texttt{attribution/\allowbreak{}\allowbreak{}source\_\allowbreak{}chang\allowbreak{}es.\allowbreak{}json}, checks 1,510 successful historical receipts and 3,096 project-import object-hash links, and verifies the internal manifest. It does not invoke Lean. The 3,029 existing evidence files remain byte-identical to the clean predecessor.
+
+\texttt{evidence/\allowbreak{}ver\allowbreak{}ification.\allowbreak{}js\allowbreak{}on} records the campaign result, including fifteen standard-axiom queries. \texttt{evidence/\allowbreak{}bui\allowbreak{}ld\_\allowbreak{}plan.\allowbreak{}json\allowbreak{}} gives the topological plan. Each module has a receipt in \texttt{evidence/\allowbreak{}rec\allowbreak{}eipts/\allowbreak{}} and compiler output in \texttt{evidence/\allowbreak{}mod\allowbreak{}ule\_\allowbreak{}logs/\allowbreak{}}; \texttt{evidence/\allowbreak{}ent\allowbreak{}ry\_\allowbreak{}audit.\allowbreak{}log\allowbreak{}} collects the three entry outputs. At assembly, source hashes matched the receipts and all compiled objects on disk matched their recorded hashes. Compiled objects are not included in this archive.
+
+The campaign ran in several invocations, resuming only objects with valid receipts from that campaign. The final Paper II invocation reports 517 modules newly compiled and 370 reused from earlier invocations of the same clean campaign, totalling the 887 Paper II-phase modules. These 370 are not an imported project cache from an earlier campaign. All 517 modules compiled in the final invocation used the raised memory limit; this changed resource limits, not mathematical sources. The first 23 modules were recompiled against the final Mathlib checkout of the same revision, with identical output bytes, as recorded in \texttt{evidence/\allowbreak{}ear\allowbreak{}ly\_\allowbreak{}module\_\allowbreak{}re\allowbreak{}check.\allowbreak{}txt}. These are parts of one local clean campaign, not independent replications.
+
+For a fresh compilation, install \texttt{leanprover/\allowbreak{}l\allowbreak{}ean4:v4.\allowbreak{}35.\allowbreak{}0\allowbreak{}-\allowbreak{}rc3}, prepare Mathlib at \texttt{c55e6e78\allowbreak{}6f49\allowbreak{}471c\allowbreak{}72fbddbe\allowbreak{}\allowbreak{}c5415808\allowbreak{}896a\allowbreak{}ec1e\allowbreak{}} and the recorded dependency revisions, and obtain their cache with \texttt{lake exe cac\allowbreak{}he get}. Preserve the lock file; do not run \texttt{lake update}. Compile the supplied \texttt{source/\allowbreak{}} tree in a separate output directory and generate new receipts. The historical \texttt{tools/\allowbreak{}build.\allowbreak{}\allowbreak{}py} and \texttt{tools/\allowbreak{}align.\allowbreak{}\allowbreak{}py} use fixed Windows workspace paths and require adaptation; they are campaign records, not a portable one-command reproducer. In particular, the alignment script reconstructs the pre-correction sources and must not overwrite the selected corrected tree. The original campaign instructions remain in \texttt{evidence/\allowbreak{}BUI\allowbreak{}LD\_\allowbreak{}README.\allowbreak{}md\allowbreak{}}.
+
+Some source comments point to historical research notes or generators outside the archive. The review inventory records their exact paths, distinguishes explicit \texttt{cegis/\allowbreak{}} references from other note names, and checks that these are not project imports or required runtime reads. They are not supplied as reproducibility resources. The frozen Lean proofs and receipts are preserved without editing those comments. The audit inventory is \texttt{02\_\allowbreak{}validatio\allowbreak{}n/\allowbreak{}SOURCE\_\allowbreak{}NOT\allowbreak{}E\_\allowbreak{}INVENTORY.\allowbreak{}\allowbreak{}json} in the series repository.
+
+Relative links and audit-script paths describe the complete series monorepository. Copying only \texttt{preprints/\allowbreak{}PA\allowbreak{}PER\_\allowbreak{}II/\allowbreak{}} does not produce a standalone distribution. The source ZIP's static verifier is a separate, self-contained check of its packaged files.
+
+This editorial integration executes no Lean build. Its static audit verifies the supplied evidence and exact source correspondence; it neither inspects omitted compiled objects anew nor claims an independent reproduction.
+
+\subsection{6. Written proof and formal correspondence}\label{written-proof-and-formal-correspondence}
+
+The mathematical appendices of Paper II now integrate the six written-proof dossiers at repository commit \texttt{61f752fc\allowbreak{}87bf\allowbreak{}f6f5\allowbreak{}654725b2\allowbreak{}\allowbreak{}3ce10ad4\allowbreak{}3023\allowbreak{}64ab\allowbreak{}}. Their source correspondence is listed in Section 7. The authoring operation preserves the theorem statements and frozen sources. It adds exposition; it does not infer mathematical validity from typesetting or finite arithmetic checks.
+
+The correspondence has two levels. The declarations in Section 3 state the principal results. The construction modules in Section 7 supply the real inverse, signed certificates, refiner, semidense geometry, component balancing and conserved catalogue. Auxiliary ordinary-refiner, robust-matching, packing and cover-down results remain explicit dependencies. The finite family tables are also required by the universal classification: example components are not a substitute for those tables.
+
+The semidense theorem, the balanced F1--F3 deduction and Lemma SC are distinct. In the semidense interface, ordered disagreement is twice the manuscript's unordered edit count. In the conserved catalogue, degree means total in-degree plus out-degree and the load sums over all catalogue members. Vertex splitting can change the order of the host, so relative supply and degree budgets are rescaled before projection. These conventions are material to the correspondence.
+
+The manuscript, all mathematical appendices and auxiliary statements and this companion are available in full in English and Spanish. Both editions retain the same mathematical expressions, declaration identifiers and source hashes. The manuscript and this companion constitute their first public edition, preprint 1.0.
+
+The selected archive documents the completed aligned campaign and its subsequent header-only and README-only revisions. Project sources and original packaging materials use Apache-2.0; dependency licences remain intact. The manuscript and this companion use CC BY 4.0. The recorded compilation is one local campaign, not independent reproduction.
+
+
+\Needspace{9\baselineskip}
+\subsection{7. Map of the mathematical appendices}\label{map-of-the-mathematical-appendices}
+
+The paths below are relative to \texttt{source/\allowbreak{}Parti\allowbreak{}tioned\allowbreak{}Triang\allowbreak{}le\allowbreak{}Absorption\allowbreak{}/\allowbreak{}} in the fixed Paper II archive, except where a table gives a more specific base. Appendix A corresponds to the bounded-inverse and terminal components used by the entries in Section 3. Appendix D corresponds to \texttt{Blowup\allowbreak{}B/\allowbreak{}Vert\allowbreak{}ex\allowbreak{}Split/\allowbreak{}\{\allowbreak{}Bas\allowbreak{}ic,\allowbreak{}Div,\allowbreak{}Decom\allowbreak{}p,\allowbreak{}Supply,\allowbreak{}Tra\allowbreak{}nsfer,\allowbreak{}Compon\allowbreak{}ents\allowbreak{}T\}\allowbreak{}.\allowbreak{}lean}. The remaining correspondence is given below. Some tables use braces or wildcards to describe a family of files; these are reading aids, not import commands.
+
+\Needspace{15\baselineskip}\subsubsection{Appendix A}\label{appendix-a}
+
+{\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Argument
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Frozen modules
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Complete allowed-host real inverse & \texttt{Blowup\allowbreak{}B/\allowbreak{}Padd\allowbreak{}ed\allowbreak{}General/\allowbreak{}Re\allowbreak{}al\allowbreak{}Inverse/\allowbreak{}\{\allowbreak{}B\allowbreak{}asic,\allowbreak{}Global,\allowbreak{}\allowbreak{}Modes,\allowbreak{}Factor\allowbreak{}s,\allowbreak{}Stages\}\allowbreak{}.\allowbreak{}le\allowbreak{}an} \\
+Real inverse and consumer interfaces & \texttt{Blowup\allowbreak{}B/\allowbreak{}Padd\allowbreak{}ed\allowbreak{}General/\allowbreak{}Re\allowbreak{}al\allowbreak{}Inverse/\allowbreak{}\{\allowbreak{}P\allowbreak{}roducer,\allowbreak{}Unif\allowbreak{}orm,\allowbreak{}Producer\allowbreak{}\allowbreak{}Consumer,\allowbreak{}Con\allowbreak{}sumer\}\allowbreak{}.\allowbreak{}lean} \\
+Bounded signed certificates & \texttt{Typed\allowbreak{}Bounded\allowbreak{}\allowbreak{}Coefficients\allowbreak{}.\allowbreak{}lean}, \texttt{Typed\allowbreak{}Lattice\allowbreak{}\allowbreak{}Padding.\allowbreak{}lean\allowbreak{}} and their dependencies \\
+Physical terminal gadgets and budgets & \texttt{Blowup\allowbreak{}B/\allowbreak{}Cert\allowbreak{}\allowbreak{}Absorber/\allowbreak{}\{\allowbreak{}Ba\allowbreak{}sic,\allowbreak{}Cert,\allowbreak{}Gad\allowbreak{}get,\allowbreak{}Decomp,\allowbreak{}H\allowbreak{}ost,\allowbreak{}Greedy,\allowbreak{}B\allowbreak{}udgets,\allowbreak{}Termi\allowbreak{}nal,\allowbreak{}Produce\}\allowbreak{}\allowbreak{}.\allowbreak{}lean} \\
+\end{longtable}
+}
+
+\Needspace{15\baselineskip}\subsubsection{Appendix B}\label{appendix-b}
+
+{\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Argument
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Sources
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Local lattice & \texttt{Blowup\allowbreak{}B/\allowbreak{}Univ\allowbreak{}ersal\allowbreak{}Produce\allowbreak{}r/\allowbreak{}Pair\allowbreak{}Lattic\allowbreak{}e.\allowbreak{}lean} \\
+Ordinary finite refiner & \texttt{Universal\allowbreak{}Ref\allowbreak{}iner/\allowbreak{}\{\allowbreak{}Basic,\allowbreak{}\allowbreak{}Level,\allowbreak{}Hierar\allowbreak{}chy,\allowbreak{}Heap,\allowbreak{}Ass\allowbreak{}embly,\allowbreak{}Loads,\allowbreak{}\allowbreak{}Main\}\allowbreak{}.\allowbreak{}lean}; \texttt{Parity\allowbreak{}Chain.\allowbreak{}\allowbreak{}lean}, \texttt{Mod\allowbreak{}Three\allowbreak{}Laye\allowbreak{}r.\allowbreak{}lean} \\
+Virtual library and routing & \texttt{Blowup\allowbreak{}B/\allowbreak{}Univ\allowbreak{}ersal\allowbreak{}Produce\allowbreak{}r/\allowbreak{}\{\allowbreak{}Virtual\allowbreak{}Re\allowbreak{}finer,\allowbreak{}Label\allowbreak{}W\allowbreak{}alk,\allowbreak{}Weighted\allowbreak{}\allowbreak{}Routing,\allowbreak{}Weig\allowbreak{}hted\allowbreak{}Routing\allowbreak{}C\allowbreak{}hoice,\allowbreak{}Weight\allowbreak{}ed\allowbreak{}Routing\allowbreak{}Bud\allowbreak{}get,\allowbreak{}Routed\allowbreak{}Ev\allowbreak{}en\allowbreak{}Producer\}\allowbreak{}.\allowbreak{}\allowbreak{}lean} \\
+Charge group and finite patterns & \texttt{Blowup\allowbreak{}B/\allowbreak{}Univ\allowbreak{}ersal\allowbreak{}Produce\allowbreak{}r/\allowbreak{}\{\allowbreak{}Charge\allowbreak{}Ato\allowbreak{}ms,\allowbreak{}Patterns,\allowbreak{}\allowbreak{}Pattern\allowbreak{}Suppl\allowbreak{}y,\allowbreak{}Iter\allowbreak{}Layers\allowbreak{}\}\allowbreak{}.\allowbreak{}lean} \\
+Ledger and torsion wraps & \texttt{Blowup\allowbreak{}B/\allowbreak{}Univ\allowbreak{}ersal\allowbreak{}Produce\allowbreak{}r/\allowbreak{}\{\allowbreak{}Group\allowbreak{}Ledg\allowbreak{}er,\allowbreak{}Group\allowbreak{}Laye\allowbreak{}r,\allowbreak{}Reduction,\allowbreak{}\allowbreak{}Reduction\allowbreak{}Ari\allowbreak{}th\}\allowbreak{}.\allowbreak{}lean}; \texttt{Blowup\allowbreak{}B/\allowbreak{}Stru\allowbreak{}ctural\allowbreak{}F3Gene\allowbreak{}ral/\allowbreak{}Token\allowbreak{}Led\allowbreak{}ger.\allowbreak{}lean} \\
+Private absorbers & Appendix A.4--A.6; \texttt{Blowup\allowbreak{}B/\allowbreak{}Univ\allowbreak{}ersal\allowbreak{}Produce\allowbreak{}r/\allowbreak{}Refiner.\allowbreak{}le\allowbreak{}an} \\
+Quantitative consumer & \texttt{Blowup\allowbreak{}B/\allowbreak{}Padd\allowbreak{}ed\allowbreak{}General/\allowbreak{}\{\allowbreak{}I\allowbreak{}nverse\allowbreak{}Scales\allowbreak{},\allowbreak{}Scaled\allowbreak{}Pipel\allowbreak{}ine\}\allowbreak{}.\allowbreak{}lean}; \texttt{Blowup\allowbreak{}B/\allowbreak{}Padd\allowbreak{}ed\allowbreak{}General/\allowbreak{}Re\allowbreak{}al\allowbreak{}Inverse/\allowbreak{}\{\allowbreak{}P\allowbreak{}roducer\allowbreak{}Consu\allowbreak{}mer,\allowbreak{}Consumer\allowbreak{}\}\allowbreak{}.\allowbreak{}lean} \\
+\end{longtable}
+}
+
+\Needspace{15\baselineskip}\subsubsection{Appendix C}\label{appendix-c}
+
+Paths in this table are relative to \texttt{Blowup\allowbreak{}B/\allowbreak{}F0Di\allowbreak{}rect/\allowbreak{}}, except \texttt{Physical\allowbreak{}Hing\allowbreak{}e\allowbreak{}Supply/\allowbreak{}Temp\allowbreak{}late.\allowbreak{}lean}, which is relative to the project namespace root.
+
+{\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Step
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Frozen sources
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Host hypotheses and deletion & \texttt{Geometry.\allowbreak{}lea\allowbreak{}n}, \texttt{Geometry\allowbreak{}Dele\allowbreak{}tion.\allowbreak{}lean} \\
+Short-walk stability & \texttt{Walk\allowbreak{}Supply.\allowbreak{}l\allowbreak{}ean}, \texttt{Walk\allowbreak{}Counts.\allowbreak{}l\allowbreak{}ean}, \texttt{Walk\allowbreak{}Conseque\allowbreak{}nces.\allowbreak{}lean}, \texttt{Host\allowbreak{}Walk\allowbreak{}Quer\allowbreak{}ies.\allowbreak{}lean} \\
+Integral certificate & \texttt{Certificate\allowbreak{}I\allowbreak{}ncidence.\allowbreak{}lea\allowbreak{}n}, \texttt{Certificate\allowbreak{}P\allowbreak{}eeling.\allowbreak{}lean}, \texttt{Certificate\allowbreak{}C\allowbreak{}olumns.\allowbreak{}lean}, \texttt{Certificate\allowbreak{}A\allowbreak{}ssembly.\allowbreak{}lean\allowbreak{}}, \texttt{Certificate\allowbreak{}H\allowbreak{}ost.\allowbreak{}lean} \\
+Explicit hinges and physical counts & \texttt{Hinge\allowbreak{}Templat\allowbreak{}es.\allowbreak{}lean}, \texttt{Host\allowbreak{}Hinges.\allowbreak{}l\allowbreak{}ean}, \texttt{Host\allowbreak{}Bad\allowbreak{}Hinge\allowbreak{}s.\allowbreak{}lean}, \texttt{Host\allowbreak{}Cross\allowbreak{}Hin\allowbreak{}ges.\allowbreak{}lean}, \texttt{Hinge\allowbreak{}Countin\allowbreak{}g.\allowbreak{}lean}, \texttt{Host\allowbreak{}Hinge\allowbreak{}Sup\allowbreak{}ply.\allowbreak{}lean}; \texttt{Physical\allowbreak{}Hing\allowbreak{}e\allowbreak{}Supply/\allowbreak{}Temp\allowbreak{}late.\allowbreak{}lean} \\
+Terminal constants & \texttt{Finite\allowbreak{}Termin\allowbreak{}al.\allowbreak{}lean}, \texttt{Local\allowbreak{}Produce\allowbreak{}r.\allowbreak{}lean} \\
+Real inverse & \texttt{Real\allowbreak{}Internal\allowbreak{}\allowbreak{}Inverse.\allowbreak{}lean\allowbreak{}}, \texttt{Real\allowbreak{}Complete\allowbreak{}\allowbreak{}Algebra.\allowbreak{}lean\allowbreak{}}, \texttt{Real\allowbreak{}Complete\allowbreak{}\allowbreak{}Bounds.\allowbreak{}lean}, \texttt{Real\allowbreak{}Complete\allowbreak{}\allowbreak{}Inverse.\allowbreak{}lean\allowbreak{}}, \texttt{Inverse\allowbreak{}Restr\allowbreak{}iction.\allowbreak{}lean}, \texttt{Discarded\allowbreak{}Cop\allowbreak{}ies.\allowbreak{}lean}, \texttt{Host\allowbreak{}Real\allowbreak{}Inve\allowbreak{}rse.\allowbreak{}lean} \\
+Exact weights & \texttt{Uniform\allowbreak{}Weigh\allowbreak{}ts.\allowbreak{}lean}, \texttt{Positive\allowbreak{}Weig\allowbreak{}hts.\allowbreak{}lean}, \texttt{Weight\allowbreak{}Produc\allowbreak{}er.\allowbreak{}lean} \\
+Universal reserve and closure & \texttt{Universal\allowbreak{}Sca\allowbreak{}les.\allowbreak{}lean}, \texttt{Closure.\allowbreak{}lean\allowbreak{}}, \texttt{Theorem146.\allowbreak{}l\allowbreak{}ean} \\
+\end{longtable}
+}
+
+\Needspace{15\baselineskip}\subsubsection{Appendix E}\label{appendix-e}
+
+Paths in this table are relative to \texttt{Blowup\allowbreak{}B/\allowbreak{}}.
+
+{\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Written step
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Source modules
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Integer local/scalar criteria & \texttt{Bal\allowbreak{}Fixer/\allowbreak{}Bal\allowbreak{}\allowbreak{}Inside.\allowbreak{}lean}, \texttt{Bal\allowbreak{}Fixer/\allowbreak{}Tor\allowbreak{}s\allowbreak{}Inside.\allowbreak{}lean\allowbreak{}}, \texttt{Fin\allowbreak{}T/\allowbreak{}Lattice\allowbreak{}.\allowbreak{}lean} \\
+PAR component routing & \texttt{Fin\allowbreak{}T/\allowbreak{}Budget\allowbreak{}K\allowbreak{}appa.\allowbreak{}lean}, \texttt{Fin\allowbreak{}T/\allowbreak{}Charge\allowbreak{}U\allowbreak{}12.\allowbreak{}lean}, \texttt{Flex/\allowbreak{}Even3.\allowbreak{}l\allowbreak{}ean}, \texttt{Flex/\allowbreak{}Token\allowbreak{}Ce\allowbreak{}rts.\allowbreak{}lean}, \texttt{Flex/\allowbreak{}Comp\allowbreak{}Wra\allowbreak{}ppers.\allowbreak{}lean} \\
+Root tokens and geometric supply & \texttt{Bal\allowbreak{}Fixer/\allowbreak{}\{\allowbreak{}Ro\allowbreak{}oted\allowbreak{}Tokens,\allowbreak{}B\allowbreak{}al\allowbreak{}Supply,\allowbreak{}Bal\allowbreak{}\allowbreak{}Supply\allowbreak{}X,\allowbreak{}Bal\allowbreak{}S\allowbreak{}upply\allowbreak{}Y\}\allowbreak{}.\allowbreak{}lean\allowbreak{}} \\
+Size and load invariants & \texttt{Bal\allowbreak{}Fixer/\allowbreak{}\{\allowbreak{}Ve\allowbreak{}rtex\allowbreak{}Layer,\allowbreak{}Ve\allowbreak{}rtex\allowbreak{}Layers,\allowbreak{}V\allowbreak{}ertex\allowbreak{}Layers\allowbreak{}X\allowbreak{},\allowbreak{}Vertex\allowbreak{}Layer\allowbreak{}s\allowbreak{}Y,\allowbreak{}Vertex\allowbreak{}Lay\allowbreak{}ers\allowbreak{}D\}\allowbreak{}.\allowbreak{}lean} \\
+Global charge variants & \texttt{Bal\allowbreak{}Fixer/\allowbreak{}\{\allowbreak{}Ba\allowbreak{}l\allowbreak{}Library\allowbreak{}Chi,\allowbreak{}\allowbreak{}Bal\allowbreak{}Library\allowbreak{}Ch\allowbreak{}i\allowbreak{}Y,\allowbreak{}Bal\allowbreak{}Librar\allowbreak{}y\allowbreak{}Chi\allowbreak{}YM,\allowbreak{}Chi\allowbreak{}To\allowbreak{}kens,\allowbreak{}Chi\allowbreak{}Toke\allowbreak{}ns\allowbreak{}M\}\allowbreak{}.\allowbreak{}lean} \\
+Torsion chain & \texttt{Torsion\allowbreak{}Q/\allowbreak{}\{\allowbreak{}Ch\allowbreak{}ain,\allowbreak{}Finite,\allowbreak{}R\allowbreak{}efiner,\allowbreak{}Value\allowbreak{}\}\allowbreak{}.\allowbreak{}lean}; \texttt{Bal\allowbreak{}Fixer/\allowbreak{}Bal\allowbreak{}\allowbreak{}Library\allowbreak{}Tors.\allowbreak{}\allowbreak{}lean} \\
+Congruence potentials & \texttt{Bal\allowbreak{}Fixer/\allowbreak{}\{\allowbreak{}Po\allowbreak{}t3,\allowbreak{}Pot\allowbreak{}Q,\allowbreak{}Pot\allowbreak{}Q\allowbreak{}6\}\allowbreak{}.\allowbreak{}lean} \\
+Quantitative component closure & \texttt{Bal\allowbreak{}Fixer/\allowbreak{}Bal\allowbreak{}\allowbreak{}Component*.\allowbreak{}l\allowbreak{}ean}, \texttt{Bal\allowbreak{}Fixer/\allowbreak{}Bal\allowbreak{}\allowbreak{}Scales*.\allowbreak{}lean\allowbreak{}}, \texttt{Bal\allowbreak{}Fixer/\allowbreak{}Com\allowbreak{}p\allowbreak{}Bal*.\allowbreak{}lean}, \texttt{Bal\allowbreak{}Fixer/\allowbreak{}Fle\allowbreak{}x\allowbreak{}L.\allowbreak{}lean} \\
+Family transport & \texttt{Flex/\allowbreak{}Par\allowbreak{}Asse\allowbreak{}mbly.\allowbreak{}lean}, \texttt{Flex/\allowbreak{}Par/\allowbreak{}}, \texttt{Flex/\allowbreak{}Par\allowbreak{}Clos\allowbreak{}ed/\allowbreak{}}, \texttt{Bal\allowbreak{}Fixer/\allowbreak{}Fam\allowbreak{}/\allowbreak{}}, \texttt{Bal\allowbreak{}Fixer/\allowbreak{}All\allowbreak{}.\allowbreak{}lean} \\
+Final coverage & \texttt{Teorema\allowbreak{}B748.\allowbreak{}\allowbreak{}lean}, \texttt{Teorema\allowbreak{}B765.\allowbreak{}\allowbreak{}lean}, the census imported by the Paper II family entrypoint \\
+\end{longtable}
+}
+
+\Needspace{15\baselineskip}\subsubsection{Appendix F}\label{appendix-f}
+
+Paths in this table are relative to \texttt{Blowup\allowbreak{}B/\allowbreak{}Lati\allowbreak{}n\allowbreak{}Core/\allowbreak{}}.
+
+{\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Written argument
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Frozen sources
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Flow rounding and tensor inverse & \texttt{Real\allowbreak{}Tensor\allowbreak{}Fi\allowbreak{}lling.\allowbreak{}lean}, integer-flow and bounded-integer-filling dependencies \\
+Four-permutation graph & \texttt{Expander/\allowbreak{}Bin\allowbreak{}omial\allowbreak{}Estimat\allowbreak{}es.\allowbreak{}lean}, \texttt{Expander/\allowbreak{}Per\allowbreak{}mutation\allowbreak{}Expa\allowbreak{}nder.\allowbreak{}lean} \\
+Profile normalization and rectangles & \texttt{Dense\allowbreak{}Produce\allowbreak{}r/\allowbreak{}\{\allowbreak{}Expander\allowbreak{}F\allowbreak{}low,\allowbreak{}Faces,\allowbreak{}Co\allowbreak{}unting,\allowbreak{}Profi\allowbreak{}le,\allowbreak{}Filling\}\allowbreak{}.\allowbreak{}\allowbreak{}lean} \\
+Positive exact coverage and dense bounds & \texttt{Positivizati\allowbreak{}on/\allowbreak{}\{\allowbreak{}Exact\allowbreak{}Cov\allowbreak{}er,\allowbreak{}Load\}\allowbreak{}.\allowbreak{}lea\allowbreak{}n}, \texttt{Dense\allowbreak{}Produce\allowbreak{}r/\allowbreak{}\{\allowbreak{}Dense\allowbreak{}Vc,\allowbreak{}M\allowbreak{}ain\}\allowbreak{}.\allowbreak{}lean} \\
+Greedy hub partition and rooted load & \texttt{Cycles/\allowbreak{}\{\allowbreak{}Gree\allowbreak{}dy\allowbreak{}Partition,\allowbreak{}\allowbreak{}Dense\allowbreak{}Reducti\allowbreak{}on,\allowbreak{}Dense\allowbreak{}Asse\allowbreak{}mbly\allowbreak{}Bounds,\allowbreak{}D\allowbreak{}ense\allowbreak{}Old\allowbreak{}Load,\allowbreak{}\allowbreak{}Dense\allowbreak{}Assembl\allowbreak{}y\}\allowbreak{}.\allowbreak{}lean} \\
+Eight-permutation root network & \texttt{Expander/\allowbreak{}Eig\allowbreak{}ht\allowbreak{}Permutatio\allowbreak{}n.\allowbreak{}lean}, \texttt{Root\allowbreak{}Channels\allowbreak{}.\allowbreak{}lean}, \texttt{Root\allowbreak{}Paths.\allowbreak{}le\allowbreak{}an}, \texttt{Root\allowbreak{}Lift.\allowbreak{}lea\allowbreak{}n}, \texttt{Root\allowbreak{}Input.\allowbreak{}le\allowbreak{}an} \\
+Completed fixed catalogue & \texttt{Completed\allowbreak{}Cat\allowbreak{}alogue.\allowbreak{}lean}, \texttt{Root\allowbreak{}Mesoscop\allowbreak{}ic.\allowbreak{}lean}, \texttt{Root\allowbreak{}Catalogu\allowbreak{}e.\allowbreak{}lean}, \texttt{Root\allowbreak{}Catalogu\allowbreak{}e\allowbreak{}Budget.\allowbreak{}lean\allowbreak{}} \\
+\end{longtable}
+}
+
+\subsection{8. Auxiliary statements: exact source locations}\label{auxiliary-statements-exact-source-locations}
+
+Appendix G of the manuscript states the auxiliary results used in the assembly. The following paths are relative to \texttt{source/\allowbreak{}Parti\allowbreak{}tioned\allowbreak{}Triang\allowbreak{}le\allowbreak{}Absorption\allowbreak{}/\allowbreak{}} in the selected Paper II freeze. Names identify declarations within the indicated module, not new public entry queries. The evidence is the source and its recorded dependency closure; this revision adds no Lean build or axiom query.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{G.1}: \texttt{Returned\allowbreak{}Basi\allowbreak{}c.\allowbreak{}lean}; \texttt{Anti\allowbreak{}Edgeful}.
+\item
+  \textbf{G.2}: \texttt{Blowup\allowbreak{}B/\allowbreak{}Padd\allowbreak{}ed\allowbreak{}Nibble/\allowbreak{}Typ\allowbreak{}ed\allowbreak{}Effective\allowbreak{}C\allowbreak{}onsumer.\allowbreak{}lean\allowbreak{}}; \texttt{typed\_\allowbreak{}nibble\allowbreak{}\_\allowbreak{}packing\_\allowbreak{}nea\allowbreak{}r\_\allowbreak{}effective}.
+\item
+  \textbf{G.2}: \texttt{Blowup\allowbreak{}B/\allowbreak{}Padd\allowbreak{}ed\allowbreak{}Nibble/\allowbreak{}Typ\allowbreak{}ed\allowbreak{}Nibble\allowbreak{}Adap\allowbreak{}ter.\allowbreak{}lean}; \texttt{typed\_\allowbreak{}nibble\allowbreak{}\_\allowbreak{}packing}.
+\item
+  \textbf{G.2}: \texttt{Blowup\allowbreak{}B/\allowbreak{}Padd\allowbreak{}ed\allowbreak{}Nibble/\allowbreak{}Nib\allowbreak{}ble/\allowbreak{}Polynomi\allowbreak{}al\allowbreak{}Threshold.\allowbreak{}\allowbreak{}lean}; \texttt{packing\allowbreak{}Polyn\allowbreak{}omial}.
+\item
+  \textbf{G.2}: \texttt{Blowup\allowbreak{}B/\allowbreak{}Padd\allowbreak{}ed\allowbreak{}Quantitati\allowbreak{}ve/\allowbreak{}Effective\allowbreak{}\allowbreak{}Schedule.\allowbreak{}lea\allowbreak{}n}; \texttt{load\allowbreak{}Toleranc\allowbreak{}e}.
+\item
+  \textbf{G.2}: \texttt{Blowup\allowbreak{}B/\allowbreak{}Padd\allowbreak{}ed\allowbreak{}Nibble/\allowbreak{}Res\allowbreak{}erve\allowbreak{}Construc\allowbreak{}tion.\allowbreak{}lean}; \texttt{exists\_\allowbreak{}reser\allowbreak{}ve\_\allowbreak{}of\_\allowbreak{}decomp\allowbreak{}osition}.
+\item
+  \textbf{G.3}: \texttt{Blowup\allowbreak{}B/\allowbreak{}Padd\allowbreak{}ed\allowbreak{}Nibble/\allowbreak{}Typ\allowbreak{}ed\allowbreak{}Effective\allowbreak{}C\allowbreak{}onsumer.\allowbreak{}lean\allowbreak{}}; \texttt{typed\_\allowbreak{}cover\_\allowbreak{}\allowbreak{}down\_\allowbreak{}absorpt\allowbreak{}ion\_\allowbreak{}effectiv\allowbreak{}e}.
+\item
+  \textbf{B.3/G.4}: \texttt{Blowup\allowbreak{}B/\allowbreak{}Univ\allowbreak{}ersal\allowbreak{}Produce\allowbreak{}r/\allowbreak{}Routed\allowbreak{}Even\allowbreak{}\allowbreak{}Producer.\allowbreak{}lea\allowbreak{}n}; \texttt{even\allowbreak{}Refiner\allowbreak{}P\allowbreak{}roducer\_\allowbreak{}rout\allowbreak{}ed}.
+\item
+  \textbf{G.4/H.5, C.5a}: \texttt{Typed\allowbreak{}Refiner\allowbreak{}\allowbreak{}F0/\allowbreak{}Robust\allowbreak{}Slo\allowbreak{}ts.\allowbreak{}lean}; \texttt{exists\_\allowbreak{}robus\allowbreak{}t}.
+\item
+  \textbf{B.3/G.4/H.6}: \texttt{Universal\allowbreak{}Ref\allowbreak{}iner/\allowbreak{}Main.\allowbreak{}le\allowbreak{}an}; \texttt{exists\_\allowbreak{}unive\allowbreak{}rsal\_\allowbreak{}refiner\allowbreak{}}.
+\item
+  \textbf{G.5}: \texttt{Blowup\allowbreak{}B/\allowbreak{}Lati\allowbreak{}n\allowbreak{}Core/\allowbreak{}Weight\allowbreak{}ed\allowbreak{}Path\allowbreak{}Step.\allowbreak{}l\allowbreak{}ean}; \texttt{exists\_\allowbreak{}weigh\allowbreak{}ted\_\allowbreak{}path}.
+\item
+  \textbf{B.4}: \texttt{Blowup\allowbreak{}B/\allowbreak{}Univ\allowbreak{}ersal\allowbreak{}Produce\allowbreak{}r/\allowbreak{}Iter\allowbreak{}Layers\allowbreak{}.\allowbreak{}lean}; \texttt{iterate\_\allowbreak{}laye\allowbreak{}rs}.
+\item
+  \textbf{B.6}: \texttt{Blowup\allowbreak{}B/\allowbreak{}Padd\allowbreak{}ed\allowbreak{}F12/\allowbreak{}Host\allowbreak{}Ga\allowbreak{}p.\allowbreak{}lean}; \texttt{degree\_\allowbreak{}gap\_\allowbreak{}o\allowbreak{}f\_\allowbreak{}guarded}.
+\item
+  \textbf{C.5a}: \texttt{F0Flexible\allowbreak{}Co\allowbreak{}mpressed.\allowbreak{}lea\allowbreak{}n}; \texttt{compatible\_\allowbreak{}p\allowbreak{}roducer}.
+\item
+  \textbf{C.5a}: \texttt{Typed\allowbreak{}Refiner\allowbreak{}\allowbreak{}F0/\allowbreak{}Charge\allowbreak{}Lay\allowbreak{}er.\allowbreak{}lean}; \texttt{charge\_\allowbreak{}layer\allowbreak{}}.
+\item
+  \textbf{C.5a}: \texttt{Compatible\allowbreak{}Sh\allowbreak{}ared/\allowbreak{}Host.\allowbreak{}le\allowbreak{}an}; \texttt{compatible\_\allowbreak{}s\allowbreak{}hared\_\allowbreak{}host}.
+\item
+  \textbf{C.6}: \texttt{Blowup\allowbreak{}B/\allowbreak{}F0Di\allowbreak{}rect/\allowbreak{}Univers\allowbreak{}al\allowbreak{}Scales.\allowbreak{}lea\allowbreak{}n}; \texttt{universal\_\allowbreak{}fr\allowbreak{}om\_\allowbreak{}small\_\allowbreak{}res\allowbreak{}erve}.
+\item
+  \textbf{E.8}: \texttt{Blowup\allowbreak{}B/\allowbreak{}Padd\allowbreak{}ed\allowbreak{}F12/\allowbreak{}Padded\allowbreak{}\allowbreak{}Definitions.\allowbreak{}\allowbreak{}lean}; \texttt{Keevash\allowbreak{}Padde\allowbreak{}d\allowbreak{}Spec}.
+\item
+  \textbf{E.8}: \texttt{Blowup\allowbreak{}B/\allowbreak{}Padd\allowbreak{}ed\allowbreak{}Components\allowbreak{}/\allowbreak{}Reduction\allowbreak{}La\allowbreak{}rge.\allowbreak{}lean}; \texttt{keevash\allowbreak{}Padde\allowbreak{}d\allowbreak{}Spec\_\allowbreak{}of\_\allowbreak{}cer\allowbreak{}ts\ensuremath{{}_{8}}}.
+\item
+  \textbf{E.8}: \texttt{Blowup\allowbreak{}B/\allowbreak{}Keev\allowbreak{}ash\allowbreak{}Padded\allowbreak{}Mai\allowbreak{}n.\allowbreak{}lean}; \texttt{keevash\allowbreak{}Typed\allowbreak{}\allowbreak{}Spec\_\allowbreak{}of\_\allowbreak{}padd\allowbreak{}ed}.
+\item
+  \textbf{8}: \texttt{Blowup\allowbreak{}B/\allowbreak{}Bal\allowbreak{}F\allowbreak{}ixer/\allowbreak{}Flex\allowbreak{}L.\allowbreak{}l\allowbreak{}ean}; \texttt{Universal\allowbreak{}Cer\allowbreak{}t\allowbreak{}Flex\allowbreak{}L}.
+\item
+  \textbf{8}: \texttt{Blowup\allowbreak{}B/\allowbreak{}Bal\allowbreak{}F\allowbreak{}ixer/\allowbreak{}Comp\allowbreak{}L.\allowbreak{}l\allowbreak{}ean}; \texttt{comp\allowbreak{}Scales\allowbreak{}L}.
+\item
+  \textbf{8}: \texttt{Blowup\allowbreak{}B/\allowbreak{}Bal\allowbreak{}F\allowbreak{}ixer/\allowbreak{}Comp\allowbreak{}L.\allowbreak{}l\allowbreak{}ean}; \texttt{universal\allowbreak{}Cer\allowbreak{}t\allowbreak{}Flex\allowbreak{}L\_\allowbreak{}of\_\allowbreak{}sp\allowbreak{}lit}.
+\end{itemize}
+
+Appendix H now gives written mathematical proofs of the compatible charge library (H.1--H.4), robust slots (H.5), ordinary refiner (H.6), packing (H.7--H.8) and whole-block reserve selection (H.9). H.3 derives the layer factors in B.4. G.3 and G.5 give the cover-down and weighted-path reductions. The finite family certificates remain explicit data in the frozen sources. This exposition preserves the proof bodies of the selected aligned freeze and adds no Lean build or axiom queries. The written reconstruction and finite regression checks are auxiliary development material; the source locations above identify the frozen proof dependencies. Finite checks are transcription evidence, not premises of the universal theorems.
+
+The 120 connected non-bipartite link cases comprise 93 three-step cases and 27 further padded cases. The other routes cover 271 PAR cases and 357 BAL cases, followed by the 17 conserved cases. The padded specification is a proved intermediate interface, not an additional mathematical axiom or a theorem attributed to an unavailable manuscript.
+
+The repository check scripts expect the complete frozen source tree at their documented relative paths. A documents-only sparse checkout is insufficient. Restore the source archive or use a complete checkout before running those scripts; this is distinct from a new Lean reconstruction.
+
+\subsection{Use of artificial intelligence and computational tools}\label{use-of-artificial-intelligence-and-computational-tools}
+
+Claude, by Anthropic, and ChatGPT/Codex, by OpenAI, were used to explore and check arguments and to prepare the manuscript. Aristotle, by Harmonic, contributed to exploring approaches, searching for counterexamples, developing proofs, and formalizing and reviewing them in Lean. Its role was not limited to translating finished proofs.
+
+Certo {[}3{]} and Jacobian {[}4{]} were used to explore finite instances, check identities and assess candidate constructions. Finite checks were not treated as proofs of universal statements. The census search generated finite certificates. Lean then verified coverage of the admissible universe, uniqueness up to actual permutations, and the connection to the construction theorems; these are stronger assertions than compiling a list of examples.
+
+The author remains responsible for the arguments, citations, code and presentation. No AI system is listed as an author.
+
+
+\noindent\begin{minipage}{\linewidth}
+\subsection{References}\label{references}
+
+\begingroup\small\raggedright
+\setlength{\parskip}{3pt}
+
+{[}1{]} J. P. Traverso Gianini, \emph{Triangle decompositions II: Robust absorption for typed triangles}, preprint 1.0 (2026). \url{https://doi.org/10.5281/zenodo.23502224}. \href{https://github.com/jtraverso/nash-williams-triangle-decompositions-release/blob/main/preprints/PAPER_II/01_manuscript/PAPER_II_preprint_v1.0_en.md}{Document}.
+
+{[}2{]} J. P. Traverso Gianini, \emph{Triangle decompositions I: Formalizing the Nash--Williams theorem in Lean}, preprint 1.0 (2026). \url{https://doi.org/10.5281/zenodo.23428173}. \href{https://github.com/jtraverso/nash-williams-triangle-decompositions-release/blob/main/preprints/PAPER_I/01_manuscript/PAPER_I_preprint_v1.0_en.md}{Document}.
+
+{[}3{]} J. P. Traverso Gianini, \emph{Certo}. https://github.com/jtraverso/certo-math.
+
+{[}4{]} \emph{Jacobian}. https://github.com/morluto/jacobian.
+
+\endgroup
+
+\end{minipage}
+
+\end{document}

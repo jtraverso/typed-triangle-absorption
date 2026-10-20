@@ -8,6 +8,13 @@ This repository contains the substantive Lean development accompanying
 directory and dependency checkouts. The manuscript's frozen source archive is
 unchanged.
 
+## Manuscript and companion
+
+The final English preprint 1.0 manuscript and formalization companion are
+available in [PDF, TeX and Markdown](docs/preprint-1.0/README.md), with a
+SHA-256 manifest tied to the canonical audited snapshot. The coordinated
+public release and Zenodo deposit remain pending.
+
 ## Mathematical statements
 
 A partition assigns a label to each vertex. A triangle type is the multiset of
