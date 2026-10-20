@@ -1,0 +1,82 @@
+{
+  "paper": "PAPER_II",
+  "version": "preprint 1.0",
+  "doi": "10.5281/zenodo.23502224",
+  "canonical_repository": "https://github.com/jtraverso/nash-williams-triangle-decompositions",
+  "canonical_commit": "b5c660449aa778563bd8a4e8d82b28fad864f1e9",
+  "files": [
+    {
+      "path": "docs/preprint-1.0/01_manuscript/PAPER_II_preprint_v1.0_en.pdf",
+      "source_path": "preprints/PAPER_II/01_manuscript/PAPER_II_preprint_v1.0_en.pdf",
+      "sha256": "1f4943f1f15e6002bc1e93432c98af497d0e569b650e80e3f02a75e48d7d7786",
+      "bytes": 395758
+    },
+    {
+      "path": "docs/preprint-1.0/01_manuscript/PAPER_II_preprint_v1.0_en.tex",
+      "source_path": "preprints/PAPER_II/01_manuscript/PAPER_II_preprint_v1.0_en.tex",
+      "sha256": "3b2758ac7fc7596bf3c011fecbcd4702a940a074503697f6eec5a573b7173355",
+      "bytes": 231697
+    },
+    {
+      "path": "docs/preprint-1.0/01_manuscript/PAPER_II_preprint_v1.0_en.md",
+      "source_path": "preprints/PAPER_II/01_manuscript/PAPER_II_preprint_v1.0_en.md",
+      "sha256": "6ce54c986fc794703be220f0ca6a92d722d209f9a1dcb9a4a8ce1b91b7fc381d",
+      "bytes": 214463
+    },
+    {
+      "path": "docs/preprint-1.0/01_manuscript/PAPER_II_preprint_v1.0_es.pdf",
+      "source_path": "preprints/PAPER_II/01_manuscript/PAPER_II_preprint_v1.0_es.pdf",
+      "sha256": "f9d97b0244978badc43b09a39ae4f982c0ca51ba1494071ee2dbd22c38020f57",
+      "bytes": 409526
+    },
+    {
+      "path": "docs/preprint-1.0/01_manuscript/PAPER_II_preprint_v1.0_es.tex",
+      "source_path": "preprints/PAPER_II/01_manuscript/PAPER_II_preprint_v1.0_es.tex",
+      "sha256": "07363d9fd0f2f17f16287db0eb038930adbb474ba073c38248c6a52ad7e287e5",
+      "bytes": 256969
+    },
+    {
+      "path": "docs/preprint-1.0/01_manuscript/PAPER_II_preprint_v1.0_es.md",
+      "source_path": "preprints/PAPER_II/01_manuscript/PAPER_II_preprint_v1.0_es.md",
+      "sha256": "c5e8bfc75d590337b5b41ad566f6af066ad1b2a7e44ab0ff4c52743da9144054",
+      "bytes": 238908
+    },
+    {
+      "path": "docs/preprint-1.0/05_formalization/FORMALIZATION_COMPANION_preprint_v1.0_en.pdf",
+      "source_path": "preprints/PAPER_II/05_formalization/FORMALIZATION_COMPANION_preprint_v1.0_en.pdf",
+      "sha256": "9712d9683cf49ecea4d88280d9b8b133ba2158a61492147769e16fb36183dcf9",
+      "bytes": 60203
+    },
+    {
+      "path": "docs/preprint-1.0/05_formalization/FORMALIZATION_COMPANION_preprint_v1.0_en.tex",
+      "source_path": "preprints/PAPER_II/05_formalization/FORMALIZATION_COMPANION_preprint_v1.0_en.tex",
+      "sha256": "c2a83b75ca149b7d2f89b6fbee84f6ea6cd9c4a89bc1aebb184a0458bc074892",
+      "bytes": 51142
+    },
+    {
+      "path": "docs/preprint-1.0/05_formalization/FORMALIZATION_COMPANION_preprint_v1.0_en.md",
+      "source_path": "preprints/PAPER_II/05_formalization/FORMALIZATION_COMPANION_preprint_v1.0_en.md",
+      "sha256": "8bc944968d5549be7024248ea1db5015d64e4609014112536c4fa94584ad2f20",
+      "bytes": 25703
+    },
+    {
+      "path": "docs/preprint-1.0/05_formalization/FORMALIZATION_COMPANION_preprint_v1.0_es.pdf",
+      "source_path": "preprints/PAPER_II/05_formalization/FORMALIZATION_COMPANION_preprint_v1.0_es.pdf",
+      "sha256": "a864b44ecb19c00ab6171f526fba92de3a1127397106ab5cd07b50cd2c5defcf",
+      "bytes": 61674
+    },
+    {
+      "path": "docs/preprint-1.0/05_formalization/FORMALIZATION_COMPANION_preprint_v1.0_es.tex",
+      "source_path": "preprints/PAPER_II/05_formalization/FORMALIZATION_COMPANION_preprint_v1.0_es.tex",
+      "sha256": "4a2cd08a4d7485c2d815181c2859b8996dd43d6f3b3b4cf176b27dc7e1882ac7",
+      "bytes": 53386
+    },
+    {
+      "path": "docs/preprint-1.0/05_formalization/FORMALIZATION_COMPANION_preprint_v1.0_es.md",
+      "source_path": "preprints/PAPER_II/05_formalization/FORMALIZATION_COMPANION_preprint_v1.0_es.md",
+      "sha256": "2fdfef500891119a000f6fa8db3e8cb5be1d9104bc91faa4e58a8a9a71f3f41f",
+      "bytes": 27845
+    }
+  ],
+  "scope": "Exact document copies; formalization companion describes the manuscript freeze, not a new validation of this Palomar port."
+}

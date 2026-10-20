@@ -144,3 +144,7 @@ not by the generator alone. No AI system is an author.
 Original sources and packaging use [Apache-2.0](LICENSE); dependency licence
 texts are retained in [`LICENSES/`](LICENSES). Neither internal AI review nor
 kernel checking is described as independent human mathematical peer review.
+
+## Manuscript and companion copies
+
+The [preprint 1.0 documents](docs/preprint-1.0/README.md) include the article and its separate formalization companion in English and Spanish, in PDF, TeX and Markdown. Their manifest binds each copy to the canonical series commit. Document licensing is CC BY 4.0; the Lean source licence is unchanged.
