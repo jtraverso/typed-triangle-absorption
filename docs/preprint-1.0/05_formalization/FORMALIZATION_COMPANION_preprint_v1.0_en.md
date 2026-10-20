@@ -20,7 +20,7 @@ The completed local campaign is recorded as `PASS_CLEAN_ALIGNED_BUILD`; it is no
 
 ## 2. Frozen sources
 
-The selected source archive is `PAPER_II_LEAN_20261020_ALIGNED_v4.zip`, at [the immutable source reference](https://github.com/jtraverso/nash-williams-triangle-decompositions/blob/d6d020982ebf3f3cd8c104b6befc6c094850b3e7/archives/PAPER_II_LEAN_20261020_ALIGNED_v4.zip). Its SHA-256 is:
+The selected source archive is `PAPER_II_LEAN_20261020_ALIGNED_v4.zip`, at [the immutable source reference](https://github.com/jtraverso/nash-williams-triangle-decompositions-release/blob/d6d020982ebf3f3cd8c104b6befc6c094850b3e7/archives/PAPER_II_LEAN_20261020_ALIGNED_v4.zip). Its SHA-256 is:
 
 `677faa70a76444a000b8c2192a45d0ab0e39f8899825c004fdf6cbe52bb755cc`.
 
@@ -106,7 +106,7 @@ The correspondence has two levels. The declarations in Section 3 state the princ
 
 The semidense theorem, the balanced F1–F3 deduction and Lemma SC are distinct. In the semidense interface, ordered disagreement is twice the manuscript's unordered edit count. In the conserved catalogue, degree means total in-degree plus out-degree and the load sums over all catalogue members. Vertex splitting can change the order of the host, so relative supply and degree budgets are rescaled before projection. These conventions are material to the correspondence.
 
-The manuscript, all mathematical appendices and auxiliary statements and this companion are available in full in English and Spanish. Both editions retain the same mathematical expressions, declaration identifiers and source hashes. Earlier versions are preserved in the superseded archive.
+The manuscript, all mathematical appendices and auxiliary statements and this companion are available in full in English and Spanish. Both editions retain the same mathematical expressions, declaration identifiers and source hashes. The manuscript and this companion constitute their first public edition, preprint 1.0.
 
 The selected archive documents the completed aligned campaign and its subsequent header-only and README-only revisions. Project sources and original packaging materials use Apache-2.0; dependency licences remain intact. The manuscript and this companion use CC BY 4.0. The recorded compilation is one local campaign, not independent reproduction.
 
@@ -232,9 +232,9 @@ The author remains responsible for the arguments, citations, code and presentati
 
 ## References
 
-[1] J. P. Traverso Gianini, *Triangle decompositions II: Robust absorption for typed triangles*, preprint 1.0 (2026). https://doi.org/10.5281/zenodo.23502224. [Document](https://github.com/jtraverso/nash-williams-triangle-decompositions/blob/main/preprints/PAPER_II/01_manuscript/PAPER_II_preprint_v1.0_en.md).
+[1] J. P. Traverso Gianini, *Triangle decompositions II: Robust absorption for typed triangles*, preprint 1.0 (2026). https://doi.org/10.5281/zenodo.23502224. [Document](https://github.com/jtraverso/nash-williams-triangle-decompositions-release/blob/main/preprints/PAPER_II/01_manuscript/PAPER_II_preprint_v1.0_en.md).
 
-[2] J. P. Traverso Gianini, *Triangle decompositions I: Formalizing the Nash–Williams theorem in Lean*, preprint 1.0 (2026). https://doi.org/10.5281/zenodo.23428173. [Document](https://github.com/jtraverso/nash-williams-triangle-decompositions/blob/main/preprints/PAPER_I/01_manuscript/PAPER_I_preprint_v1.0_en.md).
+[2] J. P. Traverso Gianini, *Triangle decompositions I: Formalizing the Nash–Williams theorem in Lean*, preprint 1.0 (2026). https://doi.org/10.5281/zenodo.23428173. [Document](https://github.com/jtraverso/nash-williams-triangle-decompositions-release/blob/main/preprints/PAPER_I/01_manuscript/PAPER_I_preprint_v1.0_en.md).
 
 [3] J. P. Traverso Gianini, *Certo*. https://github.com/jtraverso/certo-math.
 

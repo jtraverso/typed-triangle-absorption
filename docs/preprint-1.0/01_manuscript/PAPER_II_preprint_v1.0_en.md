@@ -682,7 +682,7 @@ The author remains responsible for the arguments, citations, code and presentati
 
 ## References
 
-[1] J. P. Traverso Gianini, *Triangle decompositions I: Formalizing the Nash–Williams theorem in Lean*, preprint 1.0 (2026). https://doi.org/10.5281/zenodo.23428173. [Document](https://github.com/jtraverso/nash-williams-triangle-decompositions/blob/main/preprints/PAPER_I/01_manuscript/PAPER_I_preprint_v1.0_en.md).
+[1] J. P. Traverso Gianini, *Triangle decompositions I: Formalizing the Nash–Williams theorem in Lean*, preprint 1.0 (2026). https://doi.org/10.5281/zenodo.23428173. [Document](https://github.com/jtraverso/nash-williams-triangle-decompositions-release/blob/main/preprints/PAPER_I/01_manuscript/PAPER_I_preprint_v1.0_en.md).
 
 [2] M. Delcourt and L. Postle, *A Proof of Nash-Williams' Conjecture*, arXiv:2606.11178v1 (2026). https://arxiv.org/abs/2606.11178v1.
 
@@ -696,7 +696,7 @@ The author remains responsible for the arguments, citations, code and presentati
 
 [7] The mathlib Community, *The Lean Mathematical Library*, CPP 2020, 367–381. https://doi.org/10.1145/3372885.3373824.
 
-[8] J. P. Traverso Gianini, *Formalization and reproducibility companion to Triangle decompositions II*, preprint 1.0 (2026), accompanying source freeze `PAPER_II_LEAN_20261020_ALIGNED_v4`. The companion identifies the immutable source archive and its SHA-256 hash. [Document](https://github.com/jtraverso/nash-williams-triangle-decompositions/blob/main/preprints/PAPER_II/05_formalization/FORMALIZATION_COMPANION_preprint_v1.0_en.md).
+[8] J. P. Traverso Gianini, *Formalization and reproducibility companion to Triangle decompositions II*, preprint 1.0 (2026), accompanying source freeze `PAPER_II_LEAN_20261020_ALIGNED_v4`. The companion identifies the immutable source archive and its SHA-256 hash. [Document](https://github.com/jtraverso/nash-williams-triangle-decompositions-release/blob/main/preprints/PAPER_II/05_formalization/FORMALIZATION_COMPANION_preprint_v1.0_en.md).
 
 [9] J. P. Traverso Gianini, *Certo*, software repository. https://github.com/jtraverso/certo-math.
 

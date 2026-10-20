@@ -691,7 +691,7 @@ El autor es responsable de los argumentos, las citas, el código y la presentaci
 
 ## Referencias
 
-[1] J. P. Traverso Gianini, *Triangle decompositions I: Formalizing the Nash–Williams theorem in Lean*, preprint 1.0 (2026). https://doi.org/10.5281/zenodo.23428173. [Documento](https://github.com/jtraverso/nash-williams-triangle-decompositions/blob/main/preprints/PAPER_I/01_manuscript/PAPER_I_preprint_v1.0_es.md).
+[1] J. P. Traverso Gianini, *Triangle decompositions I: Formalizing the Nash–Williams theorem in Lean*, preprint 1.0 (2026). https://doi.org/10.5281/zenodo.23428173. [Documento](https://github.com/jtraverso/nash-williams-triangle-decompositions-release/blob/main/preprints/PAPER_I/01_manuscript/PAPER_I_preprint_v1.0_es.md).
 
 [2] M. Delcourt y L. Postle, *A Proof of Nash-Williams' Conjecture*, arXiv:2606.11178v1 (2026). https://arxiv.org/abs/2606.11178v1.
 
@@ -705,7 +705,7 @@ El autor es responsable de los argumentos, las citas, el código y la presentaci
 
 [7] The mathlib Community, *The Lean Mathematical Library*, CPP 2020, 367–381. https://doi.org/10.1145/3372885.3373824.
 
-[8] J. P. Traverso Gianini, *Formalization and reproducibility companion to Triangle decompositions II*, preprint 1.0 (2026), correspondiente al freeze `PAPER_II_LEAN_20261020_ALIGNED_v4`. El complemento identifica el archivo inmutable de las fuentes y su huella SHA-256. [Documento](https://github.com/jtraverso/nash-williams-triangle-decompositions/blob/main/preprints/PAPER_II/05_formalization/FORMALIZATION_COMPANION_preprint_v1.0_es.md).
+[8] J. P. Traverso Gianini, *Formalization and reproducibility companion to Triangle decompositions II*, preprint 1.0 (2026), correspondiente al freeze `PAPER_II_LEAN_20261020_ALIGNED_v4`. El complemento identifica el archivo inmutable de las fuentes y su huella SHA-256. [Documento](https://github.com/jtraverso/nash-williams-triangle-decompositions-release/blob/main/preprints/PAPER_II/05_formalization/FORMALIZATION_COMPANION_preprint_v1.0_es.md).
 
 [9] J. P. Traverso Gianini, *Certo*, repositorio de software. https://github.com/jtraverso/certo-math.
 

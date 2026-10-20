@@ -2,80 +2,80 @@
   "paper": "PAPER_II",
   "version": "preprint 1.0",
   "doi": "10.5281/zenodo.23502224",
-  "canonical_repository": "https://github.com/jtraverso/nash-williams-triangle-decompositions",
-  "canonical_commit": "b5c660449aa778563bd8a4e8d82b28fad864f1e9",
+  "canonical_repository": "https://github.com/jtraverso/nash-williams-triangle-decompositions-release",
+  "canonical_commit": "2e9b44e159b832a9f9bff2b874b7e3a18081c531",
   "files": [
     {
       "path": "docs/preprint-1.0/01_manuscript/PAPER_II_preprint_v1.0_en.pdf",
       "source_path": "preprints/PAPER_II/01_manuscript/PAPER_II_preprint_v1.0_en.pdf",
-      "sha256": "1f4943f1f15e6002bc1e93432c98af497d0e569b650e80e3f02a75e48d7d7786",
-      "bytes": 395758
+      "sha256": "77390b7642a29b4bfc7e064292385b0a42826f656edbf80bf06468eadbe062bc",
+      "bytes": 395762
     },
     {
       "path": "docs/preprint-1.0/01_manuscript/PAPER_II_preprint_v1.0_en.tex",
       "source_path": "preprints/PAPER_II/01_manuscript/PAPER_II_preprint_v1.0_en.tex",
-      "sha256": "3b2758ac7fc7596bf3c011fecbcd4702a940a074503697f6eec5a573b7173355",
-      "bytes": 231697
+      "sha256": "9dbe825e790e0e769cc24e8361179a0bc4fb42f76b6667821185f53f860490a2",
+      "bytes": 231713
     },
     {
       "path": "docs/preprint-1.0/01_manuscript/PAPER_II_preprint_v1.0_en.md",
       "source_path": "preprints/PAPER_II/01_manuscript/PAPER_II_preprint_v1.0_en.md",
-      "sha256": "6ce54c986fc794703be220f0ca6a92d722d209f9a1dcb9a4a8ce1b91b7fc381d",
-      "bytes": 214463
+      "sha256": "e84945191aef292da829c5dfb200f7df76d48e01a6a10329a0707127fee4ac8d",
+      "bytes": 214479
     },
     {
       "path": "docs/preprint-1.0/01_manuscript/PAPER_II_preprint_v1.0_es.pdf",
       "source_path": "preprints/PAPER_II/01_manuscript/PAPER_II_preprint_v1.0_es.pdf",
-      "sha256": "f9d97b0244978badc43b09a39ae4f982c0ca51ba1494071ee2dbd22c38020f57",
-      "bytes": 409526
+      "sha256": "79d7d7646154a5d764be77d90127ce6451cfb5547edd23bc4554a111220cd8a5",
+      "bytes": 409527
     },
     {
       "path": "docs/preprint-1.0/01_manuscript/PAPER_II_preprint_v1.0_es.tex",
       "source_path": "preprints/PAPER_II/01_manuscript/PAPER_II_preprint_v1.0_es.tex",
-      "sha256": "07363d9fd0f2f17f16287db0eb038930adbb474ba073c38248c6a52ad7e287e5",
-      "bytes": 256969
+      "sha256": "4901dc6aab957c09cb442d98b3cc10161f6eb5fc66e79a23591dc169ba1d5554",
+      "bytes": 256985
     },
     {
       "path": "docs/preprint-1.0/01_manuscript/PAPER_II_preprint_v1.0_es.md",
       "source_path": "preprints/PAPER_II/01_manuscript/PAPER_II_preprint_v1.0_es.md",
-      "sha256": "c5e8bfc75d590337b5b41ad566f6af066ad1b2a7e44ab0ff4c52743da9144054",
-      "bytes": 238908
+      "sha256": "e46de787bd7a419b5812f59a82c722b4cd599f7bb4c5d41a4f2c7e5d337b6141",
+      "bytes": 238924
     },
     {
       "path": "docs/preprint-1.0/05_formalization/FORMALIZATION_COMPANION_preprint_v1.0_en.pdf",
       "source_path": "preprints/PAPER_II/05_formalization/FORMALIZATION_COMPANION_preprint_v1.0_en.pdf",
-      "sha256": "9712d9683cf49ecea4d88280d9b8b133ba2158a61492147769e16fb36183dcf9",
-      "bytes": 60203
+      "sha256": "0ebbfc81f05efcb32e576bd3561a8f676898717d93b962b397b9611931bbcb8f",
+      "bytes": 60222
     },
     {
       "path": "docs/preprint-1.0/05_formalization/FORMALIZATION_COMPANION_preprint_v1.0_en.tex",
       "source_path": "preprints/PAPER_II/05_formalization/FORMALIZATION_COMPANION_preprint_v1.0_en.tex",
-      "sha256": "c2a83b75ca149b7d2f89b6fbee84f6ea6cd9c4a89bc1aebb184a0458bc074892",
-      "bytes": 51142
+      "sha256": "1a0f596e3a99ebca6aa01cf9d2ad2fc6cf2f2ad3420f386bd1dffcc923872e53",
+      "bytes": 51195
     },
     {
       "path": "docs/preprint-1.0/05_formalization/FORMALIZATION_COMPANION_preprint_v1.0_en.md",
       "source_path": "preprints/PAPER_II/05_formalization/FORMALIZATION_COMPANION_preprint_v1.0_en.md",
-      "sha256": "8bc944968d5549be7024248ea1db5015d64e4609014112536c4fa94584ad2f20",
-      "bytes": 25703
+      "sha256": "20a739585e900c3f43d6cfc5d2bfde0c7e9f2bb883427376bea44c1575c5d057",
+      "bytes": 25756
     },
     {
       "path": "docs/preprint-1.0/05_formalization/FORMALIZATION_COMPANION_preprint_v1.0_es.pdf",
       "source_path": "preprints/PAPER_II/05_formalization/FORMALIZATION_COMPANION_preprint_v1.0_es.pdf",
-      "sha256": "a864b44ecb19c00ab6171f526fba92de3a1127397106ab5cd07b50cd2c5defcf",
-      "bytes": 61674
+      "sha256": "a6b12e924a1c860bafb1434df3180829388921382546d7b0ce0d68a59e56af8f",
+      "bytes": 61695
     },
     {
       "path": "docs/preprint-1.0/05_formalization/FORMALIZATION_COMPANION_preprint_v1.0_es.tex",
       "source_path": "preprints/PAPER_II/05_formalization/FORMALIZATION_COMPANION_preprint_v1.0_es.tex",
-      "sha256": "4a2cd08a4d7485c2d815181c2859b8996dd43d6f3b3b4cf176b27dc7e1882ac7",
-      "bytes": 53386
+      "sha256": "3e2041a715a33c9b25ab2b4298f8fb1811a2612ea599a0a2734cedbe29d2ae48",
+      "bytes": 53448
     },
     {
       "path": "docs/preprint-1.0/05_formalization/FORMALIZATION_COMPANION_preprint_v1.0_es.md",
       "source_path": "preprints/PAPER_II/05_formalization/FORMALIZATION_COMPANION_preprint_v1.0_es.md",
-      "sha256": "2fdfef500891119a000f6fa8db3e8cb5be1d9104bc91faa4e58a8a9a71f3f41f",
-      "bytes": 27845
+      "sha256": "2d253fa13091ec46b4f74b2569849d1496b3785dca7a2d7e8bf7d27c644978b5",
+      "bytes": 27907
     }
   ],
   "scope": "Exact document copies; formalization companion describes the manuscript freeze, not a new validation of this Palomar port."
