@@ -2773,7 +2773,9 @@
   },
   "PartitionedTriangleAbsorption/BlowupB/LatinCore/CapacitatedFlowFeasibility.lean": {
     "before": "b4ae364e06c0dd3226883300905ff0ecd7cc71b9e62af2ba6fc166013428ef22",
-    "after": "16a08d7bb689385096fa6295deb275cdc4ae4b2095a926d27a26ae13605cb608"
+    "after": "1b2c2b64ec32310ed93ec58f007a12dfc4a17d6f1b47b1921798886855132142",
+    "after_initial_port": "16a08d7bb689385096fa6295deb275cdc4ae4b2095a926d27a26ae13605cb608",
+    "repair_record": "tools/import_header_repair.json"
   },
   "PartitionedTriangleAbsorption/BlowupB/LatinCore/CatalogueAnchors.lean": {
     "before": "a1a9c2f737868aa4640bc326cde05c0840b64d863717b903e71e378898e4f82e",

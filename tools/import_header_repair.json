@@ -1,0 +1,23 @@
+{
+  "status": "PASS_SOURCE_PRESERVATION",
+  "file": "PartitionedTriangleAbsorption/BlowupB/LatinCore/CapacitatedFlowFeasibility.lean",
+  "change": "Move the two existing imports before the public section and expose their names through public import.",
+  "before_sha256": "16a08d7bb689385096fa6295deb275cdc4ae4b2095a926d27a26ae13605cb608",
+  "after_sha256": "1b2c2b64ec32310ed93ec58f007a12dfc4a17d6f1b47b1921798886855132142",
+  "declarations_and_proofs_normalized_sha256": "e6cc5af43c3ca6a7511f91091042fc19e797dc5d07834ac9c05dcea53c5328ba",
+  "declarations_and_proofs_unchanged": true,
+  "imports_unchanged": true,
+  "lean_validation": {
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "PartitionedTriangleAbsorption/BlowupB/LatinCore/CapacitatedFlowFeasibility.lean"
+    ],
+    "exit_code": 0,
+    "log": "tools/import_header_repair.log",
+    "log_sha256": "984ae179fa6ac74a25455f8b8c4bc8aff69746161cb1a2b54f62ae48dea68047",
+    "checked_at": "2026-10-20T15:00:26.031540-03:00"
+  },
+  "full_build_status": "Pending completion and one incremental retry; no full-build success claimed."
+}

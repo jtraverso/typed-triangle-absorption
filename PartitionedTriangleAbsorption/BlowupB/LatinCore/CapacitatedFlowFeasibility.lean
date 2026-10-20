@@ -5,6 +5,8 @@ Authors: Juan Pablo Traverso Gianini
 -/
 module
 
+public import Mathlib.Analysis.Normed.Order.Lattice
+public import Mathlib.Analysis.RCLike.Basic
 
 @[expose] public section
 
@@ -28,9 +30,6 @@ the (compact) box of sub-capacity flows.
 
 Sorry-free and axiom-clean `[propext, Classical.choice, Quot.sound]`.
 -/
-import Mathlib.Analysis.Normed.Order.Lattice
-import Mathlib.Analysis.RCLike.Basic
-
 open Finset
 
 namespace Nibble.Flow

@@ -1,0 +1,122 @@
+PartitionedTriangleAbsorption/BlowupB/LatinCore/CapacitatedFlowFeasibility.lean:142:14: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+PartitionedTriangleAbsorption/BlowupB/LatinCore/CapacitatedFlowFeasibility.lean:144:16: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+PartitionedTriangleAbsorption/BlowupB/LatinCore/CapacitatedFlowFeasibility.lean:145:16: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+PartitionedTriangleAbsorption/BlowupB/LatinCore/CapacitatedFlowFeasibility.lean:158:55: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+PartitionedTriangleAbsorption/BlowupB/LatinCore/CapacitatedFlowFeasibility.lean:163:16: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+PartitionedTriangleAbsorption/BlowupB/LatinCore/CapacitatedFlowFeasibility.lean:170:16: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+PartitionedTriangleAbsorption/BlowupB/LatinCore/CapacitatedFlowFeasibility.lean:176:16: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+PartitionedTriangleAbsorption/BlowupB/LatinCore/CapacitatedFlowFeasibility.lean:177:16: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+PartitionedTriangleAbsorption/BlowupB/LatinCore/CapacitatedFlowFeasibility.lean:181:16: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+PartitionedTriangleAbsorption/BlowupB/LatinCore/CapacitatedFlowFeasibility.lean:186:16: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+PartitionedTriangleAbsorption/BlowupB/LatinCore/CapacitatedFlowFeasibility.lean:195:45: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+PartitionedTriangleAbsorption/BlowupB/LatinCore/CapacitatedFlowFeasibility.lean:200:16: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+PartitionedTriangleAbsorption/BlowupB/LatinCore/CapacitatedFlowFeasibility.lean:207:16: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+PartitionedTriangleAbsorption/BlowupB/LatinCore/CapacitatedFlowFeasibility.lean:213:16: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+PartitionedTriangleAbsorption/BlowupB/LatinCore/CapacitatedFlowFeasibility.lean:218:16: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+PartitionedTriangleAbsorption/BlowupB/LatinCore/CapacitatedFlowFeasibility.lean:222:16: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+PartitionedTriangleAbsorption/BlowupB/LatinCore/CapacitatedFlowFeasibility.lean:223:16: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+PartitionedTriangleAbsorption/BlowupB/LatinCore/CapacitatedFlowFeasibility.lean:245:12: warning: `continuous_finset_sum` has been deprecated: Use `continuous_finsetSum` instead
+
+Hint: Replace the deprecated name:
+  continuous_finset_̵s̵S̲um
+PartitionedTriangleAbsorption/BlowupB/LatinCore/CapacitatedFlowFeasibility.lean:246:12: warning: `continuous_finset_sum` has been deprecated: Use `continuous_finsetSum` instead
+
+Hint: Replace the deprecated name:
+  continuous_finset_̵s̵S̲um
+PartitionedTriangleAbsorption/BlowupB/LatinCore/CapacitatedFlowFeasibility.lean:249:4: warning: `continuous_finset_sum` has been deprecated: Use `continuous_finsetSum` instead
+
+Hint: Replace the deprecated name:
+  continuous_finset_̵s̵S̲um
+PartitionedTriangleAbsorption/BlowupB/LatinCore/CapacitatedFlowFeasibility.lean:257:4: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+PartitionedTriangleAbsorption/BlowupB/LatinCore/CapacitatedFlowFeasibility.lean:268:6: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+PartitionedTriangleAbsorption/BlowupB/LatinCore/CapacitatedFlowFeasibility.lean:282:14: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+PartitionedTriangleAbsorption/BlowupB/LatinCore/CapacitatedFlowFeasibility.lean:282:35: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+PartitionedTriangleAbsorption/BlowupB/LatinCore/CapacitatedFlowFeasibility.lean:282:47: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+PartitionedTriangleAbsorption/BlowupB/LatinCore/CapacitatedFlowFeasibility.lean:288:14: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+PartitionedTriangleAbsorption/BlowupB/LatinCore/CapacitatedFlowFeasibility.lean:288:46: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+PartitionedTriangleAbsorption/BlowupB/LatinCore/CapacitatedFlowFeasibility.lean:290:16: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+PartitionedTriangleAbsorption/BlowupB/LatinCore/CapacitatedFlowFeasibility.lean:293:16: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
