@@ -1,0 +1,11 @@
+{
+  "policy_repository": "https://github.com/PalomarRegistry/PalomarPolicy",
+  "policy_revision": "96b034cc31a72a63d4f4041911dce337a85c9a04",
+  "metadata_schema_validation": "PASS",
+  "challenge_build": "PASS; six intentional theorem holes only",
+  "files": {
+    "CONTRIBUTING.md": "32cfaa48ef8d51a6959df46f73ccff1482d8bbf89b4bb3f878498b518b11edcd",
+    "formalization-v0.4.schema.json": "25ff6b25ca4511635aff4443cf20480c15e59dddf19591c730950b442ea54fce",
+    "toolchains.json": "fd40347e4b586e7c42233b35f11efb006d25033b9a7ded9565719edf7aa98354"
+  }
+}

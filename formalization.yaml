@@ -1,0 +1,174 @@
+version: "v0.4"
+
+project:
+  name: "Robust absorption for typed triangles"
+  description: >-
+    Typed triangle decomposition results from Paper II: a typical-host theorem
+    under three-step links for four-label families; its nearly complete and
+    balanced deductions with explicit type-weight hypotheses; a semidense
+    two-label mixed-triangle theorem; a computer-assisted typical-host theorem
+    for every admissible four-label family; and a terminal absorber obtained
+    from a bounded signed certificate and explicit physical hinge supply.
+    Divisibility includes global edge counts and local degree profiles.
+    The typical-host hypotheses are retained; the result is not asserted for
+    arbitrary divisible hosts. The repository contains the substantive proof
+    development, including the finite family census and conserved-family
+    constructions, with a small independent Mathlib-only Challenge.
+  authors:
+    - "Juan Pablo Traverso Gianini"
+  license: "Apache-2.0"
+  responsible_maintainers:
+    - "Juan Pablo Traverso Gianini"
+
+classification:
+  arxiv: ["math.CO"]
+  msc2020: ["05C70", "05C35", "05B05"]
+
+sources:
+  - title: "Triangle decompositions II: Robust absorption for typed triangles"
+    authors: ["Juan Pablo Traverso Gianini"]
+    type: "preprint"
+    location: "Preprint 1.0, 20 October 2026; Theorems A–D, balanced consequence of B and Lemma SC"
+    relationship: "formalizes"
+    note: >-
+      Author's manuscript. DOI 10.5281/zenodo.23502224 is reserved but the
+      coordinated manuscript release is pending. The repository is the
+      substantive source development. Priority of the combined statements
+      remains provisional.
+    license: "CC-BY-4.0"
+    author_endorsement: "participated"
+  - title: "The existence of designs II"
+    authors: ["Peter Keevash"]
+    id: "doi:10.48550/arXiv.1802.05900"
+    type: "preprint"
+    location: "arXiv:1802.05900, Theorem 3.1"
+    relationship: "background"
+    note: >-
+      The labelled decomposition framework motivates the graph-level
+      typical-host interface named KeevashTypedSpec. No equivalence with the
+      full labelled-complex hypotheses is claimed; the general theorem is
+      neither imported nor assumed.
+    license: "unknown"
+    author_endorsement: "not-contacted"
+  - title: "Refined Absorption: A New Proof of the Existence Conjecture"
+    authors: ["Michelle Delcourt", "Luke Postle"]
+    id: "doi:10.48550/arXiv.2402.17855"
+    type: "preprint"
+    location: "arXiv:2402.17855"
+    relationship: "background"
+    note: "Refined absorption and signed-certificate constructions."
+    license: "unknown"
+    author_endorsement: "not-contacted"
+  - title: "A Proof of Nash-Williams' Conjecture"
+    authors: ["Michelle Delcourt", "Luke Postle"]
+    id: "doi:10.48550/arXiv.2606.11178"
+    type: "preprint"
+    location: "arXiv:2606.11178, partitioned residual applications"
+    relationship: "background"
+    note: "Theorem 13.16 and the unpublished manuscript in reference 17 are not assumed."
+    license: "unknown"
+    author_endorsement: "not-contacted"
+  - title: "Clique decompositions of multipartite graphs and completion of Latin squares"
+    authors: ["Ben Barber", "Daniela Kühn", "Allan Lo", "Deryk Osthus", "Amelia Taylor"]
+    id: "doi:10.1016/j.jcta.2017.04.005"
+    type: "paper"
+    location: "Journal of Combinatorial Theory, Series A 151 (2017)"
+    relationship: "background"
+    note: "Earlier multipartite decomposition and completion results."
+    license: "unknown"
+    author_endorsement: "not-contacted"
+
+related_formalizations:
+  - id: "https://github.com/jtraverso/nash-williams-lean/tree/aa032bb5dc35280aa1b30f327688c7592a9eb7c0"
+    relationship: "builds-on"
+    note: >-
+      Same-author Paper I port. Shared sources originate in the aligned
+      freezes. Its constructor-explicit module-visibility repair is reused;
+      its Nash-Williams theorem and compiled project objects are not imported.
+
+status:
+  scope: >-
+    Six compared statements: Theorems A–D, balanced consequence of B and
+    Lemma SC. A concerns four labels and three-step links; D concerns all
+    four-label families using every label with a forbidden partner for every
+    label. B and its balanced form retain the typical-host property as a
+    hypothesis. C retains its semidense and non-extremality assumptions.
+    Lemma SC retains actual physical hinge supply and two explicit budgets.
+    The Challenge uses source definitions rather than opaque definition holes.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: []
+
+automation:
+  methods:
+    - method: "manual"
+      notes: "Mathematical direction, scope decisions and responsibility by the author."
+    - method: "agent"
+      models: ["Aristotle (Harmonic)", "Claude (Anthropic)", "ChatGPT/Codex (OpenAI)"]
+      framework: "Aristotle CLI and local coding assistants"
+      tool_setup: >-
+        AI systems contributed to exploring approaches, searching for
+        counterexamples, developing proofs, formalization, review and
+        manuscript preparation. Aristotle's role was not limited to
+        translating completed proofs. Codex prepared this isolated module
+        port, statement extraction and verification scripts.
+      prompting_notes: "Author-directed research and packaging instructions in Spanish."
+  notes: >-
+    Python generated finite candidate certificates. Lean proves their
+    coverage, uniqueness and use in universal statements; generated examples
+    alone are not treated as proofs. The frozen development has historical
+    clean-campaign evidence. Compilation and post-build checks for this
+    separate port are pending and must not be inferred from that evidence.
+
+fidelity:
+  divergences: >-
+    Vertex types are finite, with universe 0 where required by the original
+    theorem. Types are multisets of three labels. Edge-count vectors use
+    ordered label pairs, an injective re-encoding of the unordered counts.
+    The semidense interface uses ordered disagreement, twice unordered edit
+    distance. Hinge supply has exponent i - 4 for fixed four roots.
+    No decomposition result for arbitrary integrally divisible hosts is
+    claimed. No equivalence with Keevash's general labelled-complex
+    divisibility is claimed. The finite census is part of the proof of D,
+    not an assumed membership certificate in its statement.
+
+review:
+  status: "agent-reviewed"
+  reviewers: ["ChatGPT/Codex (OpenAI), acting for the author"]
+  notes: >-
+    Packaging review checked the frozen-source mapping, module headers,
+    source line limits, independent Challenge imports and the six source
+    statements. Kernel checks for the new port are pending. No independent
+    human review of this formalization is claimed. Palomar's own Comparator,
+    NanoDa verification and editorial review have not yet been requested.
+
+alignment:
+  statements:
+    - source: "Paper II, Theorem A"
+      lean: "PaddedGeneral.RealInverse.keevashTypedSpec_of_threeStepLinks"
+      module: "Challenge"
+      status: "proved"
+    - source: "Paper II, Theorem B"
+      lean: "PartitionedTriangleAbsorption.BlowupB.teoremaB_of_keevash"
+      module: "Challenge"
+      status: "proved"
+    - source: "Paper II, balanced consequence of Theorem B"
+      lean: "PartitionedTriangleAbsorption.BlowupB.teoremaB_balanced"
+      module: "Challenge"
+      status: "proved"
+    - source: "Paper II, Theorem C"
+      lean: "PartitionedTriangleAbsorption.BlowupB.F0Direct.theorem146_ordered"
+      module: "Challenge"
+      status: "proved"
+    - source: "Paper II, computer-assisted Theorem D"
+      lean: "PartitionedTriangleAbsorption.BlowupB.FiniteCensus.keevashTypedSpec_of_admissible"
+      module: "Challenge"
+      status: "proved"
+    - source: "Paper II, Lemma SC"
+      lean: "PartitionedTriangleAbsorption.BlowupB.LemmaSC.absorber_onePart"
+      module: "Challenge"
+      status: "proved"
+
+acknowledgements: >-
+  The Lean and Mathlib communities, and the mathematical work of Keevash,
+  Delcourt, Postle and the multipartite decomposition literature.

@@ -1,0 +1,15 @@
+{
+  "original_path": "PartitionedTriangleAbsorption/BlowupB/BalFixer/Fam/Bal04.lean",
+  "original_sha256": "ce6d334aa6485da22a85b9e87bcd7df60b65584e09edb9b0186d6774b0301d56",
+  "parts": [
+    {
+      "path": "PartitionedTriangleAbsorption/BlowupB/BalFixer/Fam/Bal04Part1.lean",
+      "body_sha256": "e1fcc4f2bceb94afb14f14a8702c30c4fd6589ccfbbb470953c963c8a1027334"
+    },
+    {
+      "path": "PartitionedTriangleAbsorption/BlowupB/BalFixer/Fam/Bal04Part2.lean",
+      "body_sha256": "42557f00be30b0656b5a7c56d70cb8ca16ce06b81027b6e3e58f46b077107a45"
+    }
+  ],
+  "proof_bodies_preserved": true
+}

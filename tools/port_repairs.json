@@ -1,0 +1,12 @@
+{
+  "repairs": [
+    {
+      "path": "PartitionedTriangleAbsorption/BlowupB/PaddedF12/TorsionFinite.lean",
+      "before_sha256": "d17ced1f4acb442b33b0be7a174e4eca891d5c4e73a27c580151e4fa7f3b2711",
+      "after_sha256": "d3f5710f771c100af0c21e92acd47ecb269a6a8418790cff39ce21ff74808847",
+      "before": "  simpa [cap] using h",
+      "after": "  cases a <;> simpa [cap] using h",
+      "reason": "Constructor-explicit elaboration under module visibility; validated in Paper I port aa032bb5dc35280aa1b30f327688c7592a9eb7c0."
+    }
+  ]
+}

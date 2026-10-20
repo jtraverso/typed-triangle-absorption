@@ -1,0 +1,19 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "PartitionedTriangleAbsorption.BlowupB.teoremaB_of_keevash",
+    "PartitionedTriangleAbsorption.BlowupB.teoremaB_balanced",
+    "PaddedGeneral.RealInverse.keevashTypedSpec_of_threeStepLinks",
+    "PartitionedTriangleAbsorption.BlowupB.FiniteCensus.keevashTypedSpec_of_admissible",
+    "PartitionedTriangleAbsorption.BlowupB.F0Direct.theorem146_ordered",
+    "PartitionedTriangleAbsorption.BlowupB.LemmaSC.absorber_onePart"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

@@ -1,0 +1,10 @@
+.lake/
+.env
+.env.*
+__pycache__/
+*.pyc
+*.olean
+*.ilean
+*.c
+*.o
+*.exe

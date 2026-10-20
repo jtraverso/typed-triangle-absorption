@@ -1,0 +1,377 @@
+{
+  "definitions": [
+    "PartitionedTriangleAbsorption.pairVec",
+    "PartitionedTriangleAbsorption.degContrib",
+    "PartitionedTriangleAbsorption.edgeVec",
+    "PartitionedTriangleAbsorption.degVec",
+    "PartitionedTriangleAbsorption.typeEdgeVec",
+    "PartitionedTriangleAbsorption.typeDegVec",
+    "PartitionedTriangleAbsorption.IsIntDiv",
+    "PartitionedTriangleAbsorption.triEdges",
+    "PartitionedTriangleAbsorption.IsTypedTri",
+    "PartitionedTriangleAbsorption.IsDecomp",
+    "PartitionedTriangleAbsorption.HasDecomp",
+    "PartitionedTriangleAbsorption.IsCopy",
+    "PartitionedTriangleAbsorption.vertSet",
+    "PartitionedTriangleAbsorption.IsHinge",
+    "PartitionedTriangleAbsorption.TypedTransformer.Link",
+    "PartitionedTriangleAbsorption.TypedTransformer.ThreeStepLinks",
+    "PaddedGeneral.FamilyFacts",
+    "PartitionedTriangleAbsorption.BlowupB.AllowedPair",
+    "PartitionedTriangleAbsorption.BlowupB.thirdsT",
+    "PartitionedTriangleAbsorption.BlowupB.TriRegular",
+    "PartitionedTriangleAbsorption.BlowupB.CNExt",
+    "PartitionedTriangleAbsorption.BlowupB.KeevashTypedSpec",
+    "PartitionedTriangleAbsorption.BlowupB.instDecidableAllowedPair",
+    "PartitionedTriangleAbsorption.BlowupB.missSet",
+    "PartitionedTriangleAbsorption.BlowupB.missDeg",
+    "PartitionedTriangleAbsorption.BlowupB.nPrime",
+    "PartitionedTriangleAbsorption.BlowupB.clsz",
+    "PartitionedTriangleAbsorption.BlowupB.BalancedWeights",
+    "PartitionedTriangleAbsorption.TypedApplicationLinks.F0",
+    "PartitionedTriangleAbsorption.TypedApplicationLinks.other0",
+    "PartitionedTriangleAbsorption.CloneSupply.partSet",
+    "PartitionedTriangleAbsorption.CloneSupply.partNbrs",
+    "PartitionedTriangleAbsorption.CloneSupply.partDeg",
+    "PartitionedTriangleAbsorption.BlowupB.F0Direct.orderedSideTarget",
+    "PartitionedTriangleAbsorption.BlowupB.F0Direct.orderedSideCost",
+    "PartitionedTriangleAbsorption.SignedCertificate.ind",
+    "PartitionedTriangleAbsorption.SignedCertificate.certWeight",
+    "PartitionedTriangleAbsorption.SignedHinge.HingeSupply",
+    "PartitionedTriangleAbsorption.BlowupB.LemmaSC.onePart",
+    "PartitionedTriangleAbsorption.BlowupB.LemmaSC.K3fam"
+  ],
+  "theorems": [
+    "PartitionedTriangleAbsorption.BlowupB.teoremaB_of_keevash",
+    "PartitionedTriangleAbsorption.BlowupB.teoremaB_balanced",
+    "PaddedGeneral.RealInverse.keevashTypedSpec_of_threeStepLinks",
+    "PartitionedTriangleAbsorption.BlowupB.FiniteCensus.keevashTypedSpec_of_admissible",
+    "PartitionedTriangleAbsorption.BlowupB.F0Direct.theorem146_ordered",
+    "PartitionedTriangleAbsorption.BlowupB.LemmaSC.absorber_onePart"
+  ],
+  "reproductions": [
+    {
+      "source": "PartitionedTriangleAbsorption/ReturnedBasic.lean",
+      "name": "PartitionedTriangleAbsorption.pairVec",
+      "kind": "definition",
+      "source_start_line": 52,
+      "reproduced_sha256": "e5b437c0a878fb65a5e7c6bcbd93140d03c94e4effaf56056e2cba03a4b83958"
+    },
+    {
+      "source": "PartitionedTriangleAbsorption/ReturnedBasic.lean",
+      "name": "PartitionedTriangleAbsorption.degContrib",
+      "kind": "definition",
+      "source_start_line": 58,
+      "reproduced_sha256": "4c63f92d1201cc28ed8bcfe2ff5bd9d151e815dc57ad71ff371cce333b12fbc4"
+    },
+    {
+      "source": "PartitionedTriangleAbsorption/ReturnedBasic.lean",
+      "name": "PartitionedTriangleAbsorption.edgeVec",
+      "kind": "definition",
+      "source_start_line": 64,
+      "reproduced_sha256": "6f361fb68ebd2448b8dafc9215013788e79558979664e9aa8ace033c49b1dc6d"
+    },
+    {
+      "source": "PartitionedTriangleAbsorption/ReturnedBasic.lean",
+      "name": "PartitionedTriangleAbsorption.degVec",
+      "kind": "definition",
+      "source_start_line": 68,
+      "reproduced_sha256": "82d1ec4ad39720f783a46aed5995133bee5c26e80823661b32e3655a549c8e82"
+    },
+    {
+      "source": "PartitionedTriangleAbsorption/ReturnedBasic.lean",
+      "name": "PartitionedTriangleAbsorption.typeEdgeVec",
+      "kind": "definition",
+      "source_start_line": 72,
+      "reproduced_sha256": "190e873f43505c476ec21635a8d0de4ab7c4a9008c0a15418d8820b558a9fbe6"
+    },
+    {
+      "source": "PartitionedTriangleAbsorption/ReturnedBasic.lean",
+      "name": "PartitionedTriangleAbsorption.typeDegVec",
+      "kind": "definition",
+      "source_start_line": 76,
+      "reproduced_sha256": "526cfab948dd38f46028af5eaec5f2b0dc0df4f808e7ec25b24c6ed1c69b55db"
+    },
+    {
+      "source": "PartitionedTriangleAbsorption/ReturnedBasic.lean",
+      "name": "PartitionedTriangleAbsorption.IsIntDiv",
+      "kind": "definition",
+      "source_start_line": 85,
+      "reproduced_sha256": "5925f030986b3e5706b094cc4601e49d52e0d86f964d0d2c9e45c8f67c3946e5"
+    },
+    {
+      "source": "PartitionedTriangleAbsorption/ReturnedBasic.lean",
+      "name": "PartitionedTriangleAbsorption.triEdges",
+      "kind": "definition",
+      "source_start_line": 102,
+      "reproduced_sha256": "8e6fd57c9addd5c0c43bdfd2e81c8ce9766aa4897f1b8981354593a9cae40d4e"
+    },
+    {
+      "source": "PartitionedTriangleAbsorption/ReturnedBasic.lean",
+      "name": "PartitionedTriangleAbsorption.IsTypedTri",
+      "kind": "definition",
+      "source_start_line": 105,
+      "reproduced_sha256": "ac24643282bcc7ed45f0f6ef65cda10f823407bd45804bb650c113cab5433eec"
+    },
+    {
+      "source": "PartitionedTriangleAbsorption/ReturnedBasic.lean",
+      "name": "PartitionedTriangleAbsorption.IsDecomp",
+      "kind": "definition",
+      "source_start_line": 110,
+      "reproduced_sha256": "600565044e7b5a122cddff37da7a30dd41091b3c18403fde82d32e081bf572f7"
+    },
+    {
+      "source": "PartitionedTriangleAbsorption/ReturnedBasic.lean",
+      "name": "PartitionedTriangleAbsorption.HasDecomp",
+      "kind": "definition",
+      "source_start_line": 116,
+      "reproduced_sha256": "d5b42e017a2781f31d7f4ff12f04391428d2ff49526523e7f45912e100d50fc1"
+    },
+    {
+      "source": "PartitionedTriangleAbsorption/ReturnedBasic.lean",
+      "name": "PartitionedTriangleAbsorption.IsCopy",
+      "kind": "definition",
+      "source_start_line": 120,
+      "reproduced_sha256": "c595b7fa8db23442063cb7f96020809e0433a1733b06b2d1b9edc629b562679f"
+    },
+    {
+      "source": "PartitionedTriangleAbsorption/ReturnedBasic.lean",
+      "name": "PartitionedTriangleAbsorption.vertSet",
+      "kind": "definition",
+      "source_start_line": 153,
+      "reproduced_sha256": "0a669b5065ad209d688eff4454b4cc37caa6b0defe19b4fff0555bc8c45590f5"
+    },
+    {
+      "source": "PartitionedTriangleAbsorption/ReturnedBasic.lean",
+      "name": "PartitionedTriangleAbsorption.IsHinge",
+      "kind": "definition",
+      "source_start_line": 158,
+      "reproduced_sha256": "3fda6e567a53c9a3d4c9bb7199308be245608f3129f7c2bd7ef855d9b4a33e18"
+    },
+    {
+      "source": "PartitionedTriangleAbsorption/TypedTransformerLabels.lean",
+      "name": "PartitionedTriangleAbsorption.TypedTransformer.Link",
+      "kind": "definition",
+      "source_start_line": 26,
+      "reproduced_sha256": "9cfd8eca8b8808821fbbb7719655d9cb3a61b9e5bd7dabd0189ca3652dd65380"
+    },
+    {
+      "source": "PartitionedTriangleAbsorption/TypedTransformerLabels.lean",
+      "name": "PartitionedTriangleAbsorption.TypedTransformer.ThreeStepLinks",
+      "kind": "definition",
+      "source_start_line": 30,
+      "reproduced_sha256": "ddd32fefeb0805bae0ef07ca0d2c2915de52fae4b943a00308d490e9128afc1e"
+    },
+    {
+      "source": "PartitionedTriangleAbsorption/BlowupB/PaddedGeneral/Reduction.lean",
+      "name": "PaddedGeneral.FamilyFacts",
+      "kind": "definition",
+      "source_start_line": 72,
+      "reproduced_sha256": "94fd6a411e9ac91741a20c8caecd4f1dac247f1d37dd3a698b9752f8d3523cc0"
+    },
+    {
+      "source": "PartitionedTriangleAbsorption/BlowupB/CompleteBlowup.lean",
+      "name": "PartitionedTriangleAbsorption.BlowupB.AllowedPair",
+      "kind": "definition",
+      "source_start_line": 82,
+      "reproduced_sha256": "ff2d6097ae91370a81761456a99e7ed1404f41d77916f426395862334a8f6bf3"
+    },
+    {
+      "source": "PartitionedTriangleAbsorption/BlowupB/KeevashBridge.lean",
+      "name": "PartitionedTriangleAbsorption.BlowupB.thirdsT",
+      "kind": "definition",
+      "source_start_line": 46,
+      "reproduced_sha256": "1c0dd7ea592724727a1880cabe893eea2ab922be78de0e5909152bccc2a4e61b"
+    },
+    {
+      "source": "PartitionedTriangleAbsorption/BlowupB/KeevashBridge.lean",
+      "name": "PartitionedTriangleAbsorption.BlowupB.TriRegular",
+      "kind": "definition",
+      "source_start_line": 53,
+      "reproduced_sha256": "6bb10d7947302e235c2e5306ab99858b49cd861461a27d7528c404ead65954d9"
+    },
+    {
+      "source": "PartitionedTriangleAbsorption/BlowupB/KeevashBridge.lean",
+      "name": "PartitionedTriangleAbsorption.BlowupB.CNExt",
+      "kind": "definition",
+      "source_start_line": 63,
+      "reproduced_sha256": "10e7889a219cb7f112bd5782bdb43041c37754ebaa2f55f4a38f6ccfcbf9c641"
+    },
+    {
+      "source": "PartitionedTriangleAbsorption/BlowupB/KeevashBridge.lean",
+      "name": "PartitionedTriangleAbsorption.BlowupB.KeevashTypedSpec",
+      "kind": "definition",
+      "source_start_line": 72,
+      "reproduced_sha256": "6b1b73a8e6046b31e852a508511283ff46bcf68d73be4d9daed3a69cb2739711"
+    },
+    {
+      "source": "PartitionedTriangleAbsorption/BlowupB/Nearly.lean",
+      "name": "PartitionedTriangleAbsorption.BlowupB.instDecidableAllowedPair",
+      "kind": "definition",
+      "source_start_line": 29,
+      "reproduced_sha256": "4384dd7cfeeeba7dbe73427e37e5ac184056202b6e046fa90288d9b4ffe21755"
+    },
+    {
+      "source": "PartitionedTriangleAbsorption/BlowupB/Nearly.lean",
+      "name": "PartitionedTriangleAbsorption.BlowupB.missSet",
+      "kind": "definition",
+      "source_start_line": 37,
+      "reproduced_sha256": "c3187af4f7cc05aad3f4ddfa9ac5cc06eb60c08095b3343f943b4c14952d61f9"
+    },
+    {
+      "source": "PartitionedTriangleAbsorption/BlowupB/Nearly.lean",
+      "name": "PartitionedTriangleAbsorption.BlowupB.missDeg",
+      "kind": "definition",
+      "source_start_line": 42,
+      "reproduced_sha256": "3a94746fcb0931f7b938b863de80630055c48879637b217d85b29c116caba67c"
+    },
+    {
+      "source": "PartitionedTriangleAbsorption/BlowupB/ReserveWeights.lean",
+      "name": "PartitionedTriangleAbsorption.BlowupB.nPrime",
+      "kind": "definition",
+      "source_start_line": 34,
+      "reproduced_sha256": "e242acbbcddf97e97c6a18d51ae1fe5ce7110de55a6aad104e92b2cd61ef5aec"
+    },
+    {
+      "source": "PartitionedTriangleAbsorption/BlowupB/TypicalReserveMain.lean",
+      "name": "PartitionedTriangleAbsorption.BlowupB.clsz",
+      "kind": "definition",
+      "source_start_line": 38,
+      "reproduced_sha256": "3ef2b5dcfd53846d030b9d651f3a9baa73cc8a964e01758c81752505396af096"
+    },
+    {
+      "source": "PartitionedTriangleAbsorption/BlowupB/TeoremaBBalanced.lean",
+      "name": "PartitionedTriangleAbsorption.BlowupB.BalancedWeights",
+      "kind": "definition",
+      "source_start_line": 33,
+      "reproduced_sha256": "2581a5efbf6ed2a2195377048e856f7e3d3e698a9a624bc196dc3abe1e38fba4"
+    },
+    {
+      "source": "PartitionedTriangleAbsorption/BlowupB/TeoremaB.lean",
+      "name": "PartitionedTriangleAbsorption.BlowupB.teoremaB_of_keevash",
+      "kind": "theorem",
+      "source_start_line": 178,
+      "reproduced_sha256": "f9a88ef5fc8d43e7b73b92b0cc5d2a4aba31e5165078fa6de7e778fccec5f3de"
+    },
+    {
+      "source": "PartitionedTriangleAbsorption/BlowupB/TeoremaBBalanced.lean",
+      "name": "PartitionedTriangleAbsorption.BlowupB.teoremaB_balanced",
+      "kind": "theorem",
+      "source_start_line": 52,
+      "reproduced_sha256": "80f0e6bd48a83f49edcf6161743a97b78bf90a50ae5d29df270c2656559dbf1f"
+    },
+    {
+      "source": "PartitionedTriangleAbsorption/BlowupB/PaddedGeneral/RealInverse/ThreeStepFamily.lean",
+      "name": "PaddedGeneral.RealInverse.keevashTypedSpec_of_threeStepLinks",
+      "kind": "theorem",
+      "source_start_line": 22,
+      "reproduced_sha256": "e6affb4b68ea1b1ef3f4ac4008e59cf474ea9165b08586ca3ee85b3e924ce197"
+    },
+    {
+      "source": "PartitionedTriangleAbsorption/BlowupB/Census/Universal.lean",
+      "name": "PartitionedTriangleAbsorption.BlowupB.FiniteCensus.keevashTypedSpec_of_admissible",
+      "kind": "theorem",
+      "source_start_line": 42,
+      "reproduced_sha256": "b1a5276c3542985ccd5e33376f16772315b135f74a92537ed12d5495183dca14"
+    },
+    {
+      "source": "PartitionedTriangleAbsorption/TypedApplicationLinks.lean",
+      "name": "PartitionedTriangleAbsorption.TypedApplicationLinks.F0",
+      "kind": "definition",
+      "source_start_line": 26,
+      "reproduced_sha256": "a3cfea6f5612beb4ab641856053a430ab8f188459afc528799b266b48f5a1ea7"
+    },
+    {
+      "source": "PartitionedTriangleAbsorption/TypedApplicationLinks.lean",
+      "name": "PartitionedTriangleAbsorption.TypedApplicationLinks.other0",
+      "kind": "definition",
+      "source_start_line": 38,
+      "reproduced_sha256": "a366805026b73e9724910745be4fe625e0a6c1a73ff12257f3bb2868a300dc49"
+    },
+    {
+      "source": "PartitionedTriangleAbsorption/CloneSupply/Basic.lean",
+      "name": "PartitionedTriangleAbsorption.CloneSupply.partSet",
+      "kind": "definition",
+      "source_start_line": 36,
+      "reproduced_sha256": "17354b528573cb2bb4b653cd5ddb4500d130d2abbaa1ccccea257184f66742e6"
+    },
+    {
+      "source": "PartitionedTriangleAbsorption/CloneSupply/Basic.lean",
+      "name": "PartitionedTriangleAbsorption.CloneSupply.partNbrs",
+      "kind": "definition",
+      "source_start_line": 40,
+      "reproduced_sha256": "32d4007591ce99ee53e9da6af1dafd3580e2620f468345a94f81702850d6acf9"
+    },
+    {
+      "source": "PartitionedTriangleAbsorption/CloneSupply/Basic.lean",
+      "name": "PartitionedTriangleAbsorption.CloneSupply.partDeg",
+      "kind": "definition",
+      "source_start_line": 45,
+      "reproduced_sha256": "f363d2c841d5c53b444f82f15220dbf49edd15f3b7c280f9c0cafc0ad3c6c8a8"
+    },
+    {
+      "source": "PartitionedTriangleAbsorption/F0OrderedBridge.lean",
+      "name": "PartitionedTriangleAbsorption.BlowupB.F0Direct.orderedSideTarget",
+      "kind": "definition",
+      "source_start_line": 20,
+      "reproduced_sha256": "e337c2f7adc508fa3a18b62a07eed4e941be3332f09d30dbdc0cb36934f84f2b"
+    },
+    {
+      "source": "PartitionedTriangleAbsorption/F0OrderedBridge.lean",
+      "name": "PartitionedTriangleAbsorption.BlowupB.F0Direct.orderedSideCost",
+      "kind": "definition",
+      "source_start_line": 24,
+      "reproduced_sha256": "e1d12b11a179aa8348b37dc4617005eb64c22afaae1946bb1c51622b8ea324c4"
+    },
+    {
+      "source": "PartitionedTriangleAbsorption/F0OrderedTheorem.lean",
+      "name": "PartitionedTriangleAbsorption.BlowupB.F0Direct.theorem146_ordered",
+      "kind": "theorem",
+      "source_start_line": 20,
+      "reproduced_sha256": "f96b7ef9f98cae05fb3957514220b955dc616e15166d63524b0479fa566d1b43"
+    },
+    {
+      "source": "PartitionedTriangleAbsorption/SignedCertificate/Basic.lean",
+      "name": "PartitionedTriangleAbsorption.SignedCertificate.ind",
+      "kind": "definition",
+      "source_start_line": 39,
+      "reproduced_sha256": "848471a198e1274281036347ced40877c63430dbbd6a5728d6e467e85264764a"
+    },
+    {
+      "source": "PartitionedTriangleAbsorption/SignedCertificate/Basic.lean",
+      "name": "PartitionedTriangleAbsorption.SignedCertificate.certWeight",
+      "kind": "definition",
+      "source_start_line": 48,
+      "reproduced_sha256": "54035036e4f7629f6e6c6bc74e5bbc8d0420e382ffe56cfb4fdf3fad1be1b34b"
+    },
+    {
+      "source": "PartitionedTriangleAbsorption/SignedHinge/Select.lean",
+      "name": "PartitionedTriangleAbsorption.SignedHinge.HingeSupply",
+      "kind": "definition",
+      "source_start_line": 39,
+      "reproduced_sha256": "ba490c864a9d21e4c138caa4f9ca39e5f21ac16e97e02566a44004953ae8598c"
+    },
+    {
+      "source": "PartitionedTriangleAbsorption/BlowupB/LemmaSC/OnePart.lean",
+      "name": "PartitionedTriangleAbsorption.BlowupB.LemmaSC.onePart",
+      "kind": "definition",
+      "source_start_line": 34,
+      "reproduced_sha256": "d7587892fb9f6a08c0e73b067e72c2e4755157cbdf1b8d3faafa9a91b71f8869"
+    },
+    {
+      "source": "PartitionedTriangleAbsorption/BlowupB/LemmaSC/OnePart.lean",
+      "name": "PartitionedTriangleAbsorption.BlowupB.LemmaSC.K3fam",
+      "kind": "definition",
+      "source_start_line": 37,
+      "reproduced_sha256": "3b11713746a6d44189b1f315a1767545648350391fdf26ac7e54b9561087f3f3"
+    },
+    {
+      "source": "PartitionedTriangleAbsorption/BlowupB/LemmaSC/OnePart.lean",
+      "name": "PartitionedTriangleAbsorption.BlowupB.LemmaSC.absorber_onePart",
+      "kind": "theorem",
+      "source_start_line": 102,
+      "reproduced_sha256": "c363e94cee0335ecfdc3b6dcf45090f782c55bd27a3886066560947f358720e2"
+    }
+  ],
+  "note": "Challenge definitions are reproduced, not left as unnamed definition holes."
+}
