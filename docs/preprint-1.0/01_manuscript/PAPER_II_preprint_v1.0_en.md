@@ -10,7 +10,9 @@ date: '20 October 2026'
 
 **Preprint 1.0 — 20 October 2026.**
 
-**DOI:** https://doi.org/10.5281/zenodo.23502224.
+**DOI:** <https://doi.org/10.5281/zenodo.23502224>.
+
+Copyright © 2026 Juan Pablo Traverso Gianini. This document is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
 
 ## Abstract
 
@@ -682,7 +684,7 @@ The author remains responsible for the arguments, citations, code and presentati
 
 ## References
 
-[1] J. P. Traverso Gianini, *Triangle decompositions I: Formalizing the Nash–Williams theorem in Lean*, preprint 1.0 (2026). https://doi.org/10.5281/zenodo.23428173. [Document](https://github.com/jtraverso/nash-williams-triangle-decompositions-release/blob/main/preprints/PAPER_I/01_manuscript/PAPER_I_preprint_v1.0_en.md).
+[1] J. P. Traverso Gianini, *Triangle decompositions I: Formalizing the Nash–Williams theorem in Lean*, preprint 1.0 (2026). <https://doi.org/10.5281/zenodo.23428173>. [Document](https://github.com/jtraverso/nash-williams-triangle-decompositions-release/blob/main/preprints/PAPER_I/01_manuscript/PAPER_I_preprint_v1.0_en.md).
 
 [2] M. Delcourt and L. Postle, *A Proof of Nash-Williams' Conjecture*, arXiv:2606.11178v1 (2026). https://arxiv.org/abs/2606.11178v1.
 
@@ -692,9 +694,9 @@ The author remains responsible for the arguments, citations, code and presentati
 
 [5] P. Keevash, *The existence of designs II*, arXiv:1802.05900 (2018). https://arxiv.org/abs/1802.05900.
 
-[6] L. de Moura and S. Ullrich, *The Lean 4 Theorem Prover and Programming Language*, CADE 28 (2021), 625–635. https://doi.org/10.1007/978-3-030-79876-5_37.
+[6] L. de Moura and S. Ullrich, *The Lean 4 Theorem Prover and Programming Language*, CADE 28 (2021), 625–635. <https://doi.org/10.1007/978-3-030-79876-5_37>.
 
-[7] The mathlib Community, *The Lean Mathematical Library*, CPP 2020, 367–381. https://doi.org/10.1145/3372885.3373824.
+[7] The mathlib Community, *The Lean Mathematical Library*, CPP 2020, 367–381. <https://doi.org/10.1145/3372885.3373824>.
 
 [8] J. P. Traverso Gianini, *Formalization and reproducibility companion to Triangle decompositions II*, preprint 1.0 (2026), accompanying source freeze `PAPER_II_LEAN_20261020_ALIGNED_v4`. The companion identifies the immutable source archive and its SHA-256 hash. [Document](https://github.com/jtraverso/nash-williams-triangle-decompositions-release/blob/main/preprints/PAPER_II/05_formalization/FORMALIZATION_COMPANION_preprint_v1.0_en.md).
 
@@ -703,27 +705,27 @@ The author remains responsible for the arguments, citations, code and presentati
 [10] *Jacobian*, software repository. https://github.com/morluto/jacobian.
 
 
-[11] B. Barber, D. Kühn, A. Lo, D. Osthus and A. Taylor, *Clique decompositions of multipartite graphs and completion of Latin squares*, Journal of Combinatorial Theory, Series A 151 (2017), 146–201. https://doi.org/10.1016/j.jcta.2017.04.005.
+[11] B. Barber, D. Kühn, A. Lo, D. Osthus and A. Taylor, *Clique decompositions of multipartite graphs and completion of Latin squares*, Journal of Combinatorial Theory, Series A 151 (2017), 146–201. <https://doi.org/10.1016/j.jcta.2017.04.005>.
 
-[12] R. Montgomery, *Fractional clique decompositions of dense partite graphs*, Combinatorics, Probability and Computing 26 (2017), 911–943. https://doi.org/10.1017/S0963548317000165. https://arxiv.org/abs/1603.01039.
+[12] R. Montgomery, *Fractional clique decompositions of dense partite graphs*, Combinatorics, Probability and Computing 26 (2017), 911–943. <https://doi.org/10.1017/S0963548317000165>. https://arxiv.org/abs/1603.01039.
 
-[13] B. Barber, D. Kühn, A. Lo and D. Osthus, *Edge-decompositions of graphs with high minimum degree*, Advances in Mathematics 288 (2016), 337–385. https://doi.org/10.1016/j.aim.2015.09.032.
+[13] B. Barber, D. Kühn, A. Lo and D. Osthus, *Edge-decompositions of graphs with high minimum degree*, Advances in Mathematics 288 (2016), 337–385. <https://doi.org/10.1016/j.aim.2015.09.032>.
 
 [14] S. Glock, D. Kühn, A. Lo and D. Osthus, *The existence of designs via iterative absorption: hypergraph F-designs for arbitrary F*, arXiv:1611.06827v3 (2020). https://arxiv.org/abs/1611.06827v3.
 
 [15] P. Keevash, *The existence of designs*, arXiv:1401.3665v4 (2024; first version 2014). https://arxiv.org/abs/1401.3665v4.
 
-[16] V. Rödl, *On a packing and covering problem*, European Journal of Combinatorics 6 (1985), 69–78. https://doi.org/10.1016/S0195-6698(85)80023-8.
+[16] V. Rödl, *On a packing and covering problem*, European Journal of Combinatorics 6 (1985), 69–78. <https://doi.org/10.1016/S0195-6698(85)80023-8>.
 
-[17] P. Frankl and V. Rödl, *Near perfect coverings in graphs and hypergraphs*, European Journal of Combinatorics 6 (1985), 317–326. https://doi.org/10.1016/S0195-6698(85)80045-7.
+[17] P. Frankl and V. Rödl, *Near perfect coverings in graphs and hypergraphs*, European Journal of Combinatorics 6 (1985), 317–326. <https://doi.org/10.1016/S0195-6698(85)80045-7>.
 
-[18] N. Pippenger and J. Spencer, *Asymptotic behavior of the chromatic index for hypergraphs*, Journal of Combinatorial Theory, Series A 51 (1989), 24–42. https://doi.org/10.1016/0097-3165(89)90074-5.
+[18] N. Pippenger and J. Spencer, *Asymptotic behavior of the chromatic index for hypergraphs*, Journal of Combinatorial Theory, Series A 51 (1989), 24–42. <https://doi.org/10.1016/0097-3165(89)90074-5>.
 
-[19] P. E. Haxell and V. Rödl, *Integer and fractional packings in dense graphs*, Combinatorica 21 (2001), 13–38. https://doi.org/10.1007/s004930170003.
+[19] P. E. Haxell and V. Rödl, *Integer and fractional packings in dense graphs*, Combinatorica 21 (2001), 13–38. <https://doi.org/10.1007/s004930170003>.
 
-[20] S. Ehard, S. Glock and F. Joos, *Pseudorandom hypergraph matchings*, Combinatorics, Probability and Computing 29 (2020), 868–885. https://doi.org/10.1017/S0963548320000280.
+[20] S. Ehard, S. Glock and F. Joos, *Pseudorandom hypergraph matchings*, Combinatorics, Probability and Computing 29 (2020), 868–885. <https://doi.org/10.1017/S0963548320000280>.
 
-[21] S. Boucheron, G. Lugosi and P. Massart, *Concentration Inequalities: A Nonasymptotic Theory of Independence*, Oxford University Press (2013), Chapter 2. https://doi.org/10.1093/acprof:oso/9780199535255.001.0001.
+[21] S. Boucheron, G. Lugosi and P. Massart, *Concentration Inequalities: A Nonasymptotic Theory of Independence*, Oxford University Press (2013), Chapter 2. <https://doi.org/10.1093/acprof:oso/9780199535255.001.0001>.
 
 \clearpage
 
@@ -2875,13 +2877,13 @@ Conversely, the padded property implies (2.7). Given the class lower bound $\gam
 ## Appendix F. A fixed catalogue for the conserved families
 
 Throughout, a cyclic digraph has three vertex classes, and every arc goes from
-class i to class i+1 modulo 3. Digraphs have no repeated arcs. The degree d(v)
+class $i$ to class $i+1$ modulo 3. Digraphs have no repeated arcs. The degree $d(v)$
 means **in-degree plus out-degree**. A signed circulation is an integer vector
 on the arcs with equal incoming and outgoing sums at every vertex. A positive
 piece is a nonempty set of arcs which is balanced in the same sense. It need not
 be a single cycle. Its size is its number of arcs.
 
-For a finite catalogue C of pieces, its load at v is
+For a finite catalogue $C$ of pieces, its load at $v$ is
 
 $$
 \operatorname{load}_{\mathcal C}(v)=\sum_{P\in\mathcal C}d_P(v).
@@ -2889,108 +2891,108 @@ $$
 
 This counts the entire catalogue, not merely the pieces selected for a
 particular residual graph. All reserves and catalogues below are chosen before
-the residual L. Only the partition selected from the catalogue depends on L.
+the residual $L$. Only the partition selected from the catalogue depends on $L$.
 
 ### F.1. Integer rounding and a two-sided inverse
 
-Orient the edges of a finite simple graph arbitrarily and let B be its signed
-incidence matrix, with a column $e_{v}-e_{u}$ for an edge oriented from u to v.
+Orient the edges of a finite simple graph arbitrarily and let $B$ be its signed
+incidence matrix, with a column $e_{v}-e_{u}$ for an edge oriented from $u$ to $v$.
 
-**Flow rounding.** If Bf is integral, there is an integral vector z with $Bz=Bf$
-and $\lfloor f_e\rfloor\le z_e\le\lceil f_e\rceil$ for every edge e. In particular $|z_{e}-f_{e}|<1$.
+**Flow rounding.** If $Bf$ is integral, there is an integral vector $z$ with $Bz=Bf$
+and $\lfloor f_e\rfloor\le z_e\le\lceil f_e\rceil$ for every edge $e$. In particular $|z_{e}-f_{e}|<1$.
 
-To see this, consider the edges on which f is not integral. No vertex has exactly
+To see this, consider the edges on which $f$ is not integral. No vertex has exactly
 one such incident edge: its incidence equation would have a nonintegral left
 side and an integral right side. If any such edge remains, their underlying
 graph therefore contains a cycle. Add a signed multiple of its cyclic incidence
-vector. This preserves Bf. Increase the multiple until an edge first reaches an
+vector. This preserves $Bf$. Increase the multiple until an edge first reaches an
 integer endpoint of its allowed interval. No other coordinate leaves its
 interval, and at least one nonintegral coordinate disappears. Previously
 integral coordinates are not changed. Iteration terminates, proving the claim.
 
-Suppose G satisfies the cut inequality
+Suppose $G$ satisfies the cut inequality
 
 $$
 |\partial_G S|\ge h\min\{|S|,|V(G)\setminus S|\},\qquad h>0.\tag{F.1}
 $$
 
-Every zero-sum real vector g with $|g_{v}|\le M$ has a real preimage under B of
-supremum norm at most M/h. Indeed,
+Every zero-sum real vector $g$ with $|g_{v}|\le M$ has a real preimage under $B$ of
+supremum norm at most $M/h$. Indeed,
 
 $$
 \left|\sum_{v\in S}g_v\right|\le M\min\{|S|,|V(G)\setminus S|\}\le(M/h)|\partial_G S|.
 $$
 
 These cut inequalities imply the flow assertion. For completeness, the image
-of the box $[-M/h,M/h]^E$ under B is a compact convex set. If g were outside it,
-a separating potential p would satisfy
+of the box $[-M/h,M/h]^E$ under $B$ is a compact convex set. If $g$ were outside it,
+a separating potential $p$ would satisfy
 
 $$
 \langle p,g\rangle>(M/h)\sum_{uv\in E}|p_u-p_v|.
 $$
 
-Subtract a constant from p, which does not change the left side, and express p
+Subtract a constant from $p$, which does not change the left side, and express $p$
 as a sum of indicators of its nested level sets multiplied by consecutive
 level differences. Apply the cut inequality to each term and sum. This gives
-the reverse inequality, a contradiction. Integral g can then be rounded as
+the reverse inequality, a contradiction. Integral $g$ can then be rounded as
 above without changing its divergence.
 
-**Two-sided inverse.** Let A and B be connected graphs with expansion constants
-$h_{A},h_{B}$. If X is an integral matrix with zero row and column sums and
+**Two-sided inverse.** Let $A$ and $B$ be connected graphs with expansion constants
+$h_{A},h_{B}$. If $X$ is an integral matrix with zero row and column sums and
 $|X_{ab}|\le M$, then
 
 $$
 B_A Z B_B^{\mathsf T}=X,\qquad |Z_{ef}|<\frac{2M}{h_Ah_B}+2.\tag{F.2}
 $$
 
-for an integral matrix Z.
+for an integral matrix $Z$.
 
-First lift each column of X through $B_{A}$, obtaining columns $u_{b}$ bounded by
-$M/h_{A}$. Set $s_b=u_b-\operatorname{mean}_{b\prime}u_{b\prime}$. Then $B_{A}$ $s_{b}=X_{b}$, because the rows of X sum
-to zero; the rows of the matrix s also sum to zero, and $|s_{eb}|\le 2M/h_{A}$. Lift
-each row through $B_{B}$. This gives a real matrix C with
+First lift each column of $X$ through $B_{A}$, obtaining columns $u_{b}$ bounded by
+$M/h_{A}$. Set $s_b=u_b-\operatorname{mean}_{b\prime}u_{b\prime}$. Then $B_{A}$ $s_{b}=X_{b}$, because the rows of $X$ sum
+to zero; the rows of the matrix $s$ also sum to zero, and $|s_{eb}|\le 2M/h_{A}$. Lift
+each row through $B_{B}$. This gives a real matrix $C$ with
 
 $$
 B_A C B_B^{\mathsf T}=X,\qquad |C_{ef}|\le\frac{2M}{h_Ah_B}.\tag{F.3}
 $$
 
 There is also an integral preimage $C_{0}$, without a claimed norm bound: express
-X as a sum of $X_{ab}(e_a-e_{a_0})(e_b-e_{b_0})^{\mathsf T}$, for fixed roots $a_0,b_0$, and lift the
-two differences along paths in A and B.
+$X$ as a sum of $X_{ab}(e_a-e_{a_0})(e_b-e_{b_0})^{\mathsf T}$, for fixed roots $a_0,b_0$, and lift the
+two differences along paths in $A$ and $B$.
 
-We round C while preserving its two-sided image. Choose a spanning tree of A.
-Let P send an edge vector to the unique vector supported on that tree with the
-same incidence. Thus $B_AP=B_A$ and P vanishes on $\ker B_A$. Put
+We round $C$ while preserving its two-sided image. Choose a spanning tree of $A$.
+Let $P$ send an edge vector to the unique vector supported on that tree with the
+same incidence. Thus $B_AP=B_A$ and $P$ vanishes on $\ker B_A$. Put
 
 $$
 D=C-C_0,\qquad V=PD,\qquad U=D-V.
 $$
 
 Then $B_AU=0$. Also $B_A D B_B^{\mathsf T}=0$, so $P(DB_B^{\mathsf T})=0$ and hence $VB_B^{\mathsf T}=0$.
-Round every column of U as a zero-divergence flow on A, and every row of V as
-a zero-divergence flow on B. The resulting integral $U_{Z},V_{Z}$ retain those
+Round every column of $U$ as a zero-divergence flow on $A$, and every row of $V$ as
+a zero-divergence flow on $B$. The resulting integral $U_{Z},V_{Z}$ retain those
 identities and change each entry by less than one. Therefore
-$Z=C_{0}+U_{Z}+V_{Z}$ proves (F.2). No bound on P is used. In particular this argument
+$Z=C_{0}+U_{Z}+V_{Z}$ proves (F.2). No bound on $P$ is used. In particular this argument
 does not assume that a tensor product of incidence matrices is totally
 unimodular.
 
 ### F.2. A bounded-degree expander at every size
 
-For each $n\ge 1$ there is a simple graph G on n vertices with maximum degree at
+For each $n\ge 1$ there is a simple graph $G$ on $n$ vertices with maximum degree at
 most eight and expansion $h=1/20$. The one-vertex case is immediate. For larger
-n, take four independent uniform permutations and form the undirected union
+$n$, take four independent uniform permutations and form the undirected union
 of their permutation edges, discarding loops and repetitions.
 
-Here is the counting argument, including its numerical estimate. Fix a set S
-of size $1\le s\le n/2$ and put $r=\lfloor (s-1)/20\rfloor$. A permutation with at most r images
-leaving S maps S into $S\cup R$ for some r-set R outside S. Its probability is
+Here is the counting argument, including its numerical estimate. Fix a set $S$
+of size $1\le s\le n/2$ and put $r=\lfloor (s-1)/20\rfloor$. A permutation with at most $r$ images
+leaving $S$ maps $S$ into $S\cup R$ for some $r$-set $R$ outside $S$. Its probability is
 at most
 
 $$
 \binom nr\binom{s+r}s\big/\binom ns.
 $$
 
-Consequently the probability that some s-set is bad for all four permutations
+Consequently the probability that some $s$-set is bad for all four permutations
 is at most
 
 $$
@@ -3022,7 +3024,7 @@ $$
 
 because $\alpha\le 1/2$ and $60^{5}\cdot 27\le 2^{35}$. Summing $2^{-s}$ over the finite range
 $1\le s\le \lfloor n/2\rfloor$ gives a number strictly less than one. Thus one tuple of
-permutations works for every such set. For each S, some permutation has at
+permutations works for every such set. For each $S$, some permutation has at
 least $r+1\ge s/20$ outgoing images. These give distinct edges of the simple
 boundary, even after repetitions between permutations are discarded. Taking
 complements proves (F.1) for every set. Each permutation contributes at most two
@@ -3031,9 +3033,9 @@ also implies connectedness.
 
 ### F.3. A bounded signed filling in the complete cyclic host
 
-Let Q have three classes A,B,C, each indexed by $\mathbb Z/n\mathbb Z$, and all cyclic arcs
-between consecutive classes. Fix an orientation of the graph G from Section F.2
-on the index set. For indices a,b,c, write
+Let $Q$ have three classes $A,B,C$, each indexed by $\mathbb Z/n\mathbb Z$, and all cyclic arcs
+between consecutive classes. Fix an orientation of the graph $G$ from Section F.2
+on the index set. For indices $a,b,c$, write
 
 $$
 t(a,b,c)=[A_aB_b]+[B_bC_c]+[C_cA_a].
@@ -3041,25 +3043,25 @@ $$
 
 Use the following fixed signed circulations as faces:
 
-1. the $n^{2}$ Latin triangles t(a,b,a+b);
-2. for every oriented edge $f\to s$ of G and every a, the two moves
+1. the $n^{2}$ Latin triangles $t(a,b,a+b)$;
+2. for every oriented edge $f\to s$ of $G$ and every $a$, the two moves
 
 $$
 \begin{aligned}m_B(e,a)&=t(a,s,a+f)-t(a,f,a+f),\\m_C(e,a)&=t(a,f-a,s)-t(a,f-a,f);\end{aligned}
 $$
 
 3. in each of the three consecutive-class blocks, the rectangles
-   $(e_s-e_f)(e_{s\prime}-e_{f\prime})^{\mathsf T}$ indexed by two oriented edges of G.
+   $(e_s-e_f)(e_{s\prime}-e_{f\prime})^{\mathsf T}$ indexed by two oriented edges of $G$.
 
-Each face is nonzero, has coefficients in {-1,0,1}, and has at most four
+Each face is nonzero, has coefficients in $\{-1,0,1\}$, and has at most four
 nonzero arcs. The moves have four, rather than six, arcs because a common
 triangle side cancels. The only outgoing-profile change of $m_{B}$ is $e_{s}-e_{f}$
-in class B; that of $m_{C}$ is $e_{s}-e_{f}$ in class C. Each rectangle has zero row
+in class $B$; that of $m_{C}$ is $e_{s}-e_{f}$ in class $C$. Each rectangle has zero row
 and column sums and therefore zero outgoing profile in every class.
 
-There are at most $57n^{2}$ faces: G has at most $4n$ edges, so the three counts
+There are at most $57n^{2}$ faces: $G$ has at most $4n$ edges, so the three counts
 are $n^{2}$, at most $8n^{2}$, and at most $48n^{2}$. For a fixed arc, bounds for the
-numbers of incident faces in the four groups (triangles, B-moves, C-moves,
+numbers of incident faces in the four groups (triangles, $B$-moves, $C$-moves,
 rectangles) are respectively
 
 $$
@@ -3067,26 +3069,26 @@ $$
 $$
 
 For the moves, choosing which of their two varying endpoints equals a fixed
-index reduces the count to incident edges of G, with at most four such choices;
+index reduces the count to incident edges of $G$, with at most four such choices;
 once this edge is fixed the remaining index is determined. For rectangles,
 choose one endpoint of each oriented edge, giving the safe bound
 $(2\cdot 8)^{2}$. The bound three for the Latin faces is deliberately loose. These
 counts remain valid if different indexed faces have the same arc vector.
 
-Let L be any balanced subgraph of Q. Denote its outgoing degrees in the three
-classes by $d_{A},d_{B},d_{C}$. Their sums agree and every degree is at most n. Choose
+Let $L$ be any balanced subgraph of $Q$. Denote its outgoing degrees in the three
+classes by $d_{A},d_{B},d_{C}$. Their sums agree and every degree is at most $n$. Choose
 
 $$
 z_{ab}=\begin{cases}1,&\text{if the representative of }b-a\pmod n\text{ is }<d_A(a),\\0,&\text{otherwise.}\end{cases}
 $$
 
-The chain sum $z_{ab}$ t(a,b,a+b) has the required A-profile. Its B- and C-profile
-errors have sum zero and absolute value at most n. By Section F.1 each error has
-an integral flow on G with coefficients of absolute value less than $20n+1$.
-Split each coefficient into n integral summands of absolute value at most 21.
+The chain sum $z_{ab}$ $t(a,b,a+b)$ has the required $A$-profile. Its $B$- and $C$-profile
+errors have sum zero and absolute value at most $n$. By Section F.1 each error has
+an integral flow on $G$ with coefficients of absolute value less than $20n+1$.
+Split each coefficient into $n$ integral summands of absolute value at most 21.
 Use these summands as coefficients of $m_{B}(e,a)$, respectively $m_{C}(e,a)$.
 The two corrections affect only their respective profiles. We obtain a signed
-circulation Y with exactly the outgoing profile of L in all three classes.
+circulation $Y$ with exactly the outgoing profile of $L$ in all three classes.
 
 By (F.4), the absolute face usage on any arc in this construction is at most
 
@@ -3111,38 +3113,38 @@ $$
 T=3+2\cdot21\cdot32+1078401\cdot256.\tag{F.5}
 $$
 
-The faces and T were fixed before L. The filling coefficients depend on L.
+The faces and $T$ were fixed before $L$. The filling coefficients depend on $L$.
 
 ### F.4. Converting signed fillings to a positive catalogue
 
-Fix D subset Q. For each arc $e=u\to v$ of Q, introduce T internally private
-positive paths from u to v of length four and T internally private negative
-paths from v to u of length five. Distinct paths have distinct internal
+Fix $D\subseteq Q$. For each arc $e=u\to v$ of $Q$, introduce $T$ internally private
+positive paths from $u$ to $v$ of length four and $T$ internally private negative
+paths from $v$ to $u$ of length five. Distinct paths have distinct internal
 vertices and distinct arcs. Their lengths have the appropriate residues
-modulo three, so all paths are cyclic. Let R be their union, disjoint from D.
+modulo three, so all paths are cyclic. Let $R$ be their union, disjoint from $D$.
 
 The catalogue consists of three types of positive balanced pieces:
 
 - for every face, either sign, and every choice of a channel on each of its
   nonzero arcs, replace each signed arc by a path in its indicated direction;
-- for every arc of Q, the union of any positive and any negative channel;
-- for every e in D, e together with the zeroth negative channel for e.
+- for every arc of $Q$, the union of any positive and any negative channel;
+- for every $e\in D$, $e$ together with the zeroth negative channel for $e$.
 
 Replacing an integral circulation by directed paths preserves balance.
 Every listed piece is nonempty and contains at most 20 arcs. In particular,
 the first type is not asserted to be a single directed cycle; balance is the
 property used by the subsequent construction.
 
-We prove exact coverage, not just coverage of L. Given balanced L subset D,
+We prove exact coverage, not just coverage of $L$. Given balanced $L\subseteq D$,
 take the filling from Section F.3 and expand its coefficients into signed unit
-occurrences. At an arc e, let $p_{e},n_{e}$ be their positive and negative counts.
+occurrences. At an arc $e$, let $p_{e},n_{e}$ be their positive and negative counts.
 Then
 
 $$
 p_e-n_e=\mathbf1_L(e),\qquad p_e+n_e\le T.
 $$
 
-For e in L first select the third-type piece using negative channel zero.
+For $e\in L$ first select the third-type piece using negative channel zero.
 Assign distinct positive channels to the $p_{e}$ positive occurrences and distinct
 remaining negative channels to the $n_{e}$ negative occurrences. There is enough
 space, since $n_{e}+1_{L}(e)=p_{e}\le T$. The unassigned positive and negative channels
@@ -3161,7 +3163,7 @@ $$
 
 For the first estimate there are at most $2\cdot 57n^{2}\cdot T^{4}$ face pieces,
 $9n^{2}\cdot T^{2}$ paired-channel pieces, and $9n^{2}$ input pieces. The bounds $9n^{2}$ count
-all ordered pairs, so they safely overestimate the arcs of Q.
+all ordered pairs, so they safely overestimate the arcs of $Q$.
 
 For the load estimate, a physical arc belongs to at most
 $2\cdot 323\cdot T^{4}+T^{2}+1$ catalogue pieces. A base vertex touches at most $6n$ reference
@@ -3174,7 +3176,7 @@ $$
 
 incident physical arcs, for $n\ge 1$. Double counting pairs (piece, incident arc)
 proves (F.6). These deliberately loose bounds cover both base and private
-vertices. An arbitrary cyclic digraph D on N vertices embeds in Q with N
+vertices. An arbitrary cyclic digraph $D$ on $N$ vertices embeds in $Q$ with $N$
 indices per class; padding preserves its original vertices. Formula (F.6) gives
 a fixed reserve and catalogue with count $\le C_dN^2$ and load $\le C_dN$.
 For $N=0$ use the empty reserve and catalogue. This proves the dense producer
@@ -3182,14 +3184,14 @@ with piece size twenty; it is not an additional hypothesis.
 
 ### F.5. Reducing a degree-seventeen input to square-root load
 
-Let Y be cyclic with $d_{Y}(v)\le 17$ and $m=|Y|>0$. Put
+Let $Y$ be cyclic with $d_{Y}(v)\le 17$ and $m=|Y|>0$. Put
 
 $$
 s=\lfloor\sqrt{2m}\rfloor+1,\quad M=307+290s,\quad A_0=9\cdot597^2\cdot8.\tag{F.7}
 $$
 
-We assign the support of Y to M groups in each colour, each with at most s
-vertices, so that distinct arcs of Y have distinct ordered pairs of groups.
+We assign the support of $Y$ to $M$ groups in each colour, each with at most $s$
+vertices, so that distinct arcs of $Y$ have distinct ordered pairs of groups.
 Process vertices one at a time. In addition to group capacity, maintain that
 vertices at undirected distance at most two receive different group indices.
 At a new vertex the forbidden group indices are bounded by:
@@ -3197,55 +3199,55 @@ At a new vertex the forbidden group indices are bounded by:
 - $17+17^{2}=306$ from vertices at distance at most two;
 - $17^2s=289s$ from existing arcs whose group pair would coincide with an arc
   to a previously processed neighbour;
-- at most s-1 full groups, since the processed support has size less than $s^{2}$.
+- at most $s-1$ full groups, since the processed support has size less than $s^{2}$.
 
-For the second count, a group contains at most s old vertices, each meeting at
+For the second count, a group contains at most $s$ old vertices, each meeting at
 most seventeen arcs; there are at most seventeen relevant neighbours. Distinct
 new arcs cannot collide with each other, because their old endpoints have
 different group indices. Opposite orientations at the new vertex cannot
-collide: their endpoint colours differ. Since M is larger than the sum of the
+collide: their endpoint colours differ. Since $M$ is larger than the sum of the
 three exclusions, a group is always available. This establishes the claimed
 assignment, rather than merely assuming a simple quotient.
 
-Let p(v) be the group of v and let D be the cyclic quotient, with one hub per
-group. The map e->(p(tail e),p(head e)) is injective. There are $N=3M$ hubs and
+Let $p(v)$ be the group of $v$ and let $D$ be the cyclic quotient, with one hub per
+group. The map $e\mapsto(p(\operatorname{tail}e),p(\operatorname{head}e))$ is injective. There are $N=3M$ hubs and
 at most $17s$ input arcs incident with any one hub. Since $s^{2}\le 8m$ and $M\le 597s$,
 
 $$
 N^2\le A_0m,\qquad(\text{hub incidence})^2\le A_0m.\tag{F.8}
 $$
 
-Use Section F.4 on D. For each original arc $e=u\to v$ introduce five private
+Use Section F.4 on $D$. For each original arc $e=u\to v$ introduce five private
 vertices and the following paths:
 
 $$
 \begin{aligned}P_e&:v\to x_0\to u,\\O_e&:u\to x_1\to x_2\to p(u),\\I_e&:p(v)\to x_3\to x_4\to v,\\Q_e&:p(u)\to p(v).\end{aligned}
 $$
 
-The colours of p(u),p(v) equal those of u,v. Thus the indicated paths are
+The colours of $p(u),p(v)$ equal those of $u,v$. Thus the indicated paths are
 cyclic. The base cycle $P_{e}+O_{e}+Q_{e}+I_{e}$ has length nine. The reserve consists
 of all these base cycles and the dense reserve on the hubs. Its catalogue
 contains the dense catalogue and:
 
-- the triangle $e+P_{e}$, for each e in Y;
-- the base cycle of length nine for each e;
+- the triangle $e+P_{e}$, for each $e\in Y$;
+- the base cycle of length nine for each $e$;
 - $I_{e}+O_{f}$, a cycle of length six, whenever $head(e)=tail(f)$.
 
-Given balanced L subset Y, select the base cycle for each e outside L and the
-triangle for each e in L. At each old vertex pair its incoming L-arcs with
-its outgoing L-arcs, and use the corresponding six-cycles. The remaining
-arcs are exactly the dense reserve plus Q(L). The latter is balanced, because
-the group map preserves sums of divergences, and is a subgraph of D by
+Given balanced $L\subseteq Y$, select the base cycle for each $e$ outside $L$ and the
+triangle for each $e\in L$. At each old vertex pair its incoming $L$-arcs with
+its outgoing $L$-arcs, and use the corresponding six-cycles. The remaining
+arcs are exactly the dense reserve plus $Q(L)$. The latter is balanced, because
+the group map preserves sums of divergences, and is a subgraph of $D$ by
 injectivity. Section F.4 partitions this remainder. All selections are
-arc-disjoint; all pieces belong to the catalogue fixed before L.
+arc-disjoint; all pieces belong to the catalogue fixed before $L$.
 
-There are at most $17m$ compatible ordered pairs (e,f), so the total catalogue
-size is at most (19+C_d A_0)m. The following load calculation records the
+There are at most $17m$ compatible ordered pairs $(e,f)$, so the total catalogue
+size is at most $(19+C_d A_0)m$. The following load calculation records the
 stronger bound needed later for vertices which will be identified.
-At a vertex w let $S_{w}$ be the sum of its degrees in all base nine-cycles.
+At a vertex $w$ let $S_{w}$ be the sum of its degrees in all base nine-cycles.
 The triangles contribute at most $S_{w}+d_{Y}(w)$, the base cycles at most $S_{w}$,
 and the six-cycles at most $34S_{w}$: an arc can be the first or second member
-of at most seventeen pairs. The dense catalogue contributes at most $C_{d}$ N
+of at most seventeen pairs. The dense catalogue contributes at most $C_{d}$ $N$
 and does not meet any old vertex. In particular $S_{v}=2d_{Y}(v)$ at an old vertex,
 and hence
 
@@ -3253,8 +3255,8 @@ $$
 \operatorname{load}(v)\le73d_Y(v)\quad\text{for every old vertex}.\tag{F.9}
 $$
 
-At a general vertex, let ell be its hub incidence if it is a hub, and zero
-otherwise. The number of base cycles meeting it is at most 17+ell, giving
+At a general vertex, let $\ell$ be its hub incidence if it is a hub, and zero
+otherwise. The number of base cycles meeting it is at most $17+\ell$, giving
 
 $$
 \operatorname{load}(w)\le1241+(72+C_d)(\ell+N).
@@ -3266,7 +3268,7 @@ $$
 C_m=19+C_dA_0+1241+(72+C_d)(2A_0).\tag{F.10}
 $$
 
-therefore bounds catalogue size by $C_{m}$ m and gives
+therefore bounds catalogue size by $C_{m}$ $m$ and gives
 $\operatorname{load}(w)^2\le C_m^2m$ at every vertex. Every piece has size at most twenty.
 For $m=0$ the empty catalogue satisfies the same assertions. The distinction
 between (F.9) and the square-root bound is essential: a square-root bound per
@@ -3274,8 +3276,8 @@ port would be inadequate after many ports are assigned to one physical root.
 
 ### F.6. A fixed eight-permutation network at each root
 
-For every finite set P there are eight permutations such that, for every
-S subset P, the total number of directed permutation channels leaving S,
+For every finite set $P$ there are eight permutations such that, for every
+$S\subseteq P$, the total number of directed permutation channels leaving $S$,
 counted with their permutation labels, is at least
 
 $$
@@ -3284,24 +3286,24 @@ $$
 
 Here parallel channels are retained as different channels; this is not the
 simple graph used in Section F.2. For $|P|\le 1$ the assertion is immediate. Let
-$n=|P|$ and fix S with $1\le s\le n/2$, $p=s/n$. For a uniform permutation let I be the
-number of images from S which stay in S. Its factorial moments satisfy
+$n=|P|$ and fix $S$ with $1\le s\le n/2$, $p=s/n$. For a uniform permutation let $I$ be the
+number of images from $S$ which stay in $S$. Its factorial moments satisfy
 
 $$
 \mathbb E\binom Ik=\frac{\binom sk^2}{\binom nk}\le\binom skp^k.
 $$
 
-Thus E $\lambda^{I}$ $\le (1+p(\lambda-1))^{s}$ for $\lambda\ge 1$. If eight independent
-permutations have fewer than s outgoing channels, their total internal count
-exceeds $7s$. Markov's inequality with $\lambda=4/p$, followed by
-$\binom{n}{s}\le (3/p)^{s}$, bounds the probability of a bad s-set by
+Thus $\mathbb E$ $\lambda^{I}$ $\le (1+p(\lambda-1))^{s}$ for $\lambda\ge 1$. If eight independent
+permutations have fewer than $s$ outgoing channels, their total internal count
+exceeds $7s$. Markov'$s$ inequality with $\lambda=4/p$, followed by
+$\binom{n}{s}\le (3/p)^{s}$, bounds the probability of a bad $s$-set by
 
 $$
 \left[3(5-p)^8p^6/4^7\right]^s\le2^{-s}.
 $$
 
 For the last inequality, $p^{3}(5-p)^{4}$ is increasing for $0<p\le 1/2$ and is less
-than 52 there, while $3\cdot 52^{2}<4^{7}/2$. The sum over s is strictly less than one.
+than 52 there, while $3\cdot 52^{2}<4^{7}/2$. The sum over $s$ is strictly less than one.
 Some tuple therefore works for all small sets. The outgoing count across a
 cut equals that across its complement for each permutation, proving (F.11).
 
@@ -3320,17 +3322,17 @@ and sink for the positive and negative demands and augmenting along residual
 paths: if augmentation stops before all demand is routed, the source-reachable
 set violates precisely one of these cut inequalities. Integral capacities
 keep every selected channel at value zero or one. The network works for all
-such b; it is not chosen after b is known.
+such $b$; it is not chosen after $b$ is known.
 
 ### F.7. Root ports and the completed catalogue
 
-Let X be an arbitrary cyclic digraph and put $x=|X|$. Split each input arc into
+Let $X$ be an arbitrary cyclic digraph and put $x=|X|$. Split each input arc into
 two distinct ports, one assigned to its tail root and one to its head root.
 The lifted input is a matching on $2x$ ports. A port retains the colour of its
 root. For each root apply Section F.6 to its set of ports. Replace every selected
 network channel by a private path of length three, whose endpoints are its
-ports. The endpoints have the same colour, so this path is cyclic. Let N be
-the union of all network paths and I the lifted input.
+ports. The endpoints have the same colour, so this path is cyclic. Let $N$ be
+the union of all network paths and $I$ the lifted input.
 
 Every port has network total degree at most sixteen, every network internal
 vertex has degree two, and the lifted matching adds at most one. Hence
@@ -3340,15 +3342,15 @@ $$
 $$
 
 Indeed there are at most eight channels per port, each with three arcs, so
-$|N|\le 24\cdot (2x)$. The networks are fixed for X. If L subset X is balanced, its
-lift has divergence in {-1,0,1} at every port and the sum of divergences in
-each root fibre is zero. Section F.6 selects whole channels whose paths A
-cancel these divergences. Thus A union I(L) is balanced, with A subset N.
+$|N|\le 24\cdot (2x)$. The networks are fixed for $X$. If $L\subseteq X$ is balanced, its
+lift has divergence in $\{-1,0,1\}$ at every port and the sum of divergences in
+each root fibre is zero. Section F.6 selects whole channels whose paths $A$
+cancel these divergences. Thus $A\cup I(L)$ is balanced, with $A\subseteq N$.
 
-Apply Section F.5 once to $Y=N\cup I$, producing a reserve R disjoint from Y
+Apply Section F.5 once to $Y=N\cup I$, producing a reserve $R$ disjoint from $Y$
 and its fixed catalogue. Enlarge this catalogue by every individual channel
-path of N. Given L, first use the mesoscopic partition for A union I(L).
-Then add the individual channel paths not selected in A. This partitions
+path of $N$. Given $L$, first use the mesoscopic partition for $A\cup I(L)$.
+Then add the individual channel paths not selected in $A$. This partitions
 
 $$
 R\cup N\cup I(L).\tag{F.13}
@@ -3372,7 +3374,7 @@ $$
 \operatorname{load}(v)\le73\cdot17+16=1257.\tag{F.14}
 $$
 
-For a genuinely new mesoscopic vertex u there are no extra channel pieces,
+For a genuinely new mesoscopic vertex $u$ there are no extra channel pieces,
 so $load(u)^{2}\le C_{m}^{2}\cdot 49x$. The remaining bounds are
 
 $$
@@ -3382,7 +3384,7 @@ $$
 and every piece has at most twenty arcs. The second bound keeps the sizes
 twenty and three separate; replacing both by twenty is unnecessary.
 
-There are exactly $d_{X}(r)$ ports assigned to a physical root r. The total
+There are exactly $d_{X}(r)$ ports assigned to a physical root $r$. The total
 catalogue precharge carried by those ports is therefore at most
 
 $$
@@ -3390,9 +3392,9 @@ $$
 $$
 
 not 1257 times the total number of input arcs. Network internal vertices are
-not pinned to r. This is the root budget used by the weighted physical
-embedding. Taking L empty in (F.13) also proves that the support of the catalogue
-contains R union N, which is needed when its arc weights are defined.
+not pinned to $r$. This is the root budget used by the weighted physical
+embedding. Taking $L$ empty in (F.13) also proves that the support of the catalogue
+contains $R\cup N$, which is needed when its arc weights are defined.
 
 Equations (F.12)--(F.16) complete the abstract catalogue construction. Together
 with an arc-injective physical realization and the terminal absorber proved
@@ -3402,12 +3404,12 @@ to the conserved-family construction. This statement concerns that input; the se
 ### F.8. Why the pieces meet the terminal divisibility conditions
 
 For the three-colour core the only triangle type is 012. At a vertex of colour
-i in a balanced cyclic piece P, the numbers of neighbours of colours i-1 and
-i+1 agree: they are its incoming and outgoing degrees. Its local profile is
+$i$ in a balanced cyclic piece $P$, the numbers of neighbours of colours $i-1$ and
+$i+1$ agree: they are its incoming and outgoing degrees. Its local profile is
 therefore an integral multiple of the corner profile of 012. Summing balance
 over each colour class also shows that the numbers of arcs in the three
 consecutive-class blocks agree. The global edge-count vector is consequently
-an integral multiple of (1,1,1). Thus P satisfies both integer divisibility
+an integral multiple of $(1,1,1)$. Thus $P$ satisfies both integer divisibility
 conditions; total edge-count divisibility alone is not the argument.
 
 After the physical replacement in this article, the same reasoning applies
@@ -3425,11 +3427,11 @@ embedding.
 Finally, apply the fixed-catalogue assembly lemma to the physical catalogue.
 Its count and whole-catalogue load, rather than the load of any particular
 residual selection, are the inputs to that lemma. The terminal gadgets and
-their physical embeddings are fixed for all pieces before L is selected.
-The partition for L then chooses one of the two decompositions of each
+their physical embeddings are fixed for all pieces before $L$ is selected.
+The partition for $L$ then chooses one of the two decompositions of each
 already embedded gadget. This explains precisely where (F.15), (F.16) and the
 physical load estimate enter; it does not introduce a new absorber depending
-on L. The quantitative choice of the host scales remains the one in the
+on $L$. The quantitative choice of the host scales remains the one in the
 frozen producer and the physical realization lemma of Section 8.
 
 ## Appendix G. Auxiliary statements and their uses
@@ -3764,4 +3766,3 @@ A block influences at most two witnesses. If its influence is $c_i$, then $c_i\l
 
 There are at most $4n^2$ queries and $n$ degree conditions. Put $c_0=\rho^3\omega^2/48$. The failure bound is at most $5n^2e^{-c_0n}$. If $n\ge2^{27}\rho^{-9}\omega^{-6}$, then $c_0^3n>30$, and $e^{c_0n}>(c_0n)^3/6$ makes this bound less than one. The selected graph is decomposable and has the required degree bound; its query supply is even stronger than $\rho^2\omega n/12$. Together with the explicit reductions in G.3 and G.5, this completes the auxiliary proofs.
 
-Copyright © 2026 Juan Pablo Traverso Gianini. This document is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).

@@ -8,7 +8,9 @@ date: '20 October 2026'
 
 **Preprint 1.0 — 20 October 2026.**
 
-**DOI:** https://doi.org/10.5281/zenodo.23502224.
+**DOI:** <https://doi.org/10.5281/zenodo.23502224>.
+
+Copyright © 2026 Juan Pablo Traverso Gianini. This document is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
 
 ## 1. Validated scope
 
@@ -232,12 +234,11 @@ The author remains responsible for the arguments, citations, code and presentati
 
 ## References
 
-[1] J. P. Traverso Gianini, *Triangle decompositions II: Robust absorption for typed triangles*, preprint 1.0 (2026). https://doi.org/10.5281/zenodo.23502224. [Document](https://github.com/jtraverso/nash-williams-triangle-decompositions-release/blob/main/preprints/PAPER_II/01_manuscript/PAPER_II_preprint_v1.0_en.md).
+[1] J. P. Traverso Gianini, *Triangle decompositions II: Robust absorption for typed triangles*, preprint 1.0 (2026). <https://doi.org/10.5281/zenodo.23502224>. [Document](https://github.com/jtraverso/nash-williams-triangle-decompositions-release/blob/main/preprints/PAPER_II/01_manuscript/PAPER_II_preprint_v1.0_en.md).
 
-[2] J. P. Traverso Gianini, *Triangle decompositions I: Formalizing the Nash–Williams theorem in Lean*, preprint 1.0 (2026). https://doi.org/10.5281/zenodo.23428173. [Document](https://github.com/jtraverso/nash-williams-triangle-decompositions-release/blob/main/preprints/PAPER_I/01_manuscript/PAPER_I_preprint_v1.0_en.md).
+[2] J. P. Traverso Gianini, *Triangle decompositions I: Formalizing the Nash–Williams theorem in Lean*, preprint 1.0 (2026). <https://doi.org/10.5281/zenodo.23428173>. [Document](https://github.com/jtraverso/nash-williams-triangle-decompositions-release/blob/main/preprints/PAPER_I/01_manuscript/PAPER_I_preprint_v1.0_en.md).
 
 [3] J. P. Traverso Gianini, *Certo*. https://github.com/jtraverso/certo-math.
 
 [4] *Jacobian*. https://github.com/morluto/jacobian.
 
-Copyright © 2026 Juan Pablo Traverso Gianini. This document is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).

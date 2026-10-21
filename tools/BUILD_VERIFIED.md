@@ -21,4 +21,6 @@ Evidence:
 
 Run the local verification with `python -I tools/check_palomar.py`; `python -I tools/audit_build_repairs.py` checks the permitted source changes.
 
+Run `python -I tools/verify_build_evidence.py` to verify the checked source inventory, six canonical English document copies, report and archived log hashes without rebuilding Lean. This check also works in a fresh checkout without `.lake/`; it verifies the saved evidence rather than asserting that the new checkout has been compiled.
+
 This is not a Palomar Comparator/NanoDa acceptance report. The repository update includes these verified sources and records; it does not submit them to Palomar or modify the canonical papers/freezes. The completed monitoring automation was deleted. The evidence's `git_head` records its parent revision at generation time; `built_sources_manifest.json` identifies the exact source bytes checked.

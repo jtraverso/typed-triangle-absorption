@@ -27,12 +27,13 @@ classification:
 sources:
   - title: "Triangle decompositions II: Robust absorption for typed triangles"
     authors: ["Juan Pablo Traverso Gianini"]
+    id: "doi:10.5281/zenodo.23502224"
     type: "preprint"
     location: "Preprint 1.0, 20 October 2026; Theorems A–D, balanced consequence of B and Lemma SC"
     relationship: "formalizes"
     note: >-
-      Author's manuscript. DOI 10.5281/zenodo.23502224 is reserved but the
-      coordinated manuscript release is pending. The repository is the
+      Author's published preprint 1.0, DOI 10.5281/zenodo.23502224.
+      The repository is the
       substantive source development. Priority of the combined statements
       remains provisional.
     license: "CC-BY-4.0"
@@ -117,8 +118,10 @@ automation:
     Python generated finite candidate certificates. Lean proves their
     coverage, uniqueness and use in universal statements; generated examples
     alone are not treated as proofs. The frozen development has historical
-    clean-campaign evidence. Compilation and post-build checks for this
-    separate port are pending and must not be inferred from that evidence.
+    clean-campaign evidence. This separate module-system port also completed
+    its own build and post-build checks on 21 October 2026: ALL CHECKS PASSED.
+    tools/final_build_evidence.json and tools/built_sources_manifest.json
+    identify the verified sources and logs, independently of the freeze.
 
 fidelity:
   divergences: >-
@@ -138,7 +141,10 @@ review:
   notes: >-
     Packaging review checked the frozen-source mapping, module headers,
     source line limits, independent Challenge imports and the six source
-    statements. Kernel checks for the new port are pending. No independent
+    statements. The independent Challenge/Solution build and strict local
+    comparison passed for all 1,514 local modules; fifteen declarations use
+    only standard Lean axioms. tools/BUILD_VERIFIED.md details the permitted
+    repairs and evidence. No independent
     human review of this formalization is claimed. Palomar's own Comparator,
     NanoDa verification and editorial review have not yet been requested.
 

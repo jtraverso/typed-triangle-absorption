@@ -1,7 +1,7 @@
 {
   "status": "ALL CHECKS PASSED",
-  "sealed_utc": "2026-10-21T08:32:48.637301+00:00",
-  "git_head": "1b425ec9ee59131290be460ab0ef88664bb8290e",
+  "sealed_utc": "2026-10-21T08:34:05.717215+00:00",
+  "git_head": "fb4b53e6861ebb53da59894fdc33cef22abfaeaa",
   "local_compiled_modules": 1514,
   "mathlib_revision": "c55e6e786f49471c72fbddbec5415808896aec1e",
   "toolchain": "leanprover/lean4:v4.35.0-rc3",
@@ -15,7 +15,7 @@
     "LF report output matching its declared SHA-256"
   ],
   "built_sources_manifest_sha256": "b244587aa31966888d4805d00d7e5255c6c3d00b573297fbe3e7940a637da293",
-  "successful_logs_archive_sha256": "b8273241083285870b4fa9c0a60baed88f782d2133ac94c6bbf9e273f943e48b",
+  "successful_logs_archive_sha256": "f7b68e3d96b024fb27172a9528bd44288b55fbac4bfad9d6b871df03f7fe80ba",
   "scope": "Local preflight and complete independent proof-library build. The recorded git_head is the parent revision at evidence generation; built_sources_manifest.json identifies the exact checked source bytes. Palomar Comparator/NanoDa verification and submission remain separate. Canonical manuscript freezes are unchanged.",
   "files": [
     {
@@ -40,7 +40,7 @@
     },
     {
       "path": "tools/build_repair_preservation.json",
-      "sha256": "84a62d535c33dde84f47e0018057c26f947e2ad82f1f22d6e67d73aeabeed943"
+      "sha256": "728996493cdf681058efdaa2d4e08d7da344cded4bea841bb50cd4e5a57bb052"
     },
     {
       "path": "tools/interface_parameter_alignment.json",

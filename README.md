@@ -8,6 +8,13 @@ This repository contains the substantive Lean development accompanying
 directory and dependency checkouts. The manuscript's frozen source archive is
 unchanged.
 
+## Manuscript and companion
+
+The final English preprint 1.0 manuscript and formalization companion are
+available in [PDF, TeX and Markdown](docs/preprint-1.0/README.md), with a
+SHA-256 manifest tied to the canonical audited snapshot. The coordinated
+manuscript release is available at [DOI 10.5281/zenodo.23502224](https://doi.org/10.5281/zenodo.23502224).
+
 ## Mathematical statements
 
 A partition assigns a label to each vertex. A triangle type is the multiset of
@@ -96,18 +103,28 @@ lake build Challenge Solution
 python -I tools/check_palomar.py
 ```
 
-The independent Challenge build passed. The full Solution build and post-build
-checks remain pending. Successful historical compilation
-of the freeze is not a successful build of this port. The final report must
-confirm the compared types, reproduced definitions, standard axioms and
-absence of proof holes in the Solution closure. Palomar performs its own
-Comparator and NanoDa verification after a fixed public commit is submitted.
+The independent build and local preflight finished with **ALL CHECKS PASSED**
+on 21 October 2026. All 1,514 local modules have compiled artifacts. After
+aligning four reproduced definition headers, Challenge was rebuilt and its
+types and definitions matched Solution exactly (1,573 printed lines).
+Fifteen audited declarations use only `propext`, `Classical.choice` and
+`Quot.sound`; the library and Solution contain no proof holes or custom axioms.
+
+The [verification summary](tools/BUILD_VERIFIED.md),
+[complete report](tools/check_report.txt),
+[source manifest](tools/built_sources_manifest.json) and
+[sealed logs](tools/final_build_logs.zip) identify the checked build.
+The [repair audit](tools/build_repair_preservation.json) records the import
+repair, two resource headers, one expressly authorized redundant `rfl`
+removal and the four authorized Challenge header alignments. Definition
+bodies and mathematical statements are preserved. These are local checks;
+Palomar's independent Comparator/NanoDa verification remains separate.
 
 ## Sources and relationship to earlier work
 
 - J. P. Traverso Gianini, *Triangle decompositions II: Robust absorption for
-  typed triangles*, preprint 1.0 (2026). DOI reserved:
-  `10.5281/zenodo.23502224`; the coordinated manuscript release is pending.
+  typed triangles*, preprint 1.0 (2026).
+  [DOI 10.5281/zenodo.23502224](https://doi.org/10.5281/zenodo.23502224).
   This repository formalizes the six results identified above.
 - P. Keevash, *The existence of designs II*, arXiv:1802.05900,
   [DOI](https://doi.org/10.48550/arXiv.1802.05900). Background for the
@@ -145,6 +162,7 @@ Original sources and packaging use [Apache-2.0](LICENSE); dependency licence
 texts are retained in [`LICENSES/`](LICENSES). Neither internal AI review nor
 kernel checking is described as independent human mathematical peer review.
 
-## Manuscript and companion copies
-
-The [preprint 1.0 documents](docs/preprint-1.0/README.md) include the article and its separate formalization companion in English and Spanish, in PDF, TeX and Markdown. Their manifest binds each copy to the canonical series commit. Document licensing is CC BY 4.0; the Lean source licence is unchanged.
+The English manuscript and companion copies retain their canonical preprint
+1.0 bytes and CC BY 4.0 licence. Their companion describes the manuscript's
+frozen development; the separate port repairs and verified build are documented
+in `tools/BUILD_VERIFIED.md`.
