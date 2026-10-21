@@ -1,0 +1,18 @@
+{
+  "status": "PASS_VERIFIER_WINDOWS_IO_REGRESSION",
+  "cases": [
+    {
+      "case": "unicode_success",
+      "status": "PASS"
+    },
+    {
+      "case": "unicode_failure",
+      "status": "PASS"
+    },
+    {
+      "case": "ascii_failure",
+      "status": "PASS"
+    }
+  ],
+  "scope": "Only exercises the actual output footer with stubbed results; the real Lean assertions and comparison passed separately and are unchanged."
+}

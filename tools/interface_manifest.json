@@ -181,21 +181,24 @@
       "name": "PartitionedTriangleAbsorption.BlowupB.thirdsT",
       "kind": "definition",
       "source_start_line": 46,
-      "reproduced_sha256": "1c0dd7ea592724727a1880cabe893eea2ab922be78de0e5909152bccc2a4e61b"
+      "reproduced_sha256": "1c0dd7ea592724727a1880cabe893eea2ab922be78de0e5909152bccc2a4e61b",
+      "challenge_header_aligned_sha256": "417374b334d91ad3d862b1375c570ac1159b6f0cc5c59c49d4c37af40687d06b"
     },
     {
       "source": "PartitionedTriangleAbsorption/BlowupB/KeevashBridge.lean",
       "name": "PartitionedTriangleAbsorption.BlowupB.TriRegular",
       "kind": "definition",
       "source_start_line": 53,
-      "reproduced_sha256": "6bb10d7947302e235c2e5306ab99858b49cd861461a27d7528c404ead65954d9"
+      "reproduced_sha256": "6bb10d7947302e235c2e5306ab99858b49cd861461a27d7528c404ead65954d9",
+      "challenge_header_aligned_sha256": "4fe175c96e8206c9e747c8a484a68fa4c8afbc02e9f69ee1d54135da2cd6e092"
     },
     {
       "source": "PartitionedTriangleAbsorption/BlowupB/KeevashBridge.lean",
       "name": "PartitionedTriangleAbsorption.BlowupB.CNExt",
       "kind": "definition",
       "source_start_line": 63,
-      "reproduced_sha256": "10e7889a219cb7f112bd5782bdb43041c37754ebaa2f55f4a38f6ccfcbf9c641"
+      "reproduced_sha256": "10e7889a219cb7f112bd5782bdb43041c37754ebaa2f55f4a38f6ccfcbf9c641",
+      "challenge_header_aligned_sha256": "8725d203464e3f38ccb6c2d2880928e615987ef969f202ccdd6a1c6d9752ed6d"
     },
     {
       "source": "PartitionedTriangleAbsorption/BlowupB/KeevashBridge.lean",
@@ -237,7 +240,8 @@
       "name": "PartitionedTriangleAbsorption.BlowupB.clsz",
       "kind": "definition",
       "source_start_line": 38,
-      "reproduced_sha256": "3ef2b5dcfd53846d030b9d651f3a9baa73cc8a964e01758c81752505396af096"
+      "reproduced_sha256": "3ef2b5dcfd53846d030b9d651f3a9baa73cc8a964e01758c81752505396af096",
+      "challenge_header_aligned_sha256": "2ddf9d5a468a23f542ac793bc71d98dd354a83021fd86baa735170c9b4509c8e"
     },
     {
       "source": "PartitionedTriangleAbsorption/BlowupB/TeoremaBBalanced.lean",
@@ -373,5 +377,6 @@
       "reproduced_sha256": "c363e94cee0335ecfdc3b6dcf45090f782c55bd27a3886066560947f358720e2"
     }
   ],
-  "note": "Challenge definitions are reproduced, not left as unnamed definition holes."
+  "note": "Challenge definitions are reproduced, not left as unnamed definition holes.",
+  "parameter_alignment_note": "For four definitions, reproduced_sha256 retains the original source-declaration hash; challenge_header_aligned_sha256 records its author-authorized explicit binder-order alignment. Removing only those header binders recovers the original declaration byte for byte after LF normalization. Bodies are unchanged."
 }

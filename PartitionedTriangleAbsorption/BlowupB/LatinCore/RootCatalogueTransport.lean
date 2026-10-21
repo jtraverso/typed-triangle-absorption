@@ -35,7 +35,6 @@ theorem channel_as_walk (src dst : E → P) (e : E) :
       pathArcs (channelVertex src dst e) 3 := by
   have hr : range 3 = ({0,1,2} : Finset ℕ) := by decide
   simp [RootPaths.pathArcs, liftArc, pathArcs, hr, channelVertex]
-  rfl
 
 omit [Fintype P] [Fintype E] [Fintype U] in
 theorem channel_balanced (root : P → V) (src dst : E → P) (e : E)

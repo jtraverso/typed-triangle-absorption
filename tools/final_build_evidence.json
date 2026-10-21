@@ -1,0 +1,74 @@
+{
+  "status": "ALL CHECKS PASSED",
+  "sealed_utc": "2026-10-21T08:32:48.637301+00:00",
+  "git_head": "1b425ec9ee59131290be460ab0ef88664bb8290e",
+  "local_compiled_modules": 1514,
+  "mathlib_revision": "c55e6e786f49471c72fbddbec5415808896aec1e",
+  "toolchain": "leanprover/lean4:v4.35.0-rc3",
+  "check_report_sha256": "611e82c56f9f1a7a1f966876fcff3d75785ab1e36dd40d2d58f9f35ccaa2dcc2",
+  "checker_sha256": "a758d9bca61772a0c709f5247f443ba0b1b6e6009255787a70b67d42f3ce43e3",
+  "checker_test_logic_unchanged_from_baseline": true,
+  "checker_baseline_revision": "93979dd796e185f13676a9b09593cc09b2b95bbf",
+  "checker_original_sha256": "0c60e1e9b658d96edccd12b96dfa1bdd6b2c6c59387a9c7dc4522adbef0cd408",
+  "checker_io_only_repairs": [
+    "UTF-8 console output",
+    "LF report output matching its declared SHA-256"
+  ],
+  "built_sources_manifest_sha256": "b244587aa31966888d4805d00d7e5255c6c3d00b573297fbe3e7940a637da293",
+  "successful_logs_archive_sha256": "b8273241083285870b4fa9c0a60baed88f782d2133ac94c6bbf9e273f943e48b",
+  "scope": "Local preflight and complete independent proof-library build. The recorded git_head is the parent revision at evidence generation; built_sources_manifest.json identifies the exact checked source bytes. Palomar Comparator/NanoDa verification and submission remain separate. Canonical manuscript freezes are unchanged.",
+  "files": [
+    {
+      "path": ".lake/palomar-build/build.log",
+      "sha256": "045884f62d8f47f085008bd71a7932d027c8a696462cedf29036828071353a7f"
+    },
+    {
+      "path": ".lake/palomar-build/challenge-interface-rebuild.log",
+      "sha256": "89e96b744dad55686e608715ba27d54be2c22f86a28ae09dfd70deb1542a94f9"
+    },
+    {
+      "path": ".lake/palomar-build/checks-final-utf8.log",
+      "sha256": "10aa7b3369acd60fb8d4ff0d2f1331f487fb47ecdff38428b79a1f1a74f49ddc"
+    },
+    {
+      "path": "tools/check_report.txt",
+      "sha256": "611e82c56f9f1a7a1f966876fcff3d75785ab1e36dd40d2d58f9f35ccaa2dcc2"
+    },
+    {
+      "path": "tools/check_result.json",
+      "sha256": "8c063425dcafcc1eebfd69c26e0789725e43a379e9a04f8f149a9bea20fa4dee"
+    },
+    {
+      "path": "tools/build_repair_preservation.json",
+      "sha256": "84a62d535c33dde84f47e0018057c26f947e2ad82f1f22d6e67d73aeabeed943"
+    },
+    {
+      "path": "tools/interface_parameter_alignment.json",
+      "sha256": "d7cfa6f258b08ab23c37963a71c6f99b878953cfc8fd47660eba17fa175e3b74"
+    },
+    {
+      "path": "tools/import_header_repair.json",
+      "sha256": "3e9b419c5c647e6d6b9eac118a16ff5fdf96ead6893a02db0861c87e26d3206f"
+    },
+    {
+      "path": "tools/heartbeat_budget_repair.json",
+      "sha256": "ae4cd9f300408b87b762002d755ac93e45e3852227d1b7205f3bb8532718ba7b"
+    },
+    {
+      "path": "tools/charge_walk_budget_repair.json",
+      "sha256": "0242965daaf345187467753e63e19a7432e663ccd9253a82f65ca1d6be9d8f98"
+    },
+    {
+      "path": "tools/redundant_rfl_repair.json",
+      "sha256": "af3bb3640d10a764971c51814da224c74036fe2c79e0a9c95a286f6846f5a996"
+    },
+    {
+      "path": "tools/checker_io_repair.json",
+      "sha256": "4e4ba320d79db3ea78823172caf34b48a60fc10ee0116b8dfc6ae0dd3e7ab06e"
+    },
+    {
+      "path": "tools/check_io_regression.json",
+      "sha256": "8d005d50e64f9e7ecc2915442785b6302d30b993521425d56d9fc3e9648e9265"
+    }
+  ]
+}

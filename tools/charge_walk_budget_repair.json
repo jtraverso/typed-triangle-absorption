@@ -1,0 +1,10 @@
+{
+  "status": "PASS_SOURCE_PRESERVATION",
+  "file": "PartitionedTriangleAbsorption/BlowupB/Kappa/ChargeWalk.lean",
+  "before_sha256": "c902112d56bc03075cf468629bc7301b10cb86a60af2e8aad58b8667b4e3dcca",
+  "after_sha256": "29f05662369eabbcf5e83219c64ddf02d8a98538f3da301b788a5ab4568921f5",
+  "change": "Header-only maxHeartbeats 1600000; statements and proofs unchanged.",
+  "cause": "Deterministic timeout at whnf with maxHeartbeats 200000; subsequent unknown-constant error follows the timed-out declaration.",
+  "validation": "Pending incremental retry after current build completes.",
+  "checked_utc": "2026-10-20T20:21:25.031725+00:00"
+}

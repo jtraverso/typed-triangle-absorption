@@ -1,0 +1,14 @@
+{
+  "status": "AUTHOR_AUTHORIZED_COMPATIBILITY_EDIT",
+  "file": "PartitionedTriangleAbsorption/BlowupB/LatinCore/RootCatalogueTransport.lean",
+  "declaration": "PartitionedTriangleAbsorption.BlowupB.LatinCore.RootCatalogueTransport.channel_as_walk",
+  "change": "Remove exactly one redundant trailing rfl after simp has solved the goal.",
+  "author_authorization": "User explicitly authorized deleting only this redundant rfl in the active chat on 2026-10-20.",
+  "before_sha256": "8091542422bc8073941b9bb723850e14b8c9fa175045a7b974bdcc2719959f71",
+  "after_sha256": "27232763f54af9b7f96eef4f4ced055ca04a77dee515db353427cff1240c34ae",
+  "statement_unchanged": true,
+  "proof_text_changed": true,
+  "proof_change_scope": "One unused rfl tactic removed; preceding proof commands unchanged.",
+  "validation": "Pending module compilation and complete preflight.",
+  "checked_utc": "2026-10-20T20:29:36.018169+00:00"
+}

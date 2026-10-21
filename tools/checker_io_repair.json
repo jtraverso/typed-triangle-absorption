@@ -1,0 +1,7 @@
+{
+  "status": "PASS_IO_ONLY_REPAIR_TEST_LOGIC_UNCHANGED",
+  "before_sha256": "0c60e1e9b658d96edccd12b96dfa1bdd6b2c6c59387a9c7dc4522adbef0cd408",
+  "after_sha256": "a758d9bca61772a0c709f5247f443ba0b1b6e6009255787a70b67d42f3ce43e3",
+  "canonical_logic_sha256": "0c60e1e9b658d96edccd12b96dfa1bdd6b2c6c59387a9c7dc4522adbef0cd408",
+  "scope": "Only UTF-8 stdout and LF artifact writing. Restoring these I/O lines reproduces the entire original verifier exactly; no assertion or checking logic changed. Previously successful full Lean checks retained; report bytes normalized to the exact string whose hash they already declared."
+}

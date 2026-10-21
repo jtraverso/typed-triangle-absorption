@@ -12,6 +12,9 @@ public import PartitionedTriangleAbsorption.BlowupB.PaddedF12.R2Refiner
 
 @[expose] public section
 
+-- Resource budget for elaborating the unchanged universal absorber proof.
+set_option maxHeartbeats 1600000
+
 /-!
 # Universal absorbers for one-charge families WITHOUT common neighbour classes
 

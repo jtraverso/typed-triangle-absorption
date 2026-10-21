@@ -1,0 +1,44 @@
+PASS_MODULE_POLICY (1514 Lean files; no source exceeds the line cap)
+PASS_STATEMENT_IMPORTS (Mathlib only)
+PASS_NO_PAPER_I_IMPORTS
+no sorry/admit/native_decide/custom axiom in the library or Solution
+PASS_STANDARD_AXIOMS (15 declarations, including teoremaB_balanced)
+'PaddedGeneral.RealInverse.keevashTypedSpec_of_threeStepLinks' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PartitionedTriangleAbsorption.BlowupB.LatinCore.PhysicalProducer.physicalCycRefiner3' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PartitionedTriangleAbsorption.BlowupB.teoremaB_of_keevash' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PartitionedTriangleAbsorption.BlowupB.LemmaSC.absorber_onePart' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PartitionedTriangleAbsorption.BlowupB.LatinCore.Conserved17.all_family_certificates' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PartitionedTriangleAbsorption.BlowupB.LatinCore.Conserved17.all_typed_specs' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PartitionedTriangleAbsorption.BlowupB.keevashTypedSpec_of_closed765' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PartitionedTriangleAbsorption.BlowupB.FiniteCensus.representativeMasks_card' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PartitionedTriangleAbsorption.BlowupB.FiniteCensus.census_complete' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PartitionedTriangleAbsorption.BlowupB.FiniteCensus.representative_closed765' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PartitionedTriangleAbsorption.BlowupB.FiniteCensus.keevashTypedSpec_of_admissible' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PaddedGeneral.RealInverse.idealized_F12' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PartitionedTriangleAbsorption.BlowupB.F0Direct.theorem146_ordered' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NashWilliams18.PaperII.margin_four_colour_decomposition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PartitionedTriangleAbsorption.BlowupB.teoremaB_balanced' depends on axioms: [propext, Classical.choice, Quot.sound]
+TYPES AND DEFINITIONS IDENTICAL (1573 lines)
+ALL CHECKS PASSED

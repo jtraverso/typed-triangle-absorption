@@ -1,0 +1,39 @@
+{
+  "status": "PASS_STATEMENTS_PRESERVED_AND_AUTHORIZED_TACTIC_CLEANUP",
+  "base_revision": "93979dd796e185f13676a9b09593cc09b2b95bbf",
+  "current_head": "1b425ec9ee59131290be460ab0ef88664bb8290e",
+  "checked_utc": "2026-10-21T08:32:47.571444+00:00",
+  "files": [
+    {
+      "file": "Challenge.lean",
+      "before_sha256": "9ab1cec2f9a03ff51099a7e808c8f705075e20c4f7d0cddf379b5c10615d7284",
+      "after_sha256": "6b5464784fd38e2624fc0ad7a76e5625b224cb2dff7a53c82c9ff2d3589c4ff2",
+      "normalized_body_sha256": "548d07a28c1657b142c38ea83da4720eab1766936aaaf2bdd66c095364f4b3b2"
+    },
+    {
+      "file": "PartitionedTriangleAbsorption/BlowupB/Kappa/ChargeWalk.lean",
+      "before_sha256": "c902112d56bc03075cf468629bc7301b10cb86a60af2e8aad58b8667b4e3dcca",
+      "after_sha256": "29f05662369eabbcf5e83219c64ddf02d8a98538f3da301b788a5ab4568921f5",
+      "normalized_body_sha256": "3fdd0a1ee89ce3e48f08eb0b71e5735c155d1e6ff9abd3808244d8419f379aff"
+    },
+    {
+      "file": "PartitionedTriangleAbsorption/BlowupB/LatinCore/CapacitatedFlowFeasibility.lean",
+      "before_sha256": "16a08d7bb689385096fa6295deb275cdc4ae4b2095a926d27a26ae13605cb608",
+      "after_sha256": "1b2c2b64ec32310ed93ec58f007a12dfc4a17d6f1b47b1921798886855132142",
+      "normalized_body_sha256": "5d5221dc47064015afc9f92674b01a19588041f4da280e2a30c653007110e106"
+    },
+    {
+      "file": "PartitionedTriangleAbsorption/BlowupB/LatinCore/RootCatalogueTransport.lean",
+      "before_sha256": "8091542422bc8073941b9bb723850e14b8c9fa175045a7b974bdcc2719959f71",
+      "after_sha256": "27232763f54af9b7f96eef4f4ced055ca04a77dee515db353427cff1240c34ae",
+      "normalized_body_sha256": "b5969fa38cb2ce779e71e3baed27b1de2abc83a1f5e64027120e2159c1db5303"
+    },
+    {
+      "file": "PartitionedTriangleAbsorption/BlowupB/PaddedCharge/Universal.lean",
+      "before_sha256": "f8472486be3bd52bedabfccd45ef005bda75413c7b06cdddab2a494f32a5cf12",
+      "after_sha256": "c758c7334e7546096a7d9d70436a1bd2977bf543f475df41c5190e4630c4bb10",
+      "normalized_body_sha256": "f187958a3262440af6abb12a24e28c090e272675cf8cf8cf29a3a2c465218bbe"
+    }
+  ],
+  "scope": "Exactly five tracked Lean files differ: import placement/public imports, resource headers in two modules, the author-authorized deletion of one redundant trailing rfl in channel_as_walk, and the separately author-authorized alignment of implicit parameter binders in four reproduced Challenge definitions. All definition bodies, mathematical statements and all remaining proof text are unchanged against the initial build revision."
+}

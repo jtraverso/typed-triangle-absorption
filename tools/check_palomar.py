@@ -9,6 +9,7 @@ import hashlib
 import json
 import re
 import subprocess
+import sys
 import tempfile
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -119,11 +120,12 @@ if __name__ == "__main__":
     except Exception as error:
         REPORT.extend(["CHECKS FAILED", str(error)])
     report = "\n".join(REPORT) + "\n"
-    (ROOT / "tools/check_report.txt").write_text(report, encoding="utf8")
+    (ROOT / "tools/check_report.txt").write_text(report, encoding="utf8", newline="\n")
     (ROOT / "tools/check_result.json").write_text(json.dumps(dict(
         status="ALL CHECKS PASSED" if success else "CHECKS FAILED",
         report_sha256=hashlib.sha256(report.encode()).hexdigest(),
         scope="Local preflight; independent Palomar Comparator/NanoDa verification is separate."),
-        indent=2) + "\n", encoding="utf8")
+        indent=2) + "\n", encoding="utf8", newline="\n")
+    sys.stdout.reconfigure(encoding="utf8")
     print(report)
     raise SystemExit(0 if success else 1)

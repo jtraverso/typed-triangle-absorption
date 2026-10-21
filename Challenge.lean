@@ -146,14 +146,14 @@ def AllowedPair (F : Finset (Multiset (Fin t))) (i j : Fin t) : Prop :=
   ∃ τ ∈ F, Multiset.card τ = 3 ∧ ({i, j} : Multiset (Fin t)) ≤ τ
 
 /-- Third vertices `w` closing a triangle `{u, v, w}` of type `τ` with `uw, vw ∈ G`. -/
-def thirdsT (p : V → Fin t) (G : Finset (Sym2 V)) (u v : V) (τ : Multiset (Fin t)) :
+def thirdsT {t : ℕ} {V : Type u_1} [Fintype V] [DecidableEq V] (p : V → Fin t) (G : Finset (Sym2 V)) (u v : V) (τ : Multiset (Fin t)) :
     Finset V :=
   univ.filter fun w => w ≠ u ∧ w ≠ v ∧ s(u, w) ∈ G ∧ s(v, w) ∈ G ∧
     ({p u, p v, p w} : Multiset (Fin t)) = τ
 
 /-- Regularity with weights on typed triangles: every typed triangle of `G` has weight in
 `[ω/n, 1/(ω n)]` and every edge of `G` has load `1 ± c`. -/
-def TriRegular (p : V → Fin t) (F : Finset (Multiset (Fin t))) (G : Finset (Sym2 V))
+def TriRegular {t : ℕ} {V : Type u_1} [Fintype V] [DecidableEq V] (p : V → Fin t) (F : Finset (Multiset (Fin t))) (G : Finset (Sym2 V))
     (ω c : ℝ) : Prop :=
   ∃ y : Finset V → ℝ,
     (∀ s : Finset V, IsTypedTri p F s → triEdges s ⊆ G →
@@ -163,7 +163,7 @@ def TriRegular (p : V → Fin t) (F : Finset (Multiset (Fin t))) (G : Finset (Sy
 /-- Extendability by common neighbourhoods: for every `S` with `|S| ≤ h`, every class `i` and
 every `A ⊆ S` joined to `i` by allowed pairs, at least `ω n` vertices of class `i` outside `S`
 are `G`-adjacent to all of `A`. -/
-def CNExt (p : V → Fin t) (F : Finset (Multiset (Fin t))) (G : Finset (Sym2 V)) (ω : ℝ)
+def CNExt {t : ℕ} {V : Type u_1} [Fintype V] [DecidableEq V] (p : V → Fin t) (F : Finset (Multiset (Fin t))) (G : Finset (Sym2 V)) (ω : ℝ)
     (h : ℕ) : Prop :=
   ∀ (S A : Finset V) (i : Fin t), S.card ≤ h → A ⊆ S → (∀ a ∈ A, AllowedPair F (p a) i) →
     ω * Fintype.card V ≤
@@ -198,7 +198,7 @@ def missDeg (p : V → Fin t) (F : Finset (Multiset (Fin t))) (G : SimpleGraph V
 def nPrime (nc : Fin t → ℝ) (s : Multiset (Fin t)) (c : Fin t) : ℝ := nc c - s.count c
 
 /-- Class sizes. -/
-def clsz (p : V → Fin t) (c : Fin t) : ℝ := ((univ.filter fun v => p v = c).card : ℝ)
+def clsz {t : ℕ} {V : Type u_1} [Fintype V] (p : V → Fin t) (c : Fin t) : ℝ := ((univ.filter fun v => p v = c).card : ℝ)
 
 /-- Balanced type weights (finite condition on the family). -/
 def BalancedWeights (F : Finset (Multiset (Fin t))) (w : Multiset (Fin t) → ℝ) : Prop :=

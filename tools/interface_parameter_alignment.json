@@ -1,0 +1,16 @@
+{
+  "authorization": "User explicitly authorized aligning only these four definitions in the current conversation, 21 October 2026.",
+  "definitions": [
+    "thirdsT",
+    "TriRegular",
+    "CNExt",
+    "clsz"
+  ],
+  "scope": "Only parameter binders in four declaration headers. Bodies, theorem statements and all proofs are unchanged after newline normalization.",
+  "before_sha256": "9ab1cec2f9a03ff51099a7e808c8f705075e20c4f7d0cddf379b5c10615d7284",
+  "after_sha256": "6b5464784fd38e2624fc0ad7a76e5625b224cb2dff7a53c82c9ff2d3589c4ff2",
+  "body_preservation": "PASS_EXACT_AFTER_REMOVING_FOUR_AUTHORIZED_HEADER_INSERTIONS",
+  "applied_utc": "2026-10-21T07:58:18.155171+00:00",
+  "universe_alignment": "Explicit Type u_1 preserves the universe name of the original compiled declarations; only the same four headers are affected.",
+  "line_endings": "Original LF preserved; git diff contains only the four authorized header replacements."
+}

@@ -10,6 +10,9 @@ public import PartitionedTriangleAbsorption.BlowupB.Kappa.Terminal
 
 @[expose] public section
 
+-- Resource budget for elaborating the unchanged universal absorber proof.
+set_option maxHeartbeats 1600000
+
 /-!
 # Aristotle's one-charge walk certificate under `KappaLinks`
 

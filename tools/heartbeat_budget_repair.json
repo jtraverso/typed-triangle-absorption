@@ -1,0 +1,18 @@
+{
+  "status": "PASS_SOURCE_PRESERVATION",
+  "file": "PartitionedTriangleAbsorption/BlowupB/PaddedCharge/Universal.lean",
+  "change": "Header-only elaboration resource option: maxHeartbeats 1600000; no statement or proof changes.",
+  "before_sha256": "f8472486be3bd52bedabfccd45ef005bda75413c7b06cdddab2a494f32a5cf12",
+  "after_sha256": "c758c7334e7546096a7d9d70436a1bd2977bf543f475df41c5190e4630c4bb10",
+  "declarations_and_proofs_unchanged": true,
+  "initial_error": "Deterministic timeout at whnf with maxHeartbeats 200000",
+  "checked_utc": "2026-10-20T19:57:20.943519+00:00",
+  "validation": {
+    "status": "MODULE_BUILT_IN_INCREMENTAL_BUILD",
+    "module": "PartitionedTriangleAbsorption.BlowupB.PaddedCharge.Universal",
+    "duration_seconds": 154,
+    "build_attempt": 2,
+    "full_build_status": "Pending downstream modules and preflight",
+    "checked_utc": "2026-10-20T20:13:28.226183+00:00"
+  }
+}
