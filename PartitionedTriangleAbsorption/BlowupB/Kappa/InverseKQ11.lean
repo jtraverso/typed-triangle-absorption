@@ -63,6 +63,10 @@ theorem typeWeightKQ11_symmetric (p : V → Fin 4) (z001 z011 z222 z333 : ℝ) :
     TernarySymmetric (typeWeightKQ11 p z001 z011 z222 z333) := by
   unfold typeWeightKQ11
   repeat' first
+    | with_reducible apply TernarySymmetric.add
+    | with_reducible exact monoTypeWeight_symmetric p _ _
+    | with_reducible exact repeatedTypeWeight_symmetric p _ _ _
+    | with_reducible exact tripartiteTypeWeight_symmetric p _ _ _ _
     | exact monoTypeWeight_symmetric p _ _
     | exact repeatedTypeWeight_symmetric p _ _ _
     | exact tripartiteTypeWeight_symmetric p _ _ _ _
@@ -72,6 +76,7 @@ theorem typeWeightKQ11_supported (p : V → Fin 4) (z001 z011 z222 z333 : ℝ) :
     TernarySupported p KQ11 (typeWeightKQ11 p z001 z011 z222 z333) := by
   unfold typeWeightKQ11
   repeat' first
+    | with_reducible apply TernarySupported.add
     | exact monoTypeWeight_supported p KQ11 _ (by unfold Link KQ11; decide) _
     | exact aabLift_supported p KQ11 _ _ (by decide) (by unfold Link KQ11; decide) _
     | exact abcLift_supported p KQ11 _ _ _ (by decide) (by decide) (by decide)
@@ -184,6 +189,11 @@ theorem vertexWeightKQ11_symmetric (p : V → Fin 4) (d : V → Fin 4 → ℝ) :
     TernarySymmetric (vertexWeightKQ11 p d) := by
   unfold vertexWeightKQ11
   repeat' first
+    | with_reducible apply TernarySymmetric.add
+    | with_reducible exact repeatedVertexWeight_symmetric p _ _ _
+    | with_reducible exact singletonVertexWeight_symmetric p _ _ _
+    | with_reducible exact tripartiteVertexWeight_symmetric p _ _ _ _
+    | with_reducible exact monoVertexWeight_symmetric p _ _
     | exact repeatedVertexWeight_symmetric p _ _ _
     | exact singletonVertexWeight_symmetric p _ _ _
     | exact tripartiteVertexWeight_symmetric p _ _ _ _
@@ -194,6 +204,7 @@ theorem vertexWeightKQ11_supported (p : V → Fin 4) (d : V → Fin 4 → ℝ) :
     TernarySupported p KQ11 (vertexWeightKQ11 p d) := by
   unfold vertexWeightKQ11
   repeat' first
+    | with_reducible apply TernarySupported.add
     | exact monoVertexWeight_supported p KQ11 _ (by unfold Link KQ11; decide) _
     | exact aabLift_supported p KQ11 _ _ (by decide) (by unfold Link KQ11; decide) _
     | exact abcLift_supported p KQ11 _ _ _ (by decide) (by decide) (by decide)
@@ -257,6 +268,11 @@ theorem zeroRowWeightKQ11_symmetric (p : V → Fin 4) (g : V → V → ℝ)
     (hs : ∀ a b, g a b = g b a) : TernarySymmetric (zeroRowWeightKQ11 p g) := by
   unfold zeroRowWeightKQ11
   repeat' first
+    | with_reducible apply TernarySymmetric.add
+    | with_reducible exact internalPairWeight_symmetric p _ _ g hs
+    | with_reducible exact repeatedPairWeight_symmetric p _ _ g
+    | with_reducible exact abcLift_symmetric p _ _ _ _
+    | with_reducible exact monoPairWeight_symmetric p _ g hs
     | exact internalPairWeight_symmetric p _ _ g hs
     | exact repeatedPairWeight_symmetric p _ _ g
     | exact abcLift_symmetric p _ _ _ _
@@ -267,6 +283,7 @@ theorem zeroRowWeightKQ11_supported (p : V → Fin 4) (g : V → V → ℝ) :
     TernarySupported p KQ11 (zeroRowWeightKQ11 p g) := by
   unfold zeroRowWeightKQ11
   repeat' first
+    | with_reducible apply TernarySupported.add
     | exact monoPairWeight_supported p KQ11 _ (by unfold Link KQ11; decide) _
     | exact aabLift_supported p KQ11 _ _ (by decide) (by unfold Link KQ11; decide) _
     | exact abcLift_supported p KQ11 _ _ _ (by decide) (by decide) (by decide)

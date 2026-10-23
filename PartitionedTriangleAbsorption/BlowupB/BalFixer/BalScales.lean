@@ -71,7 +71,7 @@ theorem bal_base (L : ℕ) (ω δ ρ n : ℝ) (hfl : FlexScalesL L ω δ ρ n) (
   have h2L1 : (1 : ℝ) ≤ 2 ^ L := one_le_pow₀ (by norm_num)
   have hω2pos : 0 < ω ^ 2 := by positivity
   have hω2 : ω ^ 2 ≤ 1 := pow_le_one₀ hω.le hω1
-  have hδ1 : δ ≤ 1 / 2 ^ 63 := by rw [le_div_iff₀ (by positivity)]; nlinarith
+  have hδ1 : δ ≤ 1 / 2 ^ 63 := by rw [le_div_iff₀ (by positivity)]; linarith
   have hlam : 0 < lam := by rw [hlamdef]; positivity
   have hlam2L : lam * 2 ^ L = ω ^ 2 * δ := by rw [hlamdef]; field_simp
   have hlamδ : lam ≤ δ := by
@@ -79,7 +79,7 @@ theorem bal_base (L : ℕ) (ω δ ρ n : ℝ) (hfl : FlexScalesL L ω δ ρ n) (
     have h2 : lam * 1 ≤ lam * 2 ^ L := mul_le_mul_of_nonneg_left h2L1 hlam.le
     linarith
   have hlamω : 64 * lam ≤ ω := by
-    have : 64 * δ ≤ ω := by nlinarith
+    have : 64 * δ ≤ ω := by linarith
     linarith
   have hlam1 : lam ≤ 1 := by linarith
   have hρ : 0 < ρ := by
@@ -91,10 +91,10 @@ theorem bal_base (L : ℕ) (ω δ ρ n : ℝ) (hfl : FlexScalesL L ω δ ρ n) (
     have : ρ * n ≤ 0 := mul_nonpos_of_nonneg_of_nonpos hρ.le h
     linarith
   have hlam2 : lam ^ 2 ≤ lam := by nlinarith
-  have hρlam : ρ ≤ lam := by nlinarith
+  have hρlam : ρ ≤ lam := by linarith
   have hlamn2 : 2 ^ 24 ≤ lam ^ 2 * n := by
     have : 2 ^ 24 * ρ * n ≤ lam ^ 2 * n := mul_le_mul_of_nonneg_right hρsq hn.le
-    nlinarith
+    linarith
   have hn1 : 1 ≤ n := by
     have : lam ^ 2 * n ≤ n := by nlinarith
     linarith
@@ -133,22 +133,22 @@ theorem bal_base (L : ℕ) (ω δ ρ n : ℝ) (hfl : FlexScalesL L ω δ ρ n) (
   have hQω : Q * ω = 2 ^ 15 * (lam * n) := by rw [hQdef]; field_simp
   have hQb : Q ≤ 2 ^ 15 * b := by
     have e : Q = 2 ^ 15 * (lam * n / ω) := by rw [hQdef]; ring
-    rw [e]; nlinarith
+    rw [e]; linarith
   have hQωb : Q / ω ≤ 2 ^ 15 * b := by
     have e : Q / ω = 2 ^ 15 * b := by rw [hQdef, hbdef]; field_simp
     rw [e]
-  have hΛ2 : 2 ≤ Λ0 := by rw [hΛdef]; nlinarith
-  have hΛb : Λ0 ≤ 2 ^ 17 * b := by rw [hΛdef]; nlinarith
+  have hΛ2 : 2 ≤ Λ0 := by rw [hΛdef]; linarith
+  have hΛb : Λ0 ≤ 2 ^ 17 * b := by rw [hΛdef]; linarith
   have hΛωb : Λ0 / ω ≤ 2 ^ 17 * b := by
     have e : Λ0 / ω = 12288 * (lam * n / ω) + 2 * (Q / ω) + 2 * (1 / ω) := by
       rw [hΛdef]; field_simp; ring
     rw [e]
-    nlinarith
+    linarith
   have hN0 : (1 : ℝ) ≤ N := by linarith
   have hNωb : (N : ℝ) / ω ≤ 2 ^ 21 * b := by
     have e1 : (N : ℝ) / ω ≤ (9 * Λ0 + 1) / ω := div_le_div_of_nonneg_right hN2 hω.le
     have e2 : (9 * Λ0 + 1) / ω = 9 * (Λ0 / ω) + 1 / ω := by field_simp
-    nlinarith
+    linarith
   have hNb : (N : ℝ) ≤ 2 ^ 21 * b := by
     have e : (N : ℝ) = (N : ℝ) / ω * ω := by field_simp
     have h0 : (0 : ℝ) ≤ (N : ℝ) / ω := by positivity
@@ -159,20 +159,20 @@ theorem bal_base (L : ℕ) (ω δ ρ n : ℝ) (hfl : FlexScalesL L ω δ ρ n) (
     have e : θ = 2 ^ 6 * (g + 1) * ((N : ℝ) / ω) := by rw [hθdef]; ring
     rw [e]
     have := mul_le_mul_of_nonneg_left hNωb (by positivity : (0 : ℝ) ≤ 2 ^ 6 * (g + 1))
-    nlinarith
+    linarith
   have hθN : 2 * g * N * n / θ ≤ ω * n / 32 := by
     have e : 2 * (g : ℝ) * N * n / θ = 2 * g * (ω * n) / (2 ^ 6 * (g + 1)) := by
       rw [hθdef]; field_simp
     rw [e, div_le_div_iff₀ (by positivity) (by norm_num)]
     have hWn : (0 : ℝ) ≤ ω * n := by positivity
-    nlinarith [mul_nonneg hg0 hWn]
+    linarith [mul_nonneg hg0 hWn]
   have hlnn : lam * n ^ 2 ≤ b * (ω * n) := by
     have e : lam * n ^ 2 = b * ω ^ 2 * n := by rw [hb_eq]; ring
     rw [e]
     have hb0 : 0 ≤ b := by positivity
-    have : ω ^ 2 ≤ ω := by nlinarith
+    have : ω ^ 2 ≤ ω := by linarith
     have := mul_le_mul_of_nonneg_left this (by positivity : (0 : ℝ) ≤ b * n)
-    nlinarith
+    linarith
   have hrnn : ρ * n ^ 2 ≤ b * (ω * n) := by
     have : ρ * n ^ 2 ≤ lam * n ^ 2 := mul_le_mul_of_nonneg_right hρlam (sq_nonneg n)
     linarith
@@ -225,12 +225,12 @@ theorem est_path (h : BalBase ω δ ρ n lam Q Λ0 θ b P N g) :
   have hρnb : ρ * n ≤ b := (mul_le_mul_of_nonneg_right h.rho_lam h.n_pos.le).trans h.ab
   have hsmall : 3 + 2 * (2 * ρ * n + 4 * lam * n + 2 * (Q + (4096 * lam * n + 1)) + 2) ≤
       2 ^ 19 * b := by
-    have := h.Qb; have := h.ab; have := h.a12; nlinarith
+    have := h.Qb; have := h.ab; have := h.a12; linarith
   have hWb : 2 ^ 63 * b ≤ ω * n := by
     have := h.W; rw [h.D] at this
     have : 2 ^ 63 * b ≤ 2 ^ 63 * (P * b) := by nlinarith [h.P1]
     linarith
-  nlinarith
+  linarith
 
 theorem est_bud (h : BalBase ω δ ρ n lam Q Λ0 θ b P N g) (hg0 : 0 ≤ g) (m : ℕ)
     (hP : 2 ^ 40 * ((g + 1) * (m + 2)) ≤ P) :
@@ -251,20 +251,20 @@ theorem est_bud (h : BalBase ω δ ρ n lam Q Λ0 θ b P N g) (hg0 : 0 ≤ g) (m
       ((2 * ρ * n + (4 * lam * n + 2 * (Q + (4096 * lam * n + 1)))) + θ + g + 2 * g * N) ≤
       ((m : ℝ) + 1) * (2 ^ 30 * (g + 1) * b) := by
     have := mul_le_mul_of_nonneg_left hin (by positivity : (0 : ℝ) ≤ (m : ℝ) + 1)
-    nlinarith
+    linarith
   have hWb : 2 ^ 63 * (P * b) ≤ ω * n := by have := h.W; rw [h.D] at this; exact this
   have hbig : ((m : ℝ) + 1) * (2 ^ 30 * (g + 1) * b) ≤ ω * n / 2 := by
     have h1 : ((m : ℝ) + 1) * (2 ^ 30 * (g + 1) * b) ≤ 2 ^ 30 * ((g + 1) * (m + 2)) * b := by
       have hx : (0 : ℝ) ≤ (g + 1) * b := by positivity
-      nlinarith
+      linarith
     have h2 : 2 ^ 30 * ((g + 1) * (m + 2)) * b ≤ P * b / 2 ^ 10 := by
       rw [le_div_iff₀ (by norm_num)]
       have := mul_le_mul_of_nonneg_right hP hb0
-      nlinarith
+      linarith
     have h3 : P * b / 2 ^ 10 ≤ ω * n / 2 := by
       have hPb : 0 ≤ P * b := by nlinarith [h.P1]
       rw [div_le_div_iff₀ (by norm_num) (by norm_num)]
-      nlinarith
+      linarith
     linarith
   have := h.θN
   have hWpos : 0 < ω * n := mul_pos h.ω_pos h.n_pos
@@ -281,9 +281,9 @@ theorem est_embed (h : BalBase ω δ ρ n lam Q Λ0 θ b P N g) (C t : ℕ) (g' 
   have hDP : P ≤ δ * n := by rw [h.D]; nlinarith [h.P1]
   have hW := h.W
   have hcons : 2 * (168 + (g' : ℝ) * 168) + 5 * t + 9 * C ≤ 2 ^ 10 * (((g' : ℝ) + 1) * (t + 1) + C) := by
-    nlinarith [mul_nonneg hg0 ht0]
+    linarith [mul_nonneg hg0 ht0]
   have hD0 : 0 ≤ δ * n := by rw [h.D]; nlinarith [h.P1]
-  nlinarith
+  linarith
 
 theorem est_deg (h : BalBase ω δ ρ n lam Q Λ0 θ b P N g) (hg0 : 0 ≤ g) (C : ℕ)
     (hP : 2 ^ 40 * ((30 * (C : ℝ) + 1) * (g + 1)) ≤ P) :
@@ -343,23 +343,23 @@ theorem est_count (h : BalBase ω δ ρ n lam Q Λ0 θ b P N g) (hg0 : 0 ≤ g) 
   have hX0 : 0 ≤ X := mul_nonneg hb0 hWn
   have h1 : (g : ℝ) * N * n ≤ g * (2 ^ 21 * X) := by
     have := mul_le_mul_of_nonneg_left h.Nn hg0
-    rw [hX]; nlinarith
+    rw [hX]; linarith
   have h2 : 1224 * ρ * n ^ 2 + 11 * N * n ≤ 1224 * X + 11 * (2 ^ 21 * X) := by
     have := h.rnn; have := h.Nn
-    rw [hX]; nlinarith
+    rw [hX]; linarith
   have h3 : (1224 * ρ * n ^ 2 + 11 * N * n) * (30 * C) ≤
       (1224 * X + 11 * (2 ^ 21 * X)) * (30 * C) :=
     mul_le_mul_of_nonneg_right h2 (by positivity)
   have hsum : 4 * (2 * ρ * n ^ 2 + 16 * lam * n ^ 2 + g * N * n +
       (1224 * ρ * n ^ 2 + 11 * N * n) * (30 * C)) ≤ 2 ^ 32 * ((30 * C + 1) * (g + 1)) * X := by
     have := h.rnn; have := h.lnn
-    nlinarith [mul_nonneg hg0 hX0, mul_nonneg hC0 hX0, mul_nonneg (mul_nonneg hC0 hg0) hX0]
+    linarith [mul_nonneg hg0 hX0, mul_nonneg hC0 hX0, mul_nonneg (mul_nonneg hC0 hg0) hX0]
   have hfin : 2 ^ 32 * ((30 * (C : ℝ) + 1) * (g + 1)) * X ≤ (δ * n) * (ω * n) := by
     rw [h.D]
     have : 2 ^ 32 * ((30 * (C : ℝ) + 1) * (g + 1)) * X ≤ P * X :=
       mul_le_mul_of_nonneg_right (by nlinarith) hX0
     rw [hX] at this ⊢
-    nlinarith
+    linarith
   linarith
 
 end Estimates
@@ -383,13 +383,13 @@ theorem bal_scales (L : ℕ) (ω δ ρ n : ℝ) (hfl : FlexScalesL L ω δ ρ n)
       have h1 : (30 * (C : ℝ) + 1) * (g + 1) ≤ (30 * C + 1) * (g + 1) * (m + 2) := by nlinarith
       have h2 : (0 : ℝ) ≤ (30 * C + 1) * (g + 1) * (m + 2) := by positivity
       nlinarith
-    nlinarith
+    linarith
   have hP2 : (2 : ℝ) ^ 40 * ((g + 1) * (m + 2)) ≤ 2 ^ L := by
     have : ((g : ℝ) + 1) * (m + 2) ≤ (30 * C + 1) * (g + 1) * (m + 2) * (t + 1) := by
       have h0 : (0 : ℝ) ≤ (g + 1) * (m + 2) := by positivity
       have h1 : (1 : ℝ) ≤ (30 * C + 1) * (t + 1) := by nlinarith
       nlinarith
-    nlinarith
+    linarith
   have hP3 : (2 : ℝ) ^ 40 * (((g : ℝ) + 1) * (t + 1) + C) ≤ 2 ^ L := by
     have : ((g : ℝ) + 1) * (t + 1) + C ≤ (30 * C + 1) * (g + 1) * (m + 2) * (t + 1) := by
       have e : (30 * (C : ℝ) + 1) * (g + 1) * (m + 2) * (t + 1) =
@@ -398,7 +398,7 @@ theorem bal_scales (L : ℕ) (ω δ ρ n : ℝ) (hfl : FlexScalesL L ω δ ρ n)
       have h0 : (1 : ℝ) ≤ (g + 1) * (t + 1) := by nlinarith
       have h1 : 2 + (C : ℝ) ≤ (30 * C + 1) * (m + 2) := by nlinarith
       nlinarith
-    nlinarith
+    linarith
   refine ⟨hB.lam_pos, by linarith [hB.lam_ω, hB.ω_le], hB.rho_pos, hB.scale, hB.rho_n,
     by linarith [hB.a12], hB.δ_pos, hB.Qpos, hB.θpos, hB.lam_ω, est_path hB,
     est_bud hB hg0 m hP2, est_embed hB C t g hP3, est_deg hB hg0 C hP1, est_count hB hg0 C hP1⟩

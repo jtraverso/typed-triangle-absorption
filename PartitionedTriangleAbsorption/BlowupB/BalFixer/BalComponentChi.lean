@@ -183,7 +183,7 @@ theorem component_bal_walk_chi (F : Finset (Multiset (Fin t))) (c : Fin t → Fi
         ((∑ w, ∑ i ∈ indices, incidentLoad (P i) w : ℕ) : ℝ) := by exact_mod_cast h1
     rw [hsum]
     change _ ≤ n * (4 * lam * n) at h3
-    nlinarith
+    linarith
   have hwalkR : ∀ e ∈ R, ∃ c1 c2 c3, (∃ l, Link F (p (endU e)) c1 l) ∧ (∃ l, Link F c2 c1 l) ∧
       (∃ l, Link F c2 c3 l) ∧ (∃ l, Link F (p (endV e)) c3 l) := by
     intro e he
@@ -286,7 +286,7 @@ theorem component_bal_walk_chi (F : Finset (Multiset (Fin t))) (c : Fin t → Fi
     have hl0 : (E0.lib.card : ℝ) ≤ 1224 * rho * n ^ 2 := hcardI
     have hs1' : ((∑ i ∈ E0.lib, (charge χ p (E0.P i) / u).natAbs : ℕ) : ℝ) ≤
         (E0.lib.card : ℝ) * 1344 := by exact_mod_cast hs1
-    have : ((∑ i ∈ E0.lib, (charge χ p (E0.P i) / u).natAbs : ℕ) : ℝ) ≤ Kχ := by nlinarith
+    have : ((∑ i ∈ E0.lib, (charge χ p (E0.P i) / u).natAbs : ℕ) : ℝ) ≤ Kχ := by linarith
     exact_mod_cast this
   obtain ⟨ι, lib, PP, R1, href1, hR1X, hR1G, hR1in, hPsub1, hPdiv1, hPcard1, hPload1, hledger1,
       hR1card, hlibcard⟩ :=
@@ -318,9 +318,9 @@ theorem component_bal_walk_chi (F : Finset (Multiset (Fin t))) (c : Fin t → Fi
       mul_le_mul_of_nonneg_right (by linarith) hC0
     have hmain : ((X ∪ R1).card : ℝ) ≤
         2 * rho * n ^ 2 + 16 * lam * n ^ 2 + g * N * n + 54 * Kχ := by
-      nlinarith
+      linarith
     have := hcountB
-    nlinarith
+    linarith
   have hdegree : max (d0 + (θ + g + g * N) + lamT * n) (δ * n + C30) +
       C30 * (Λ0 + 44 * (θ + g + g * N) + 44 * (lamT * n)) ≤ 2 * δ * n := by
     have h := hdegB

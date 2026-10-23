@@ -58,6 +58,10 @@ theorem typeWeightF_PAR020_symmetric (p : V → Fin 4) (z000 z001 z002 z123 z133
     TernarySymmetric (typeWeightF_PAR020 p z000 z001 z002 z123 z133 z233) := by
   unfold typeWeightF_PAR020
   repeat' first
+    | with_reducible apply TernarySymmetric.add
+    | with_reducible exact monoTypeWeight_symmetric p _ _
+    | with_reducible exact repeatedTypeWeight_symmetric p _ _ _
+    | with_reducible exact tripartiteTypeWeight_symmetric p _ _ _ _
     | exact monoTypeWeight_symmetric p _ _
     | exact repeatedTypeWeight_symmetric p _ _ _
     | exact tripartiteTypeWeight_symmetric p _ _ _ _
@@ -67,6 +71,7 @@ theorem typeWeightF_PAR020_supported (p : V → Fin 4) (z000 z001 z002 z123 z133
     TernarySupported p F_PAR020 (typeWeightF_PAR020 p z000 z001 z002 z123 z133 z233) := by
   unfold typeWeightF_PAR020
   repeat' first
+    | with_reducible apply TernarySupported.add
     | exact monoTypeWeight_supported p F_PAR020 _ (by unfold Link F_PAR020; decide) _
     | exact aabLift_supported p F_PAR020 _ _ (by decide) (by unfold Link F_PAR020; decide) _
     | exact abcLift_supported p F_PAR020 _ _ _ (by decide) (by decide) (by decide)
@@ -199,6 +204,11 @@ theorem vertexWeightF_PAR020_symmetric (p : V → Fin 4) (d : V → Fin 4 → �
     TernarySymmetric (vertexWeightF_PAR020 p d) := by
   unfold vertexWeightF_PAR020
   repeat' first
+    | with_reducible apply TernarySymmetric.add
+    | with_reducible exact repeatedVertexWeight_symmetric p _ _ _
+    | with_reducible exact singletonVertexWeight_symmetric p _ _ _
+    | with_reducible exact tripartiteVertexWeight_symmetric p _ _ _ _
+    | with_reducible exact monoVertexWeight_symmetric p _ _
     | exact repeatedVertexWeight_symmetric p _ _ _
     | exact singletonVertexWeight_symmetric p _ _ _
     | exact tripartiteVertexWeight_symmetric p _ _ _ _
@@ -209,6 +219,7 @@ theorem vertexWeightF_PAR020_supported (p : V → Fin 4) (d : V → Fin 4 → �
     TernarySupported p F_PAR020 (vertexWeightF_PAR020 p d) := by
   unfold vertexWeightF_PAR020
   repeat' first
+    | with_reducible apply TernarySupported.add
     | exact monoVertexWeight_supported p F_PAR020 _ (by unfold Link F_PAR020; decide) _
     | exact aabLift_supported p F_PAR020 _ _ (by decide) (by unfold Link F_PAR020; decide) _
     | exact abcLift_supported p F_PAR020 _ _ _ (by decide) (by decide) (by decide)
@@ -292,6 +303,11 @@ theorem zeroRowWeightF_PAR020_symmetric (p : V → Fin 4) (g : V → V → ℝ)
     (hs : ∀ a b, g a b = g b a) : TernarySymmetric (zeroRowWeightF_PAR020 p g) := by
   unfold zeroRowWeightF_PAR020
   repeat' first
+    | with_reducible apply TernarySymmetric.add
+    | with_reducible exact internalPairWeight_symmetric p _ _ g hs
+    | with_reducible exact repeatedPairWeight_symmetric p _ _ g
+    | with_reducible exact abcLift_symmetric p _ _ _ _
+    | with_reducible exact monoPairWeight_symmetric p _ g hs
     | exact internalPairWeight_symmetric p _ _ g hs
     | exact repeatedPairWeight_symmetric p _ _ g
     | exact abcLift_symmetric p _ _ _ _
@@ -302,6 +318,7 @@ theorem zeroRowWeightF_PAR020_supported (p : V → Fin 4) (g : V → V → ℝ) 
     TernarySupported p F_PAR020 (zeroRowWeightF_PAR020 p g) := by
   unfold zeroRowWeightF_PAR020
   repeat' first
+    | with_reducible apply TernarySupported.add
     | exact monoPairWeight_supported p F_PAR020 _ (by unfold Link F_PAR020; decide) _
     | exact aabLift_supported p F_PAR020 _ _ (by decide) (by unfold Link F_PAR020; decide) _
     | exact abcLift_supported p F_PAR020 _ _ _ (by decide) (by decide) (by decide)
@@ -475,6 +492,10 @@ theorem typeWeightF_PAR021_symmetric (p : V → Fin 4) (z000 z001 z002 z012 z133
     TernarySymmetric (typeWeightF_PAR021 p z000 z001 z002 z012 z133 z233 z333) := by
   unfold typeWeightF_PAR021
   repeat' first
+    | with_reducible apply TernarySymmetric.add
+    | with_reducible exact monoTypeWeight_symmetric p _ _
+    | with_reducible exact repeatedTypeWeight_symmetric p _ _ _
+    | with_reducible exact tripartiteTypeWeight_symmetric p _ _ _ _
     | exact monoTypeWeight_symmetric p _ _
     | exact repeatedTypeWeight_symmetric p _ _ _
     | exact tripartiteTypeWeight_symmetric p _ _ _ _
@@ -484,6 +505,7 @@ theorem typeWeightF_PAR021_supported (p : V → Fin 4) (z000 z001 z002 z012 z133
     TernarySupported p F_PAR021 (typeWeightF_PAR021 p z000 z001 z002 z012 z133 z233 z333) := by
   unfold typeWeightF_PAR021
   repeat' first
+    | with_reducible apply TernarySupported.add
     | exact monoTypeWeight_supported p F_PAR021 _ (by unfold Link F_PAR021; decide) _
     | exact aabLift_supported p F_PAR021 _ _ (by decide) (by unfold Link F_PAR021; decide) _
     | exact abcLift_supported p F_PAR021 _ _ _ (by decide) (by decide) (by decide)
@@ -616,6 +638,11 @@ theorem vertexWeightF_PAR021_symmetric (p : V → Fin 4) (d : V → Fin 4 → �
     TernarySymmetric (vertexWeightF_PAR021 p d) := by
   unfold vertexWeightF_PAR021
   repeat' first
+    | with_reducible apply TernarySymmetric.add
+    | with_reducible exact repeatedVertexWeight_symmetric p _ _ _
+    | with_reducible exact singletonVertexWeight_symmetric p _ _ _
+    | with_reducible exact tripartiteVertexWeight_symmetric p _ _ _ _
+    | with_reducible exact monoVertexWeight_symmetric p _ _
     | exact repeatedVertexWeight_symmetric p _ _ _
     | exact singletonVertexWeight_symmetric p _ _ _
     | exact tripartiteVertexWeight_symmetric p _ _ _ _
@@ -626,6 +653,7 @@ theorem vertexWeightF_PAR021_supported (p : V → Fin 4) (d : V → Fin 4 → �
     TernarySupported p F_PAR021 (vertexWeightF_PAR021 p d) := by
   unfold vertexWeightF_PAR021
   repeat' first
+    | with_reducible apply TernarySupported.add
     | exact monoVertexWeight_supported p F_PAR021 _ (by unfold Link F_PAR021; decide) _
     | exact aabLift_supported p F_PAR021 _ _ (by decide) (by unfold Link F_PAR021; decide) _
     | exact abcLift_supported p F_PAR021 _ _ _ (by decide) (by decide) (by decide)
@@ -709,6 +737,11 @@ theorem zeroRowWeightF_PAR021_symmetric (p : V → Fin 4) (g : V → V → ℝ)
     (hs : ∀ a b, g a b = g b a) : TernarySymmetric (zeroRowWeightF_PAR021 p g) := by
   unfold zeroRowWeightF_PAR021
   repeat' first
+    | with_reducible apply TernarySymmetric.add
+    | with_reducible exact internalPairWeight_symmetric p _ _ g hs
+    | with_reducible exact repeatedPairWeight_symmetric p _ _ g
+    | with_reducible exact abcLift_symmetric p _ _ _ _
+    | with_reducible exact monoPairWeight_symmetric p _ g hs
     | exact internalPairWeight_symmetric p _ _ g hs
     | exact repeatedPairWeight_symmetric p _ _ g
     | exact abcLift_symmetric p _ _ _ _
@@ -719,6 +752,7 @@ theorem zeroRowWeightF_PAR021_supported (p : V → Fin 4) (g : V → V → ℝ) 
     TernarySupported p F_PAR021 (zeroRowWeightF_PAR021 p g) := by
   unfold zeroRowWeightF_PAR021
   repeat' first
+    | with_reducible apply TernarySupported.add
     | exact monoPairWeight_supported p F_PAR021 _ (by unfold Link F_PAR021; decide) _
     | exact aabLift_supported p F_PAR021 _ _ (by decide) (by unfold Link F_PAR021; decide) _
     | exact abcLift_supported p F_PAR021 _ _ _ (by decide) (by decide) (by decide)
@@ -847,6 +881,10 @@ theorem typeWeightF_PAR022_symmetric (p : V → Fin 4) (z000 z001 z002 z113 z133
     TernarySymmetric (typeWeightF_PAR022 p z000 z001 z002 z113 z133 z223 z233) := by
   unfold typeWeightF_PAR022
   repeat' first
+    | with_reducible apply TernarySymmetric.add
+    | with_reducible exact monoTypeWeight_symmetric p _ _
+    | with_reducible exact repeatedTypeWeight_symmetric p _ _ _
+    | with_reducible exact tripartiteTypeWeight_symmetric p _ _ _ _
     | exact monoTypeWeight_symmetric p _ _
     | exact repeatedTypeWeight_symmetric p _ _ _
     | exact tripartiteTypeWeight_symmetric p _ _ _ _
@@ -856,6 +894,7 @@ theorem typeWeightF_PAR022_supported (p : V → Fin 4) (z000 z001 z002 z113 z133
     TernarySupported p F_PAR022 (typeWeightF_PAR022 p z000 z001 z002 z113 z133 z223 z233) := by
   unfold typeWeightF_PAR022
   repeat' first
+    | with_reducible apply TernarySupported.add
     | exact monoTypeWeight_supported p F_PAR022 _ (by unfold Link F_PAR022; decide) _
     | exact aabLift_supported p F_PAR022 _ _ (by decide) (by unfold Link F_PAR022; decide) _
     | exact abcLift_supported p F_PAR022 _ _ _ (by decide) (by decide) (by decide)
@@ -995,6 +1034,11 @@ theorem vertexWeightF_PAR022_symmetric (p : V → Fin 4) (d : V → Fin 4 → �
     TernarySymmetric (vertexWeightF_PAR022 p d) := by
   unfold vertexWeightF_PAR022
   repeat' first
+    | with_reducible apply TernarySymmetric.add
+    | with_reducible exact repeatedVertexWeight_symmetric p _ _ _
+    | with_reducible exact singletonVertexWeight_symmetric p _ _ _
+    | with_reducible exact tripartiteVertexWeight_symmetric p _ _ _ _
+    | with_reducible exact monoVertexWeight_symmetric p _ _
     | exact repeatedVertexWeight_symmetric p _ _ _
     | exact singletonVertexWeight_symmetric p _ _ _
     | exact tripartiteVertexWeight_symmetric p _ _ _ _
@@ -1005,6 +1049,7 @@ theorem vertexWeightF_PAR022_supported (p : V → Fin 4) (d : V → Fin 4 → �
     TernarySupported p F_PAR022 (vertexWeightF_PAR022 p d) := by
   unfold vertexWeightF_PAR022
   repeat' first
+    | with_reducible apply TernarySupported.add
     | exact monoVertexWeight_supported p F_PAR022 _ (by unfold Link F_PAR022; decide) _
     | exact aabLift_supported p F_PAR022 _ _ (by decide) (by unfold Link F_PAR022; decide) _
     | exact abcLift_supported p F_PAR022 _ _ _ (by decide) (by decide) (by decide)
@@ -1089,6 +1134,11 @@ theorem zeroRowWeightF_PAR022_symmetric (p : V → Fin 4) (g : V → V → ℝ)
     (hs : ∀ a b, g a b = g b a) : TernarySymmetric (zeroRowWeightF_PAR022 p g) := by
   unfold zeroRowWeightF_PAR022
   repeat' first
+    | with_reducible apply TernarySymmetric.add
+    | with_reducible exact internalPairWeight_symmetric p _ _ g hs
+    | with_reducible exact repeatedPairWeight_symmetric p _ _ g
+    | with_reducible exact abcLift_symmetric p _ _ _ _
+    | with_reducible exact monoPairWeight_symmetric p _ g hs
     | exact internalPairWeight_symmetric p _ _ g hs
     | exact repeatedPairWeight_symmetric p _ _ g
     | exact abcLift_symmetric p _ _ _ _
@@ -1099,6 +1149,7 @@ theorem zeroRowWeightF_PAR022_supported (p : V → Fin 4) (g : V → V → ℝ) 
     TernarySupported p F_PAR022 (zeroRowWeightF_PAR022 p g) := by
   unfold zeroRowWeightF_PAR022
   repeat' first
+    | with_reducible apply TernarySupported.add
     | exact monoPairWeight_supported p F_PAR022 _ (by unfold Link F_PAR022; decide) _
     | exact aabLift_supported p F_PAR022 _ _ (by decide) (by unfold Link F_PAR022; decide) _
     | exact abcLift_supported p F_PAR022 _ _ _ (by decide) (by decide) (by decide)
@@ -1273,6 +1324,10 @@ theorem typeWeightF_PAR023_symmetric (p : V → Fin 4) (z000 z001 z002 z011 z022
     TernarySymmetric (typeWeightF_PAR023 p z000 z001 z002 z011 z022 z133 z233 z333) := by
   unfold typeWeightF_PAR023
   repeat' first
+    | with_reducible apply TernarySymmetric.add
+    | with_reducible exact monoTypeWeight_symmetric p _ _
+    | with_reducible exact repeatedTypeWeight_symmetric p _ _ _
+    | with_reducible exact tripartiteTypeWeight_symmetric p _ _ _ _
     | exact monoTypeWeight_symmetric p _ _
     | exact repeatedTypeWeight_symmetric p _ _ _
     | exact tripartiteTypeWeight_symmetric p _ _ _ _
@@ -1282,6 +1337,7 @@ theorem typeWeightF_PAR023_supported (p : V → Fin 4) (z000 z001 z002 z011 z022
     TernarySupported p F_PAR023 (typeWeightF_PAR023 p z000 z001 z002 z011 z022 z133 z233 z333) := by
   unfold typeWeightF_PAR023
   repeat' first
+    | with_reducible apply TernarySupported.add
     | exact monoTypeWeight_supported p F_PAR023 _ (by unfold Link F_PAR023; decide) _
     | exact aabLift_supported p F_PAR023 _ _ (by decide) (by unfold Link F_PAR023; decide) _
     | exact abcLift_supported p F_PAR023 _ _ _ (by decide) (by decide) (by decide)
@@ -1421,6 +1477,11 @@ theorem vertexWeightF_PAR023_symmetric (p : V → Fin 4) (d : V → Fin 4 → �
     TernarySymmetric (vertexWeightF_PAR023 p d) := by
   unfold vertexWeightF_PAR023
   repeat' first
+    | with_reducible apply TernarySymmetric.add
+    | with_reducible exact repeatedVertexWeight_symmetric p _ _ _
+    | with_reducible exact singletonVertexWeight_symmetric p _ _ _
+    | with_reducible exact tripartiteVertexWeight_symmetric p _ _ _ _
+    | with_reducible exact monoVertexWeight_symmetric p _ _
     | exact repeatedVertexWeight_symmetric p _ _ _
     | exact singletonVertexWeight_symmetric p _ _ _
     | exact tripartiteVertexWeight_symmetric p _ _ _ _
@@ -1431,6 +1492,7 @@ theorem vertexWeightF_PAR023_supported (p : V → Fin 4) (d : V → Fin 4 → �
     TernarySupported p F_PAR023 (vertexWeightF_PAR023 p d) := by
   unfold vertexWeightF_PAR023
   repeat' first
+    | with_reducible apply TernarySupported.add
     | exact monoVertexWeight_supported p F_PAR023 _ (by unfold Link F_PAR023; decide) _
     | exact aabLift_supported p F_PAR023 _ _ (by decide) (by unfold Link F_PAR023; decide) _
     | exact abcLift_supported p F_PAR023 _ _ _ (by decide) (by decide) (by decide)
@@ -1515,6 +1577,11 @@ theorem zeroRowWeightF_PAR023_symmetric (p : V → Fin 4) (g : V → V → ℝ)
     (hs : ∀ a b, g a b = g b a) : TernarySymmetric (zeroRowWeightF_PAR023 p g) := by
   unfold zeroRowWeightF_PAR023
   repeat' first
+    | with_reducible apply TernarySymmetric.add
+    | with_reducible exact internalPairWeight_symmetric p _ _ g hs
+    | with_reducible exact repeatedPairWeight_symmetric p _ _ g
+    | with_reducible exact abcLift_symmetric p _ _ _ _
+    | with_reducible exact monoPairWeight_symmetric p _ g hs
     | exact internalPairWeight_symmetric p _ _ g hs
     | exact repeatedPairWeight_symmetric p _ _ g
     | exact abcLift_symmetric p _ _ _ _
@@ -1525,6 +1592,7 @@ theorem zeroRowWeightF_PAR023_supported (p : V → Fin 4) (g : V → V → ℝ) 
     TernarySupported p F_PAR023 (zeroRowWeightF_PAR023 p g) := by
   unfold zeroRowWeightF_PAR023
   repeat' first
+    | with_reducible apply TernarySupported.add
     | exact monoPairWeight_supported p F_PAR023 _ (by unfold Link F_PAR023; decide) _
     | exact aabLift_supported p F_PAR023 _ _ (by decide) (by unfold Link F_PAR023; decide) _
     | exact abcLift_supported p F_PAR023 _ _ _ (by decide) (by decide) (by decide)

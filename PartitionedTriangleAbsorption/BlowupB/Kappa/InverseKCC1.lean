@@ -63,6 +63,10 @@ theorem typeWeightKCC1_symmetric (p : V → Fin 4) (z001 z002 z011 z333 : ℝ) :
     TernarySymmetric (typeWeightKCC1 p z001 z002 z011 z333) := by
   unfold typeWeightKCC1
   repeat' first
+    | with_reducible apply TernarySymmetric.add
+    | with_reducible exact monoTypeWeight_symmetric p _ _
+    | with_reducible exact repeatedTypeWeight_symmetric p _ _ _
+    | with_reducible exact tripartiteTypeWeight_symmetric p _ _ _ _
     | exact monoTypeWeight_symmetric p _ _
     | exact repeatedTypeWeight_symmetric p _ _ _
     | exact tripartiteTypeWeight_symmetric p _ _ _ _
@@ -72,6 +76,7 @@ theorem typeWeightKCC1_supported (p : V → Fin 4) (z001 z002 z011 z333 : ℝ) :
     TernarySupported p KCC1 (typeWeightKCC1 p z001 z002 z011 z333) := by
   unfold typeWeightKCC1
   repeat' first
+    | with_reducible apply TernarySupported.add
     | exact monoTypeWeight_supported p KCC1 _ (by unfold Link KCC1; decide) _
     | exact aabLift_supported p KCC1 _ _ (by decide) (by unfold Link KCC1; decide) _
     | exact abcLift_supported p KCC1 _ _ _ (by decide) (by decide) (by decide)
@@ -185,6 +190,11 @@ theorem vertexWeightKCC1_symmetric (p : V → Fin 4) (d : V → Fin 4 → ℝ) :
     TernarySymmetric (vertexWeightKCC1 p d) := by
   unfold vertexWeightKCC1
   repeat' first
+    | with_reducible apply TernarySymmetric.add
+    | with_reducible exact repeatedVertexWeight_symmetric p _ _ _
+    | with_reducible exact singletonVertexWeight_symmetric p _ _ _
+    | with_reducible exact tripartiteVertexWeight_symmetric p _ _ _ _
+    | with_reducible exact monoVertexWeight_symmetric p _ _
     | exact repeatedVertexWeight_symmetric p _ _ _
     | exact singletonVertexWeight_symmetric p _ _ _
     | exact tripartiteVertexWeight_symmetric p _ _ _ _
@@ -195,6 +205,7 @@ theorem vertexWeightKCC1_supported (p : V → Fin 4) (d : V → Fin 4 → ℝ) :
     TernarySupported p KCC1 (vertexWeightKCC1 p d) := by
   unfold vertexWeightKCC1
   repeat' first
+    | with_reducible apply TernarySupported.add
     | exact monoVertexWeight_supported p KCC1 _ (by unfold Link KCC1; decide) _
     | exact aabLift_supported p KCC1 _ _ (by decide) (by unfold Link KCC1; decide) _
     | exact abcLift_supported p KCC1 _ _ _ (by decide) (by decide) (by decide)
@@ -261,6 +272,11 @@ theorem zeroRowWeightKCC1_symmetric (p : V → Fin 4) (g : V → V → ℝ)
     (hs : ∀ a b, g a b = g b a) : TernarySymmetric (zeroRowWeightKCC1 p g) := by
   unfold zeroRowWeightKCC1
   repeat' first
+    | with_reducible apply TernarySymmetric.add
+    | with_reducible exact internalPairWeight_symmetric p _ _ g hs
+    | with_reducible exact repeatedPairWeight_symmetric p _ _ g
+    | with_reducible exact abcLift_symmetric p _ _ _ _
+    | with_reducible exact monoPairWeight_symmetric p _ g hs
     | exact internalPairWeight_symmetric p _ _ g hs
     | exact repeatedPairWeight_symmetric p _ _ g
     | exact abcLift_symmetric p _ _ _ _
@@ -271,6 +287,7 @@ theorem zeroRowWeightKCC1_supported (p : V → Fin 4) (g : V → V → ℝ) :
     TernarySupported p KCC1 (zeroRowWeightKCC1 p g) := by
   unfold zeroRowWeightKCC1
   repeat' first
+    | with_reducible apply TernarySupported.add
     | exact monoPairWeight_supported p KCC1 _ (by unfold Link KCC1; decide) _
     | exact aabLift_supported p KCC1 _ _ (by decide) (by unfold Link KCC1; decide) _
     | exact abcLift_supported p KCC1 _ _ _ (by decide) (by decide) (by decide)

@@ -126,8 +126,19 @@ theorem scalar_charge_KCC1 (u : Fin 4 → Fin 4 → ℤ) (hs : ∀ i j, u i j = 
   have s21 := hs 2 1; have s31 := hs 3 1; have s32 := hs 3 2
   refine ⟨canon_KCC1 u, ?_⟩
   intro i j
+  rw [KCC1]
+  repeat rw [Finset.sum_insert (by decide)]
+  rw [Finset.sum_singleton]
+  simp (config := {decide := true}) only [canon_KCC1, coeffList, ite_true, ite_false]
+  have hqv0 : (2 * u 0 0 - 1 * u 0 2) / 2 * 2 = 2 * u 0 0 - 1 * u 0 2 := Int.ediv_mul_cancel (by omega)
+  have hqv1 : (1 * u 0 2) / 2 * 2 = 1 * u 0 2 := Int.ediv_mul_cancel (by omega)
+  have hqv2 : (1 * u 3 3) / 3 * 3 = 1 * u 3 3 := Int.ediv_mul_cancel (by omega)
+  generalize (2 * u 0 0 - 1 * u 0 2) / 2 = qv0 at *
+  generalize (1 * u 0 2) / 2 = qv1 at *
+  generalize (1 * u 3 3) / 3 = qv2 at *
+  clear p0 p1 p2 p3
   fin_cases i <;> fin_cases j <;>
-    simp (config := {decide := true}) [KCC1, canon_KCC1, coeffList, typeEdgeVec, sum_insert] <;>
+    simp (config := {decide := true}) only [typeEdgeVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;>
     omega
 
 theorem chargeInside_KCC1 : ChargeInside KCC1 cM3 (cM3 0) chiKCC1 := by
@@ -192,8 +203,19 @@ theorem scalar_inside_KCC1 (k : Fin 4) (hk : k ≠ cM3 0) : ∀ u, ScalarHyp KCC
   have s21 := hs 2 1; have s31 := hs 3 1; have s32 := hs 3 2
   refine ⟨canon_KCC1 u, ?_⟩
   intro i j
+  rw [KCC1]
+  repeat rw [Finset.sum_insert (by decide)]
+  rw [Finset.sum_singleton]
+  simp (config := {decide := true}) only [canon_KCC1, coeffList, ite_true, ite_false]
+  have hqv0 : (2 * u 0 0 - 1 * u 0 2) / 2 * 2 = 2 * u 0 0 - 1 * u 0 2 := Int.ediv_mul_cancel (by omega)
+  have hqv1 : (1 * u 0 2) / 2 * 2 = 1 * u 0 2 := Int.ediv_mul_cancel (by omega)
+  have hqv2 : (1 * u 3 3) / 3 * 3 = 1 * u 3 3 := Int.ediv_mul_cancel (by omega)
+  generalize (2 * u 0 0 - 1 * u 0 2) / 2 = qv0 at *
+  generalize (1 * u 0 2) / 2 = qv1 at *
+  generalize (1 * u 3 3) / 3 = qv2 at *
+  clear p0 p1 p2 p3 h3
   fin_cases i <;> fin_cases j <;>
-    simp (config := {decide := true}) [KCC1, canon_KCC1, coeffList, typeEdgeVec, sum_insert] <;>
+    simp (config := {decide := true}) only [typeEdgeVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;>
     omega
 
 theorem even3Inside_KCC1 (k : Fin 4) (hk : k ≠ cM3 0) : Even3Inside KCC1 cM3 k :=
@@ -214,21 +236,32 @@ theorem scalar_witness_KCC1 : ∀ u c0, ScalarHyp KCC1 u → LatEq KCC1 u c0 →
   have e02 := hc0 0 2
   have e11 := hc0 1 1
   have e33 := hc0 3 3
-  simp (config := {decide := true}) [KCC1, typeEdgeVec, sum_insert] at e00 e01 e02 e11 e33
+  simp (config := {decide := true}) only [KCC1, Finset.sum_insert, Finset.mem_insert, Finset.mem_singleton, Finset.sum_singleton, typeEdgeVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] at e00 e01 e02 e11 e33
   have s10 := hs 1 0; have s20 := hs 2 0; have s30 := hs 3 0
   have s21 := hs 2 1; have s31 := hs 3 1; have s32 := hs 3 2
   have n00 := hn 0 0; have n01 := hn 0 1; have n02 := hn 0 2; have n03 := hn 0 3; have n11 := hn 1 1; have n12 := hn 1 2; have n13 := hn 1 3; have n22 := hn 2 2; have n23 := hn 2 3; have n33 := hn 3 3
   refine ⟨canon_KCC1 u, ?_, ?_⟩
   · intro i j
+    rw [KCC1]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [canon_KCC1, coeffList, ite_true, ite_false]
+    have hqv0 : (2 * u 0 0 - 1 * u 0 2) / 2 * 2 = 2 * u 0 0 - 1 * u 0 2 := Int.ediv_mul_cancel (by omega)
+    have hqv1 : (1 * u 0 2) / 2 * 2 = 1 * u 0 2 := Int.ediv_mul_cancel (by omega)
+    have hqv2 : (1 * u 3 3) / 3 * 3 = 1 * u 3 3 := Int.ediv_mul_cancel (by omega)
+    generalize (2 * u 0 0 - 1 * u 0 2) / 2 = qv0 at *
+    generalize (1 * u 0 2) / 2 = qv1 at *
+    generalize (1 * u 3 3) / 3 = qv2 at *
+    clear n00 n01 n02 n03 n11 n12 n13 n22 n23 n33 h3
     fin_cases i <;> fin_cases j <;>
-      simp (config := {decide := true}) [KCC1, canon_KCC1, coeffList, typeEdgeVec, sum_insert] <;>
+      simp (config := {decide := true}) only [typeEdgeVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;>
       omega
   · unfold totalU
     simp only [Fin.sum_univ_four, Fin.isValue, Fin.reduceLE, ite_true, ite_false, le_refl]
     intro τ hτ
     simp only [KCC1, mem_insert, mem_singleton] at hτ
     rcases hτ with rfl | rfl | rfl | rfl <;>
-      simp (config := {decide := true}) [canon_KCC1, coeffList] <;> omega
+      simp (config := {decide := true}) only [canon_KCC1, coeffList, Multiset.insert_eq_cons, ite_true, ite_false, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, one_mul, zero_mul, zero_add, add_zero] <;> omega
 
 /-- **`UniversalCert KCC1`** (charged component, `KappaLinks` terminal absorbers). -/
 theorem universalCert_KCC1 : UniversalCert KCC1 := by
@@ -336,8 +369,21 @@ theorem scalar_charge_KCC2 (u : Fin 4 → Fin 4 → ℤ) (hs : ∀ i j, u i j = 
   have s21 := hs 2 1; have s31 := hs 3 1; have s32 := hs 3 2
   refine ⟨canon_KCC2 u, ?_⟩
   intro i j
+  rw [KCC2]
+  repeat rw [Finset.sum_insert (by decide)]
+  rw [Finset.sum_singleton]
+  simp (config := {decide := true}) only [canon_KCC2, coeffList, ite_true, ite_false]
+  have hqv0 : (2 * u 0 0 + 1 * u 0 1 - 1 * u 0 2) / 4 * 4 = 2 * u 0 0 + 1 * u 0 1 - 1 * u 0 2 := Int.ediv_mul_cancel (by omega)
+  have hqv1 : (2 * u 0 0 - 1 * u 0 1 + 1 * u 0 2) / 4 * 4 = 2 * u 0 0 - 1 * u 0 1 + 1 * u 0 2 := Int.ediv_mul_cancel (by omega)
+  have hqv2 : (-2 * u 0 0 + 1 * u 0 1 + 1 * u 0 2) / 2 * 2 = -2 * u 0 0 + 1 * u 0 1 + 1 * u 0 2 := Int.ediv_mul_cancel (by omega)
+  have hqv3 : (1 * u 3 3) / 3 * 3 = 1 * u 3 3 := Int.ediv_mul_cancel (by omega)
+  generalize (2 * u 0 0 + 1 * u 0 1 - 1 * u 0 2) / 4 = qv0 at *
+  generalize (2 * u 0 0 - 1 * u 0 1 + 1 * u 0 2) / 4 = qv1 at *
+  generalize (-2 * u 0 0 + 1 * u 0 1 + 1 * u 0 2) / 2 = qv2 at *
+  generalize (1 * u 3 3) / 3 = qv3 at *
+  clear p0 p1 p2 p3
   fin_cases i <;> fin_cases j <;>
-    simp (config := {decide := true}) [KCC2, canon_KCC2, coeffList, typeEdgeVec, sum_insert] <;>
+    simp (config := {decide := true}) only [typeEdgeVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;>
     omega
 
 theorem chargeInside_KCC2 : ChargeInside KCC2 cM3 (cM3 0) chiKCC2 := by
@@ -400,8 +446,21 @@ theorem scalar_inside_KCC2 (k : Fin 4) (hk : k ≠ cM3 0) : ∀ u, ScalarHyp KCC
   have s21 := hs 2 1; have s31 := hs 3 1; have s32 := hs 3 2
   refine ⟨canon_KCC2 u, ?_⟩
   intro i j
+  rw [KCC2]
+  repeat rw [Finset.sum_insert (by decide)]
+  rw [Finset.sum_singleton]
+  simp (config := {decide := true}) only [canon_KCC2, coeffList, ite_true, ite_false]
+  have hqv0 : (2 * u 0 0 + 1 * u 0 1 - 1 * u 0 2) / 4 * 4 = 2 * u 0 0 + 1 * u 0 1 - 1 * u 0 2 := Int.ediv_mul_cancel (by omega)
+  have hqv1 : (2 * u 0 0 - 1 * u 0 1 + 1 * u 0 2) / 4 * 4 = 2 * u 0 0 - 1 * u 0 1 + 1 * u 0 2 := Int.ediv_mul_cancel (by omega)
+  have hqv2 : (-2 * u 0 0 + 1 * u 0 1 + 1 * u 0 2) / 2 * 2 = -2 * u 0 0 + 1 * u 0 1 + 1 * u 0 2 := Int.ediv_mul_cancel (by omega)
+  have hqv3 : (1 * u 3 3) / 3 * 3 = 1 * u 3 3 := Int.ediv_mul_cancel (by omega)
+  generalize (2 * u 0 0 + 1 * u 0 1 - 1 * u 0 2) / 4 = qv0 at *
+  generalize (2 * u 0 0 - 1 * u 0 1 + 1 * u 0 2) / 4 = qv1 at *
+  generalize (-2 * u 0 0 + 1 * u 0 1 + 1 * u 0 2) / 2 = qv2 at *
+  generalize (1 * u 3 3) / 3 = qv3 at *
+  clear p0 p1 p2 p3 h3
   fin_cases i <;> fin_cases j <;>
-    simp (config := {decide := true}) [KCC2, canon_KCC2, coeffList, typeEdgeVec, sum_insert] <;>
+    simp (config := {decide := true}) only [typeEdgeVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;>
     omega
 
 theorem even3Inside_KCC2 (k : Fin 4) (hk : k ≠ cM3 0) : Even3Inside KCC2 cM3 k :=
@@ -422,21 +481,34 @@ theorem scalar_witness_KCC2 : ∀ u c0, ScalarHyp KCC2 u → LatEq KCC2 u c0 →
   have e11 := hc0 1 1
   have e12 := hc0 1 2
   have e33 := hc0 3 3
-  simp (config := {decide := true}) [KCC2, typeEdgeVec, sum_insert] at e00 e01 e02 e11 e12 e33
+  simp (config := {decide := true}) only [KCC2, Finset.sum_insert, Finset.mem_insert, Finset.mem_singleton, Finset.sum_singleton, typeEdgeVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] at e00 e01 e02 e11 e12 e33
   have s10 := hs 1 0; have s20 := hs 2 0; have s30 := hs 3 0
   have s21 := hs 2 1; have s31 := hs 3 1; have s32 := hs 3 2
   have n00 := hn 0 0; have n01 := hn 0 1; have n02 := hn 0 2; have n03 := hn 0 3; have n11 := hn 1 1; have n12 := hn 1 2; have n13 := hn 1 3; have n22 := hn 2 2; have n23 := hn 2 3; have n33 := hn 3 3
   refine ⟨canon_KCC2 u, ?_, ?_⟩
   · intro i j
+    rw [KCC2]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [canon_KCC2, coeffList, ite_true, ite_false]
+    have hqv0 : (2 * u 0 0 + 1 * u 0 1 - 1 * u 0 2) / 4 * 4 = 2 * u 0 0 + 1 * u 0 1 - 1 * u 0 2 := Int.ediv_mul_cancel (by omega)
+    have hqv1 : (2 * u 0 0 - 1 * u 0 1 + 1 * u 0 2) / 4 * 4 = 2 * u 0 0 - 1 * u 0 1 + 1 * u 0 2 := Int.ediv_mul_cancel (by omega)
+    have hqv2 : (-2 * u 0 0 + 1 * u 0 1 + 1 * u 0 2) / 2 * 2 = -2 * u 0 0 + 1 * u 0 1 + 1 * u 0 2 := Int.ediv_mul_cancel (by omega)
+    have hqv3 : (1 * u 3 3) / 3 * 3 = 1 * u 3 3 := Int.ediv_mul_cancel (by omega)
+    generalize (2 * u 0 0 + 1 * u 0 1 - 1 * u 0 2) / 4 = qv0 at *
+    generalize (2 * u 0 0 - 1 * u 0 1 + 1 * u 0 2) / 4 = qv1 at *
+    generalize (-2 * u 0 0 + 1 * u 0 1 + 1 * u 0 2) / 2 = qv2 at *
+    generalize (1 * u 3 3) / 3 = qv3 at *
+    clear n00 n01 n02 n03 n11 n12 n13 n22 n23 n33 h3
     fin_cases i <;> fin_cases j <;>
-      simp (config := {decide := true}) [KCC2, canon_KCC2, coeffList, typeEdgeVec, sum_insert] <;>
+      simp (config := {decide := true}) only [typeEdgeVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;>
       omega
   · unfold totalU
     simp only [Fin.sum_univ_four, Fin.isValue, Fin.reduceLE, ite_true, ite_false, le_refl]
     intro τ hτ
     simp only [KCC2, mem_insert, mem_singleton] at hτ
     rcases hτ with rfl | rfl | rfl | rfl | rfl <;>
-      simp (config := {decide := true}) [canon_KCC2, coeffList] <;> omega
+      simp (config := {decide := true}) only [canon_KCC2, coeffList, Multiset.insert_eq_cons, ite_true, ite_false, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, one_mul, zero_mul, zero_add, add_zero] <;> omega
 
 /-- **`UniversalCert KCC2`** (charged component, `KappaLinks` terminal absorbers). -/
 theorem universalCert_KCC2 : UniversalCert KCC2 := by
@@ -543,8 +615,21 @@ theorem scalar_charge_KCC3 (u : Fin 4 → Fin 4 → ℤ) (hs : ∀ i j, u i j = 
   have s21 := hs 2 1; have s31 := hs 3 1; have s32 := hs 3 2
   refine ⟨canon_KCC3 u, ?_⟩
   intro i j
+  rw [KCC3]
+  repeat rw [Finset.sum_insert (by decide)]
+  rw [Finset.sum_singleton]
+  simp (config := {decide := true}) only [canon_KCC3, coeffList, ite_true, ite_false]
+  have hqv0 : (2 * u 0 0 + 1 * u 0 1 - 1 * u 0 2 - 2 * u 1 1) / 4 * 4 = 2 * u 0 0 + 1 * u 0 1 - 1 * u 0 2 - 2 * u 1 1 := Int.ediv_mul_cancel (by omega)
+  have hqv1 : (2 * u 0 0 - 1 * u 0 1 + 1 * u 0 2 + 2 * u 1 1) / 4 * 4 = 2 * u 0 0 - 1 * u 0 1 + 1 * u 0 2 + 2 * u 1 1 := Int.ediv_mul_cancel (by omega)
+  have hqv2 : (-2 * u 0 0 + 1 * u 0 1 + 1 * u 0 2 - 2 * u 1 1) / 2 * 2 = -2 * u 0 0 + 1 * u 0 1 + 1 * u 0 2 - 2 * u 1 1 := Int.ediv_mul_cancel (by omega)
+  have hqv3 : (1 * u 3 3) / 3 * 3 = 1 * u 3 3 := Int.ediv_mul_cancel (by omega)
+  generalize (2 * u 0 0 + 1 * u 0 1 - 1 * u 0 2 - 2 * u 1 1) / 4 = qv0 at *
+  generalize (2 * u 0 0 - 1 * u 0 1 + 1 * u 0 2 + 2 * u 1 1) / 4 = qv1 at *
+  generalize (-2 * u 0 0 + 1 * u 0 1 + 1 * u 0 2 - 2 * u 1 1) / 2 = qv2 at *
+  generalize (1 * u 3 3) / 3 = qv3 at *
+  clear p0 p1 p2 p3
   fin_cases i <;> fin_cases j <;>
-    simp (config := {decide := true}) [KCC3, canon_KCC3, coeffList, typeEdgeVec, sum_insert] <;>
+    simp (config := {decide := true}) only [typeEdgeVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;>
     omega
 
 theorem chargeInside_KCC3 : ChargeInside KCC3 cM3 (cM3 0) chiKCC3 := by
@@ -605,8 +690,21 @@ theorem scalar_inside_KCC3 (k : Fin 4) (hk : k ≠ cM3 0) : ∀ u, ScalarHyp KCC
   have s21 := hs 2 1; have s31 := hs 3 1; have s32 := hs 3 2
   refine ⟨canon_KCC3 u, ?_⟩
   intro i j
+  rw [KCC3]
+  repeat rw [Finset.sum_insert (by decide)]
+  rw [Finset.sum_singleton]
+  simp (config := {decide := true}) only [canon_KCC3, coeffList, ite_true, ite_false]
+  have hqv0 : (2 * u 0 0 + 1 * u 0 1 - 1 * u 0 2 - 2 * u 1 1) / 4 * 4 = 2 * u 0 0 + 1 * u 0 1 - 1 * u 0 2 - 2 * u 1 1 := Int.ediv_mul_cancel (by omega)
+  have hqv1 : (2 * u 0 0 - 1 * u 0 1 + 1 * u 0 2 + 2 * u 1 1) / 4 * 4 = 2 * u 0 0 - 1 * u 0 1 + 1 * u 0 2 + 2 * u 1 1 := Int.ediv_mul_cancel (by omega)
+  have hqv2 : (-2 * u 0 0 + 1 * u 0 1 + 1 * u 0 2 - 2 * u 1 1) / 2 * 2 = -2 * u 0 0 + 1 * u 0 1 + 1 * u 0 2 - 2 * u 1 1 := Int.ediv_mul_cancel (by omega)
+  have hqv3 : (1 * u 3 3) / 3 * 3 = 1 * u 3 3 := Int.ediv_mul_cancel (by omega)
+  generalize (2 * u 0 0 + 1 * u 0 1 - 1 * u 0 2 - 2 * u 1 1) / 4 = qv0 at *
+  generalize (2 * u 0 0 - 1 * u 0 1 + 1 * u 0 2 + 2 * u 1 1) / 4 = qv1 at *
+  generalize (-2 * u 0 0 + 1 * u 0 1 + 1 * u 0 2 - 2 * u 1 1) / 2 = qv2 at *
+  generalize (1 * u 3 3) / 3 = qv3 at *
+  clear p0 p1 p2 p3 h3
   fin_cases i <;> fin_cases j <;>
-    simp (config := {decide := true}) [KCC3, canon_KCC3, coeffList, typeEdgeVec, sum_insert] <;>
+    simp (config := {decide := true}) only [typeEdgeVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;>
     omega
 
 theorem even3Inside_KCC3 (k : Fin 4) (hk : k ≠ cM3 0) : Even3Inside KCC3 cM3 k :=
@@ -627,21 +725,34 @@ theorem scalar_witness_KCC3 : ∀ u c0, ScalarHyp KCC3 u → LatEq KCC3 u c0 →
   have e12 := hc0 1 2
   have e22 := hc0 2 2
   have e33 := hc0 3 3
-  simp (config := {decide := true}) [KCC3, typeEdgeVec, sum_insert] at e00 e01 e02 e11 e12 e22 e33
+  simp (config := {decide := true}) only [KCC3, Finset.sum_insert, Finset.mem_insert, Finset.mem_singleton, Finset.sum_singleton, typeEdgeVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] at e00 e01 e02 e11 e12 e22 e33
   have s10 := hs 1 0; have s20 := hs 2 0; have s30 := hs 3 0
   have s21 := hs 2 1; have s31 := hs 3 1; have s32 := hs 3 2
   have n00 := hn 0 0; have n01 := hn 0 1; have n02 := hn 0 2; have n03 := hn 0 3; have n11 := hn 1 1; have n12 := hn 1 2; have n13 := hn 1 3; have n22 := hn 2 2; have n23 := hn 2 3; have n33 := hn 3 3
   refine ⟨canon_KCC3 u, ?_, ?_⟩
   · intro i j
+    rw [KCC3]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [canon_KCC3, coeffList, ite_true, ite_false]
+    have hqv0 : (2 * u 0 0 + 1 * u 0 1 - 1 * u 0 2 - 2 * u 1 1) / 4 * 4 = 2 * u 0 0 + 1 * u 0 1 - 1 * u 0 2 - 2 * u 1 1 := Int.ediv_mul_cancel (by omega)
+    have hqv1 : (2 * u 0 0 - 1 * u 0 1 + 1 * u 0 2 + 2 * u 1 1) / 4 * 4 = 2 * u 0 0 - 1 * u 0 1 + 1 * u 0 2 + 2 * u 1 1 := Int.ediv_mul_cancel (by omega)
+    have hqv2 : (-2 * u 0 0 + 1 * u 0 1 + 1 * u 0 2 - 2 * u 1 1) / 2 * 2 = -2 * u 0 0 + 1 * u 0 1 + 1 * u 0 2 - 2 * u 1 1 := Int.ediv_mul_cancel (by omega)
+    have hqv3 : (1 * u 3 3) / 3 * 3 = 1 * u 3 3 := Int.ediv_mul_cancel (by omega)
+    generalize (2 * u 0 0 + 1 * u 0 1 - 1 * u 0 2 - 2 * u 1 1) / 4 = qv0 at *
+    generalize (2 * u 0 0 - 1 * u 0 1 + 1 * u 0 2 + 2 * u 1 1) / 4 = qv1 at *
+    generalize (-2 * u 0 0 + 1 * u 0 1 + 1 * u 0 2 - 2 * u 1 1) / 2 = qv2 at *
+    generalize (1 * u 3 3) / 3 = qv3 at *
+    clear n00 n01 n02 n03 n11 n12 n13 n22 n23 n33 h3
     fin_cases i <;> fin_cases j <;>
-      simp (config := {decide := true}) [KCC3, canon_KCC3, coeffList, typeEdgeVec, sum_insert] <;>
+      simp (config := {decide := true}) only [typeEdgeVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;>
       omega
   · unfold totalU
     simp only [Fin.sum_univ_four, Fin.isValue, Fin.reduceLE, ite_true, ite_false, le_refl]
     intro τ hτ
     simp only [KCC3, mem_insert, mem_singleton] at hτ
     rcases hτ with rfl | rfl | rfl | rfl | rfl | rfl <;>
-      simp (config := {decide := true}) [canon_KCC3, coeffList] <;> omega
+      simp (config := {decide := true}) only [canon_KCC3, coeffList, Multiset.insert_eq_cons, ite_true, ite_false, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, one_mul, zero_mul, zero_add, add_zero] <;> omega
 
 /-- **`UniversalCert KCC3`** (charged component, `KappaLinks` terminal absorbers). -/
 theorem universalCert_KCC3 : UniversalCert KCC3 := by

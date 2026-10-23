@@ -178,8 +178,19 @@ theorem scalar_ct_KCX1 (u : Fin 4 → Fin 4 → ℤ) (hs : ∀ i j, u i j = u j 
   have s21 := hs 2 1; have s31 := hs 3 1; have s32 := hs 3 2
   refine ⟨canon_KCX1 u, ?_⟩
   intro i j
+  rw [KCX1]
+  repeat rw [Finset.sum_insert (by decide)]
+  rw [Finset.sum_singleton]
+  simp (config := {decide := true}) only [canon_KCX1, coeffList, ite_true, ite_false]
+  have hqv0 : (2 * u 0 0 - 1 * u 0 1 + 1 * u 0 2) / 6 * 6 = 2 * u 0 0 - 1 * u 0 1 + 1 * u 0 2 := Int.ediv_mul_cancel (by omega)
+  have hqv1 : (1 * u 0 1 - 1 * u 0 2) / 2 * 2 = 1 * u 0 1 - 1 * u 0 2 := Int.ediv_mul_cancel (by omega)
+  have hqv2 : (1 * u 3 3) / 3 * 3 = 1 * u 3 3 := Int.ediv_mul_cancel (by omega)
+  generalize (2 * u 0 0 - 1 * u 0 1 + 1 * u 0 2) / 6 = qv0 at *
+  generalize (1 * u 0 1 - 1 * u 0 2) / 2 = qv1 at *
+  generalize (1 * u 3 3) / 3 = qv2 at *
+  clear p0 p1 p2 p3
   fin_cases i <;> fin_cases j <;>
-    simp (config := {decide := true}) [KCX1, canon_KCX1, coeffList, typeEdgeVec, sum_insert] <;>
+    simp (config := {decide := true}) only [typeEdgeVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;>
     omega
 
 theorem chargeTorsionInside_KCX1 : ChargeTorsionInside KCX1 cM3 (cM3 0) chiKCX1 psiOne := by
@@ -215,7 +226,7 @@ theorem psiVal_of_isIntDiv_KCX1 {W : Type} [Fintype W] [DecidableEq W] (p : W �
     have e22 := h 2 2
     have e23 := h 2 3
     have e33 := h 3 3
-    simp (config := {decide := true}) [KCX1, typeEdgeVec, sum_insert] at e00 e01 e02 e03 e11 e12 e13 e22 e23 e33
+    simp (config := {decide := true}) only [KCX1, Finset.sum_insert, Finset.mem_insert, Finset.mem_singleton, Finset.sum_singleton, typeEdgeVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] at e00 e01 e02 e03 e11 e12 e13 e22 e23 e33
     simp only [Fin.sum_univ_four, psiOne_00, psiOne_01, psiOne_02, psiOne_03, psiOne_10, psiOne_11, psiOne_12, psiOne_13, psiOne_20, psiOne_21, psiOne_22, psiOne_23, psiOne_30, psiOne_31, psiOne_32, psiOne_33]
     have s10 := hs 1 0; have s20 := hs 2 0; have s30 := hs 3 0
     have s21 := hs 2 1; have s31 := hs 3 1; have s32 := hs 3 2
@@ -270,8 +281,19 @@ theorem scalar_inside_KCX1 (k : Fin 4) (hk : k ≠ cM3 0) : ∀ u, ScalarHyp KCX
   have s21 := hs 2 1; have s31 := hs 3 1; have s32 := hs 3 2
   refine ⟨canon_KCX1 u, ?_⟩
   intro i j
+  rw [KCX1]
+  repeat rw [Finset.sum_insert (by decide)]
+  rw [Finset.sum_singleton]
+  simp (config := {decide := true}) only [canon_KCX1, coeffList, ite_true, ite_false]
+  have hqv0 : (2 * u 0 0 - 1 * u 0 1 + 1 * u 0 2) / 6 * 6 = 2 * u 0 0 - 1 * u 0 1 + 1 * u 0 2 := Int.ediv_mul_cancel (by omega)
+  have hqv1 : (1 * u 0 1 - 1 * u 0 2) / 2 * 2 = 1 * u 0 1 - 1 * u 0 2 := Int.ediv_mul_cancel (by omega)
+  have hqv2 : (1 * u 3 3) / 3 * 3 = 1 * u 3 3 := Int.ediv_mul_cancel (by omega)
+  generalize (2 * u 0 0 - 1 * u 0 1 + 1 * u 0 2) / 6 = qv0 at *
+  generalize (1 * u 0 1 - 1 * u 0 2) / 2 = qv1 at *
+  generalize (1 * u 3 3) / 3 = qv2 at *
+  clear p0 p1 p2 p3 h3
   fin_cases i <;> fin_cases j <;>
-    simp (config := {decide := true}) [KCX1, canon_KCX1, coeffList, typeEdgeVec, sum_insert] <;>
+    simp (config := {decide := true}) only [typeEdgeVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;>
     omega
 
 theorem even3Inside_KCX1 (k : Fin 4) (hk : k ≠ cM3 0) : Even3Inside KCX1 cM3 k :=
@@ -295,21 +317,32 @@ theorem scalar_witness_KCX1 : ∀ u c0, ScalarHyp KCX1 u → LatEq KCX1 u c0 →
   have e11 := hc0 1 1
   have e12 := hc0 1 2
   have e33 := hc0 3 3
-  simp (config := {decide := true}) [KCX1, typeEdgeVec, sum_insert] at e00 e01 e02 e11 e12 e33
+  simp (config := {decide := true}) only [KCX1, Finset.sum_insert, Finset.mem_insert, Finset.mem_singleton, Finset.sum_singleton, typeEdgeVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] at e00 e01 e02 e11 e12 e33
   have s10 := hs 1 0; have s20 := hs 2 0; have s30 := hs 3 0
   have s21 := hs 2 1; have s31 := hs 3 1; have s32 := hs 3 2
   have n00 := hn 0 0; have n01 := hn 0 1; have n02 := hn 0 2; have n03 := hn 0 3; have n11 := hn 1 1; have n12 := hn 1 2; have n13 := hn 1 3; have n22 := hn 2 2; have n23 := hn 2 3; have n33 := hn 3 3
   refine ⟨canon_KCX1 u, ?_, ?_⟩
   · intro i j
+    rw [KCX1]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [canon_KCX1, coeffList, ite_true, ite_false]
+    have hqv0 : (2 * u 0 0 - 1 * u 0 1 + 1 * u 0 2) / 6 * 6 = 2 * u 0 0 - 1 * u 0 1 + 1 * u 0 2 := Int.ediv_mul_cancel (by omega)
+    have hqv1 : (1 * u 0 1 - 1 * u 0 2) / 2 * 2 = 1 * u 0 1 - 1 * u 0 2 := Int.ediv_mul_cancel (by omega)
+    have hqv2 : (1 * u 3 3) / 3 * 3 = 1 * u 3 3 := Int.ediv_mul_cancel (by omega)
+    generalize (2 * u 0 0 - 1 * u 0 1 + 1 * u 0 2) / 6 = qv0 at *
+    generalize (1 * u 0 1 - 1 * u 0 2) / 2 = qv1 at *
+    generalize (1 * u 3 3) / 3 = qv2 at *
+    clear n00 n01 n02 n03 n11 n12 n13 n22 n23 n33 h3
     fin_cases i <;> fin_cases j <;>
-      simp (config := {decide := true}) [KCX1, canon_KCX1, coeffList, typeEdgeVec, sum_insert] <;>
+      simp (config := {decide := true}) only [typeEdgeVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;>
       omega
   · unfold totalU
     simp only [Fin.sum_univ_four, Fin.isValue, Fin.reduceLE, ite_true, ite_false, le_refl]
     intro τ hτ
     simp only [KCX1, mem_insert, mem_singleton] at hτ
     rcases hτ with rfl | rfl | rfl | rfl | rfl <;>
-      simp (config := {decide := true}) [canon_KCX1, coeffList, aKCX1] <;> omega
+      simp (config := {decide := true}) only [canon_KCX1, coeffList, aKCX1, Multiset.insert_eq_cons, ite_true, ite_false, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, one_mul, zero_mul, zero_add, add_zero] <;> omega
 
 theorem wb_KCX1 : WitnessBoundK KCX1 1230 2480 := by
   have h : WitnessBoundK KCX1 1230 (∑ τ ∈ KCX1, (aKCX1 τ * 1230 + 4)) :=

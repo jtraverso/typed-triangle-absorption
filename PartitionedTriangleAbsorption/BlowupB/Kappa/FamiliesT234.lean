@@ -77,12 +77,16 @@ theorem scalar_KT2 : ∀ u, ScalarHyp KT2 u →
     ({0,2,2}, u 2 2),
     ({1,1,3}, u 1 3 / 2)], ?_, ?_⟩
   · intro i j
+    rw [KT2]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [coeffList, ite_true, ite_false]
     fin_cases i <;> fin_cases j <;>
-      simp (config := {decide := true}) [KT2, coeffList, typeEdgeVec, sum_insert] <;> omega
+      simp (config := {decide := true}) only [typeEdgeVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · intro τ hτ
     simp only [KT2, mem_insert, mem_singleton] at hτ
     rcases hτ with rfl | rfl | rfl | rfl | rfl | rfl <;>
-      simp (config := {decide := true}) [coeffList] <;> omega
+      simp (config := {decide := true}) only [coeffList, Multiset.insert_eq_cons, ite_true, ite_false, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, one_mul, zero_mul, zero_add, add_zero] <;> omega
 
 theorem lattice_KT2 (K : ℕ) :
     TrivialLattice KT2 ∧ WitnessBoundK KT2 K (KT2.card * (2 * K + 4)) :=
@@ -148,12 +152,16 @@ theorem scalar_KT3 : ∀ u, ScalarHyp KT3 u →
     ({1,2,2}, u 2 2 - u 2 3 / 2),
     ({2,2,3}, u 2 3 / 2)], ?_, ?_⟩
   · intro i j
+    rw [KT3]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [coeffList, ite_true, ite_false]
     fin_cases i <;> fin_cases j <;>
-      simp (config := {decide := true}) [KT3, coeffList, typeEdgeVec, sum_insert] <;> omega
+      simp (config := {decide := true}) only [typeEdgeVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · intro τ hτ
     simp only [KT3, mem_insert, mem_singleton] at hτ
     rcases hτ with rfl | rfl | rfl | rfl | rfl | rfl <;>
-      simp (config := {decide := true}) [coeffList] <;> omega
+      simp (config := {decide := true}) only [coeffList, Multiset.insert_eq_cons, ite_true, ite_false, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, one_mul, zero_mul, zero_add, add_zero] <;> omega
 
 theorem lattice_KT3 (K : ℕ) :
     TrivialLattice KT3 ∧ WitnessBoundK KT3 K (KT3.card * (2 * K + 4)) :=
@@ -220,12 +228,16 @@ theorem scalar_KT4 : ∀ u, ScalarHyp KT4 u →
     ({1,1,1}, 0),
     ({2,2,3}, u 2 3 / 2)], ?_, ?_⟩
   · intro i j
+    rw [KT4]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [coeffList, ite_true, ite_false]
     fin_cases i <;> fin_cases j <;>
-      simp (config := {decide := true}) [KT4, coeffList, typeEdgeVec, sum_insert] <;> omega
+      simp (config := {decide := true}) only [typeEdgeVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · intro τ hτ
     simp only [KT4, mem_insert, mem_singleton] at hτ
     rcases hτ with rfl | rfl | rfl | rfl | rfl | rfl | rfl <;>
-      simp (config := {decide := true}) [coeffList] <;> omega
+      simp (config := {decide := true}) only [coeffList, Multiset.insert_eq_cons, ite_true, ite_false, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, one_mul, zero_mul, zero_add, add_zero] <;> omega
 
 theorem lattice_KT4 (K : ℕ) :
     TrivialLattice KT4 ∧ WitnessBoundK KT4 K (KT4.card * (2 * K + 4)) :=

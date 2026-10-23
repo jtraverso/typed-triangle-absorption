@@ -185,7 +185,7 @@ theorem component_bal_walk_chi_ym (F : Finset (Multiset (Fin t))) (c : Fin t →
         ((∑ w, ∑ i ∈ indices, incidentLoad (P i) w : ℕ) : ℝ) := by exact_mod_cast h1
     rw [hsum]
     change _ ≤ n * (4 * lam * n) at h3
-    nlinarith
+    linarith
   have hwalkR : ∀ e ∈ R, ∃ c1 c2 c3, (∃ l, Link F (p (endU e)) c1 l) ∧ (∃ l, Link F c2 c1 l) ∧
       (∃ l, Link F c2 c3 l) ∧ (∃ l, Link F (p (endV e)) c3 l) := by
     intro e he
@@ -276,7 +276,7 @@ theorem component_bal_walk_chi_ym (F : Finset (Multiset (Fin t))) (c : Fin t →
     have hK0 : (0 : ℝ) ≤ ((8 * (168 + g * 168) : ℕ) : ℝ) := Nat.cast_nonneg _
     have : ((E0.lib.card * (8 * (168 + g * 168)) : ℕ) : ℝ) ≤ Kχ := by
       rw [Nat.cast_mul]
-      nlinarith [mul_le_mul_of_nonneg_left hl0 hK0]
+      linarith [mul_le_mul_of_nonneg_left hl0 hK0]
     exact_mod_cast this
   obtain ⟨ι, lib, PP, R1, href1, hR1X, hR1G, hR1in, hPsub1, hPdiv1, hPcard1, hPload1, hledger1,
       hR1card, hlibcard⟩ :=
@@ -308,9 +308,9 @@ theorem component_bal_walk_chi_ym (F : Finset (Multiset (Fin t))) (c : Fin t →
       mul_le_mul_of_nonneg_right (by linarith) hC0
     have hmain : ((X ∪ R1).card : ℝ) ≤
         2 * rho * n ^ 2 + 16 * lam * n ^ 2 + g * N * n + 108 * Kχ := by
-      nlinarith
+      linarith
     have := hcountB
-    nlinarith
+    linarith
   have hdegree : max (d0 + (θ + g + g * N) + lamT * n) (δ * n + C30) +
       C30 * (Λ0 + 44 * (θ + g + g * N) + 44 * (lamT * n)) ≤ 2 * δ * n := by
     have h := hdegB

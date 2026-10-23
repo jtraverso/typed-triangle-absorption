@@ -24,6 +24,37 @@ open PartitionedTriangleAbsorption.StructuralF3General
 open PaddedF12 PaddedGeneral VertexSplit
 open PartitionedTriangleAbsorption.BlowupB
 
+/-! Private evaluation helpers (proof-performance rewrite): a sum over a finite set of types
+weighted by `FinT.coeffList l` is the sum over the list `l`. -/
+
+private theorem sum_coeffList_mul_aux {t : ℕ} (S : Finset (Multiset (Fin t))) (f : Multiset (Fin t) → ℤ)
+    (l : List (Multiset (Fin t) × ℤ)) (hnd : (l.map Prod.fst).Nodup)
+    (hsub : ∀ k ∈ l.map Prod.fst, k ∈ S) :
+    ∑ τ ∈ S, FinT.coeffList l τ * f τ = (l.map fun p => p.2 * f p.1).sum := by
+  induction l generalizing S with
+  | nil => simp [FinT.coeffList]
+  | cons p l ih =>
+    obtain ⟨k, a⟩ := p
+    simp only [List.map_cons, List.nodup_cons, List.mem_cons, forall_eq_or_imp] at hnd hsub
+    rw [← Finset.add_sum_erase S _ hsub.1]
+    have hrest : ∑ τ ∈ S.erase k, FinT.coeffList ((k, a) :: l) τ * f τ =
+        ∑ τ ∈ S.erase k, FinT.coeffList l τ * f τ := by
+      refine Finset.sum_congr rfl fun τ hτ => ?_
+      rw [FinT.coeffList, if_neg (Finset.ne_of_mem_erase hτ)]
+    rw [hrest, ih (S.erase k) hnd.2
+      (fun x hx => Finset.mem_erase.2 ⟨fun h => hnd.1 (h ▸ hx), hsub.2 x hx⟩)]
+    simp [FinT.coeffList]
+
+private theorem sum_coeffList_smul_apply_aux {t : ℕ} (S : Finset (Multiset (Fin t)))
+    (g : Multiset (Fin t) → Fin t → ℤ) (j : Fin t)
+    (l : List (Multiset (Fin t) × ℤ)) (hnd : (l.map Prod.fst).Nodup)
+    (hsub : ∀ k ∈ l.map Prod.fst, k ∈ S) :
+    (∑ τ ∈ S, FinT.coeffList l τ • g τ) j = (l.map fun p => p.2 * g p.1 j).sum := by
+  rw [Finset.sum_apply]
+  simp only [Pi.smul_apply, smul_eq_mul]
+  exact sum_coeffList_mul_aux S (fun τ => g τ j) l hnd hsub
+
+
 
 noncomputable def F_BALC018 : Finset (Multiset (Fin 4)) := {{0, 0, 1}, {0, 1, 2}, {1, 2, 3}, {2, 3, 3}}
 
@@ -70,55 +101,71 @@ theorem localSol_BALC018_0 : BalFixer.LocalSol K_BALC018_0 σ_BALC018_0 B_BALC01
   · -- class 0
     have z3 : d 3 = 0 := by
       by_contra h
-      exact absurd (hsupp 3 h) (by unfold Link K_BALC018_0; decide)
+      exact absurd (hsupp 3 h) (by unfold Link K_BALC018_0; decide +kernel)
     simp only [Fin.sum_univ_four, Fin.isValue] at hpar
     have hb := fun h => hbal h
     simp only [B_BALC018_0, σ_BALC018_0, Fin.sum_univ_four, Fin.isValue, Matrix.cons_val_zero, Matrix.cons_val_one,
       Matrix.cons_val, Matrix.head_cons, Fin.mk_one, Finset.mem_insert, Finset.mem_singleton] at hb
     refine ⟨FinT.coeffList [({0, 0, 1}, (1 * d 0)), ({0, 1, 2}, (1 * d 2))], ?_⟩
     funext j
-    fin_cases j <;>
-      simp (config := {decide := true}) [K_BALC018_0, FinT.coeffList, typeDegVec, Finset.sum_filter,
-        Finset.sum_insert] at * <;> omega
+    rw [sum_coeffList_smul_apply_aux _ _ _ _ (by simp only [List.map_cons, List.map_nil]; decide +kernel)
+      (by simp only [List.map_cons, List.map_nil]; decide +kernel)]
+    simp only [List.map_cons, List.map_nil, List.sum_cons, List.sum_nil, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, typeDegVec]
+    try simp only [Fin.reduceFinMk, Fin.isValue, Fin.reduceEq, Matrix.cons_val_zero, Matrix.cons_val_one,
+      Matrix.cons_val, Matrix.head_cons, eq_self_iff_true, true_or, or_true, false_or, or_false, forall_const,
+      true_implies, false_implies, IsEmpty.forall_iff] at hb
+    fin_cases j <;> simp only [Fin.reduceFinMk, Fin.isValue, Fin.reduceEq, ↓reduceIte, Fin.zero_eta, Fin.mk_one, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_zero, Nat.cast_one, Int.reduceSub, Int.reduceMul, Int.reduceAdd, mul_zero, mul_one, zero_mul, add_zero, zero_add] <;> omega
   · -- class 1
     have z1 : d 1 = 0 := by
       by_contra h
-      exact absurd (hsupp 1 h) (by unfold Link K_BALC018_0; decide)
+      exact absurd (hsupp 1 h) (by unfold Link K_BALC018_0; decide +kernel)
     simp only [Fin.sum_univ_four, Fin.isValue] at hpar
     have hb := fun h => hbal h
     simp only [B_BALC018_0, σ_BALC018_0, Fin.sum_univ_four, Fin.isValue, Matrix.cons_val_zero, Matrix.cons_val_one,
       Matrix.cons_val, Matrix.head_cons, Fin.mk_one, Finset.mem_insert, Finset.mem_singleton] at hb
     refine ⟨FinT.coeffList [({0, 0, 1}, (1 * d 0 - 1 * d 2 + 1 * d 3) / 2), ({0, 1, 2}, (1 * d 2 - 1 * d 3)), ({1, 2, 3}, (1 * d 3))], ?_⟩
     funext j
-    fin_cases j <;>
-      simp (config := {decide := true}) [K_BALC018_0, FinT.coeffList, typeDegVec, Finset.sum_filter,
-        Finset.sum_insert] at * <;> omega
+    rw [sum_coeffList_smul_apply_aux _ _ _ _ (by simp only [List.map_cons, List.map_nil]; decide +kernel)
+      (by simp only [List.map_cons, List.map_nil]; decide +kernel)]
+    simp only [List.map_cons, List.map_nil, List.sum_cons, List.sum_nil, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, typeDegVec]
+    try simp only [Fin.reduceFinMk, Fin.isValue, Fin.reduceEq, Matrix.cons_val_zero, Matrix.cons_val_one,
+      Matrix.cons_val, Matrix.head_cons, eq_self_iff_true, true_or, or_true, false_or, or_false, forall_const,
+      true_implies, false_implies, IsEmpty.forall_iff] at hb
+    fin_cases j <;> simp only [Fin.reduceFinMk, Fin.isValue, Fin.reduceEq, ↓reduceIte, Fin.zero_eta, Fin.mk_one, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_zero, Nat.cast_one, Int.reduceSub, Int.reduceMul, Int.reduceAdd, mul_zero, mul_one, zero_mul, add_zero, zero_add] <;> omega
   · -- class 2
     have z2 : d 2 = 0 := by
       by_contra h
-      exact absurd (hsupp 2 h) (by unfold Link K_BALC018_0; decide)
+      exact absurd (hsupp 2 h) (by unfold Link K_BALC018_0; decide +kernel)
     simp only [Fin.sum_univ_four, Fin.isValue] at hpar
     have hb := fun h => hbal h
     simp only [B_BALC018_0, σ_BALC018_0, Fin.sum_univ_four, Fin.isValue, Matrix.cons_val_zero, Matrix.cons_val_one,
       Matrix.cons_val, Matrix.head_cons, Fin.mk_one, Finset.mem_insert, Finset.mem_singleton] at hb
     refine ⟨FinT.coeffList [({0, 1, 2}, (1 * d 0)), ({1, 2, 3}, (-1 * d 0 + 1 * d 1)), ({2, 3, 3}, (1 * d 0 - 1 * d 1 + 1 * d 3) / 2)], ?_⟩
     funext j
-    fin_cases j <;>
-      simp (config := {decide := true}) [K_BALC018_0, FinT.coeffList, typeDegVec, Finset.sum_filter,
-        Finset.sum_insert] at * <;> omega
+    rw [sum_coeffList_smul_apply_aux _ _ _ _ (by simp only [List.map_cons, List.map_nil]; decide +kernel)
+      (by simp only [List.map_cons, List.map_nil]; decide +kernel)]
+    simp only [List.map_cons, List.map_nil, List.sum_cons, List.sum_nil, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, typeDegVec]
+    try simp only [Fin.reduceFinMk, Fin.isValue, Fin.reduceEq, Matrix.cons_val_zero, Matrix.cons_val_one,
+      Matrix.cons_val, Matrix.head_cons, eq_self_iff_true, true_or, or_true, false_or, or_false, forall_const,
+      true_implies, false_implies, IsEmpty.forall_iff] at hb
+    fin_cases j <;> simp only [Fin.reduceFinMk, Fin.isValue, Fin.reduceEq, ↓reduceIte, Fin.zero_eta, Fin.mk_one, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_zero, Nat.cast_one, Int.reduceSub, Int.reduceMul, Int.reduceAdd, mul_zero, mul_one, zero_mul, add_zero, zero_add] <;> omega
   · -- class 3
     have z0 : d 0 = 0 := by
       by_contra h
-      exact absurd (hsupp 0 h) (by unfold Link K_BALC018_0; decide)
+      exact absurd (hsupp 0 h) (by unfold Link K_BALC018_0; decide +kernel)
     simp only [Fin.sum_univ_four, Fin.isValue] at hpar
     have hb := fun h => hbal h
     simp only [B_BALC018_0, σ_BALC018_0, Fin.sum_univ_four, Fin.isValue, Matrix.cons_val_zero, Matrix.cons_val_one,
       Matrix.cons_val, Matrix.head_cons, Fin.mk_one, Finset.mem_insert, Finset.mem_singleton] at hb
     refine ⟨FinT.coeffList [({1, 2, 3}, (1 * d 1)), ({2, 3, 3}, (1 * d 3))], ?_⟩
     funext j
-    fin_cases j <;>
-      simp (config := {decide := true}) [K_BALC018_0, FinT.coeffList, typeDegVec, Finset.sum_filter,
-        Finset.sum_insert] at * <;> omega
+    rw [sum_coeffList_smul_apply_aux _ _ _ _ (by simp only [List.map_cons, List.map_nil]; decide +kernel)
+      (by simp only [List.map_cons, List.map_nil]; decide +kernel)]
+    simp only [List.map_cons, List.map_nil, List.sum_cons, List.sum_nil, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, typeDegVec]
+    try simp only [Fin.reduceFinMk, Fin.isValue, Fin.reduceEq, Matrix.cons_val_zero, Matrix.cons_val_one,
+      Matrix.cons_val, Matrix.head_cons, eq_self_iff_true, true_or, or_true, false_or, or_false, forall_const,
+      true_implies, false_implies, IsEmpty.forall_iff] at hb
+    fin_cases j <;> simp only [Fin.reduceFinMk, Fin.isValue, Fin.reduceEq, ↓reduceIte, Fin.zero_eta, Fin.mk_one, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_zero, Nat.cast_one, Int.reduceSub, Int.reduceMul, Int.reduceAdd, mul_zero, mul_one, zero_mul, add_zero, zero_add] <;> omega
 
 def canon_BALC018_0 (u : Fin 4 → Fin 4 → ℤ) : Multiset (Fin 4) → ℤ :=
   FinT.coeffList [({0, 0, 1}, (1 * u 0 0)), ({0, 1, 2}, (1 * u 0 2)), ({1, 2, 3}, (1 * u 1 3)), ({2, 3, 3}, (1 * u 3 3))]
@@ -130,9 +177,9 @@ theorem scalar_BALC018_0 : ∀ u, BalFixer.BalScalarHyp K_BALC018_0 σ_BALC018_0
   obtain ⟨⟨hs, hn, hf, hp, h3⟩, hbal, hχ⟩ := hu
   simp only [χ_BALC018_0, Fin.sum_univ_four, Fin.isValue, Fin.reduceEq, ite_true, ite_false, Matrix.cons_val_zero,
     Matrix.cons_val_one, Matrix.cons_val, Matrix.head_cons] at hχ
-  have z03 : u 0 3 = 0 := hf 0 3 (by unfold Link K_BALC018_0; decide)
-  have z11 : u 1 1 = 0 := hf 1 1 (by unfold Link K_BALC018_0; decide)
-  have z22 : u 2 2 = 0 := hf 2 2 (by unfold Link K_BALC018_0; decide)
+  have z03 : u 0 3 = 0 := hf 0 3 (by unfold Link K_BALC018_0; decide +kernel)
+  have z11 : u 1 1 = 0 := hf 1 1 (by unfold Link K_BALC018_0; decide +kernel)
+  have z22 : u 2 2 = 0 := hf 2 2 (by unfold Link K_BALC018_0; decide +kernel)
   have p0 := hp 0
   have p1 := hp 1
   have p2 := hp 2
@@ -154,9 +201,15 @@ theorem scalar_BALC018_0 : ∀ u, BalFixer.BalScalarHyp K_BALC018_0 σ_BALC018_0
   have s32 := hs 3 2
   refine ⟨canon_BALC018_0 u, ?_⟩
   intro i j
+  try simp only [z03, z11, z22, s10, s20, s21, s30, s31, s32] at p0 p1 p2 p3 h3 b0 b3
+  clear hp p0 p1 p2 p3 h3
+  rw [canon_BALC018_0, sum_coeffList_mul_aux _ _ _ (by simp only [List.map_cons, List.map_nil]; decide +kernel)
+    (by simp only [List.map_cons, List.map_nil]; decide +kernel)]
+  simp only [List.map_cons, List.map_nil, List.sum_cons, List.sum_nil, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, typeEdgeVec]
   fin_cases i <;> fin_cases j <;>
-    simp (config := {decide := true}) [K_BALC018_0, canon_BALC018_0, FinT.coeffList, typeEdgeVec, Finset.sum_insert] <;>
-    omega
+    simp only [Fin.reduceFinMk, Fin.isValue, Fin.reduceEq, ↓reduceIte, Fin.zero_eta, Fin.mk_one, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_zero, Nat.cast_one, Int.reduceSub, Int.reduceMul, Int.reduceAdd, mul_zero, mul_one, zero_mul, add_zero, zero_add,
+      z03, z11, z22, s10, s20, s21, s30, s31, s32] <;>
+    clear z03 z11 z22 s10 s20 s21 s30 s31 s32 <;> omega
 
 def TP_BALC018_0 : Fin 4 → BalFixer.RootedTemplate 4 5 6 := ![⟨({s(0, 1), s(1, 2), s(2, 3), s(3, 4), s(4, 5), s(5, 0)} : Finset (Sym2 (Fin 6))), ![0, 2, 0, 1, 0, 2], by decide +kernel, by decide +kernel, by decide +kernel⟩,
   ⟨(∅ : Finset (Sym2 (Fin 6))), ![1, 1, 1, 1, 1, 1], by decide +kernel, by decide +kernel, by decide +kernel⟩,
@@ -208,27 +261,27 @@ theorem hvertχ_BALC018_0 : ∀ (r : Fin 4) (d : Fin 4 → ℤ), (∀ j, d j ≠
   · -- class 0
     have z3 : d 3 = 0 := by
       by_contra h
-      exact absurd (hsupp 3 h) (by unfold Link K_BALC018_0; decide)
+      exact absurd (hsupp 3 h) (by unfold Link K_BALC018_0; decide +kernel)
     have hb := fun h => hbal h
-    simp (config := {decide := true}) [B_BALC018_0, σ_BALC018_0, γ_BALC018_0, Fin.sum_univ_four] at hpar hb ⊢ <;> omega
+    simp only [B_BALC018_0, σ_BALC018_0, γ_BALC018_0, Fin.sum_univ_four, Fin.reduceFinMk, Fin.isValue, Fin.reduceEq, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, Matrix.head_cons, Finset.mem_insert, Finset.mem_singleton, Finset.notMem_empty, forall_const, true_implies, false_implies, IsEmpty.forall_iff, or_false, false_or, or_true, true_or] at hpar hb ⊢ <;> omega
   · -- class 1
     have z1 : d 1 = 0 := by
       by_contra h
-      exact absurd (hsupp 1 h) (by unfold Link K_BALC018_0; decide)
+      exact absurd (hsupp 1 h) (by unfold Link K_BALC018_0; decide +kernel)
     have hb := fun h => hbal h
-    simp (config := {decide := true}) [B_BALC018_0, σ_BALC018_0, γ_BALC018_0, Fin.sum_univ_four] at hpar hb ⊢ <;> omega
+    simp only [B_BALC018_0, σ_BALC018_0, γ_BALC018_0, Fin.sum_univ_four, Fin.reduceFinMk, Fin.isValue, Fin.reduceEq, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, Matrix.head_cons, Finset.mem_insert, Finset.mem_singleton, Finset.notMem_empty, forall_const, true_implies, false_implies, IsEmpty.forall_iff, or_false, false_or, or_true, true_or] at hpar hb ⊢ <;> omega
   · -- class 2
     have z2 : d 2 = 0 := by
       by_contra h
-      exact absurd (hsupp 2 h) (by unfold Link K_BALC018_0; decide)
+      exact absurd (hsupp 2 h) (by unfold Link K_BALC018_0; decide +kernel)
     have hb := fun h => hbal h
-    simp (config := {decide := true}) [B_BALC018_0, σ_BALC018_0, γ_BALC018_0, Fin.sum_univ_four] at hpar hb ⊢ <;> omega
+    simp only [B_BALC018_0, σ_BALC018_0, γ_BALC018_0, Fin.sum_univ_four, Fin.reduceFinMk, Fin.isValue, Fin.reduceEq, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, Matrix.head_cons, Finset.mem_insert, Finset.mem_singleton, Finset.notMem_empty, forall_const, true_implies, false_implies, IsEmpty.forall_iff, or_false, false_or, or_true, true_or] at hpar hb ⊢ <;> omega
   · -- class 3
     have z0 : d 0 = 0 := by
       by_contra h
-      exact absurd (hsupp 0 h) (by unfold Link K_BALC018_0; decide)
+      exact absurd (hsupp 0 h) (by unfold Link K_BALC018_0; decide +kernel)
     have hb := fun h => hbal h
-    simp (config := {decide := true}) [B_BALC018_0, σ_BALC018_0, γ_BALC018_0, Fin.sum_univ_four] at hpar hb ⊢ <;> omega
+    simp only [B_BALC018_0, σ_BALC018_0, γ_BALC018_0, Fin.sum_univ_four, Fin.reduceFinMk, Fin.isValue, Fin.reduceEq, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, Matrix.head_cons, Finset.mem_insert, Finset.mem_singleton, Finset.notMem_empty, forall_const, true_implies, false_implies, IsEmpty.forall_iff, or_false, false_or, or_true, true_or] at hpar hb ⊢ <;> omega
 
 set_option maxHeartbeats 16000000 in
 theorem hvertχ3_BALC018_0 : ∀ (r : Fin 4) (d : Fin 4 → ℤ), (∀ j, d j ≠ 0 → ∃ l, Link K_BALC018_0 r j l) →
@@ -238,27 +291,27 @@ theorem hvertχ3_BALC018_0 : ∀ (r : Fin 4) (d : Fin 4 → ℤ), (∀ j, d j �
   · -- class 0
     have z3 : d 3 = 0 := by
       by_contra h
-      exact absurd (hsupp 3 h) (by unfold Link K_BALC018_0; decide)
+      exact absurd (hsupp 3 h) (by unfold Link K_BALC018_0; decide +kernel)
     have hb := fun h => hbal h
-    simp (config := {decide := true}) [B_BALC018_0, σ_BALC018_0, γ_BALC018_03, Fin.sum_univ_four] at hpar hb ⊢ <;> omega
+    simp only [B_BALC018_0, σ_BALC018_0, γ_BALC018_03, Fin.sum_univ_four, Fin.reduceFinMk, Fin.isValue, Fin.reduceEq, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, Matrix.head_cons, Finset.mem_insert, Finset.mem_singleton, Finset.notMem_empty, forall_const, true_implies, false_implies, IsEmpty.forall_iff, or_false, false_or, or_true, true_or] at hpar hb ⊢ <;> omega
   · -- class 1
     have z1 : d 1 = 0 := by
       by_contra h
-      exact absurd (hsupp 1 h) (by unfold Link K_BALC018_0; decide)
+      exact absurd (hsupp 1 h) (by unfold Link K_BALC018_0; decide +kernel)
     have hb := fun h => hbal h
-    simp (config := {decide := true}) [B_BALC018_0, σ_BALC018_0, γ_BALC018_03, Fin.sum_univ_four] at hpar hb ⊢ <;> omega
+    simp only [B_BALC018_0, σ_BALC018_0, γ_BALC018_03, Fin.sum_univ_four, Fin.reduceFinMk, Fin.isValue, Fin.reduceEq, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, Matrix.head_cons, Finset.mem_insert, Finset.mem_singleton, Finset.notMem_empty, forall_const, true_implies, false_implies, IsEmpty.forall_iff, or_false, false_or, or_true, true_or] at hpar hb ⊢ <;> omega
   · -- class 2
     have z2 : d 2 = 0 := by
       by_contra h
-      exact absurd (hsupp 2 h) (by unfold Link K_BALC018_0; decide)
+      exact absurd (hsupp 2 h) (by unfold Link K_BALC018_0; decide +kernel)
     have hb := fun h => hbal h
-    simp (config := {decide := true}) [B_BALC018_0, σ_BALC018_0, γ_BALC018_03, Fin.sum_univ_four] at hpar hb ⊢ <;> omega
+    simp only [B_BALC018_0, σ_BALC018_0, γ_BALC018_03, Fin.sum_univ_four, Fin.reduceFinMk, Fin.isValue, Fin.reduceEq, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, Matrix.head_cons, Finset.mem_insert, Finset.mem_singleton, Finset.notMem_empty, forall_const, true_implies, false_implies, IsEmpty.forall_iff, or_false, false_or, or_true, true_or] at hpar hb ⊢ <;> omega
   · -- class 3
     have z0 : d 0 = 0 := by
       by_contra h
-      exact absurd (hsupp 0 h) (by unfold Link K_BALC018_0; decide)
+      exact absurd (hsupp 0 h) (by unfold Link K_BALC018_0; decide +kernel)
     have hb := fun h => hbal h
-    simp (config := {decide := true}) [B_BALC018_0, σ_BALC018_0, γ_BALC018_03, Fin.sum_univ_four] at hpar hb ⊢ <;> omega
+    simp only [B_BALC018_0, σ_BALC018_0, γ_BALC018_03, Fin.sum_univ_four, Fin.reduceFinMk, Fin.isValue, Fin.reduceEq, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, Matrix.head_cons, Finset.mem_insert, Finset.mem_singleton, Finset.notMem_empty, forall_const, true_implies, false_implies, IsEmpty.forall_iff, or_false, false_or, or_true, true_or] at hpar hb ⊢ <;> omega
 
 theorem hχdvd_BALC018_0 : ∀ {W : Type} [Fintype W] [DecidableEq W] (q : W → Fin 4) (E : Finset (Sym2 W)),
     (∀ e ∈ E, ¬ e.IsDiag) → TypedDivisibilityCollapse.ActiveEdges K_BALC018_0 q E →

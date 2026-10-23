@@ -183,7 +183,7 @@ theorem bal_library_chi_ym (p : W → Fin t) (G : SimpleGraph W) [DecidableRel G
   have hUd : ∀ w, (incidentLoad U w : ℝ) ≤ θ + g + g * N := by
     intro w
     have h := hUload w
-    split_ifs at h <;> nlinarith [show (0 : ℝ) ≤ g * N by positivity]
+    split_ifs at h <;> linarith [show (0 : ℝ) ≤ g * N by positivity]
   -- signed degrees of the pieces after the vertex layers
   have hbal1 : ∀ j ∈ E1.lib, ∀ v, p v ∈ Bc → vcharge (σc (p v)) p v (E1.P j) = 0 := by
     intro j hj v hv
@@ -216,7 +216,7 @@ theorem bal_library_chi_ym (p : W → Fin t) (G : SimpleGraph W) [DecidableRel G
           Int.natCast_natAbs _
         have hc : ((E1.P j).card : ℤ) ≤ S0 + g * S0 := by exact_mod_cast hsz j hj
         have : ((charge χ p (E1.P j) / u).natAbs : ℤ) ≤ 1 * (8 * (S0 + g * S0)) := by
-          rw [h2]; push_cast; nlinarith
+          rw [h2]; push_cast; linarith
         exact_mod_cast this
     calc ∑ j ∈ E1.lib, (charge χ p (E1.P j) / u).natAbs
         ≤ ∑ j ∈ E1.lib, (if charge χ p (E1.P j) = 0 then 0 else 1) * (8 * (S0 + g * S0)) :=
@@ -260,7 +260,7 @@ theorem bal_library_chi_ym (p : W → Fin t) (G : SimpleGraph W) [DecidableRel G
           have h0 : (0 : ℝ) ≤ Fintype.card W := Nat.cast_nonneg _
           have := hB6 v
           have : 6 * lamT * (Fintype.card W : ℝ) ≤ 12 * lamT * Fintype.card W := by
-            have := hlamT.le; nlinarith
+            have := hlamT.le; linarith
           linarith
         obtain ⟨tk, h1, h2, h3, h4, h5, h6⟩ := host_chi_tokens_m mχ hmχ F χ c k Tχp Tχm u hχp hχm σc
           hbχp hbχm M hMχp hMχm p G S (E1.R0 ∪ X0) ωχ lamT ρT hsχ hB12 hωχ hlamT

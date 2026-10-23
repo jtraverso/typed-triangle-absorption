@@ -62,6 +62,9 @@ theorem typeWeightKT3_symmetric (p : V → Fin 4) (z000 z001 z011 z112 z122 z223
     TernarySymmetric (typeWeightKT3 p z000 z001 z011 z112 z122 z223) := by
   unfold typeWeightKT3
   repeat' first
+    | with_reducible apply TernarySymmetric.add
+    | with_reducible exact monoTypeWeight_symmetric p _ _
+    | with_reducible exact repeatedTypeWeight_symmetric p _ _ _
     | exact monoTypeWeight_symmetric p _ _
     | exact repeatedTypeWeight_symmetric p _ _ _
     | apply TernarySymmetric.add
@@ -70,6 +73,7 @@ theorem typeWeightKT3_supported (p : V → Fin 4) (z000 z001 z011 z112 z122 z223
     TernarySupported p KT3 (typeWeightKT3 p z000 z001 z011 z112 z122 z223) := by
   unfold typeWeightKT3
   repeat' first
+    | with_reducible apply TernarySupported.add
     | exact monoTypeWeight_supported p KT3 _ (by unfold Link KT3; decide) _
     | exact aabLift_supported p KT3 _ _ (by decide) (by unfold Link KT3; decide) _
     | apply TernarySupported.add
@@ -184,6 +188,9 @@ theorem vertexWeightKT3_symmetric (p : V → Fin 4) (d : V → Fin 4 → ℝ) :
     TernarySymmetric (vertexWeightKT3 p d) := by
   unfold vertexWeightKT3
   repeat' first
+    | with_reducible apply TernarySymmetric.add
+    | with_reducible exact repeatedVertexWeight_symmetric p _ _ _
+    | with_reducible exact singletonVertexWeight_symmetric p _ _ _
     | exact repeatedVertexWeight_symmetric p _ _ _
     | exact singletonVertexWeight_symmetric p _ _ _
     | apply TernarySymmetric.add
@@ -192,6 +199,7 @@ theorem vertexWeightKT3_supported (p : V → Fin 4) (d : V → Fin 4 → ℝ) :
     TernarySupported p KT3 (vertexWeightKT3 p d) := by
   unfold vertexWeightKT3
   repeat' first
+    | with_reducible apply TernarySupported.add
     | exact aabLift_supported p KT3 _ _ (by decide) (by unfold Link KT3; decide) _
     | apply TernarySupported.add
 
@@ -255,6 +263,9 @@ theorem zeroRowWeightKT3_symmetric (p : V → Fin 4) (g : V → V → ℝ)
     (hs : ∀ a b, g a b = g b a) : TernarySymmetric (zeroRowWeightKT3 p g) := by
   unfold zeroRowWeightKT3
   repeat' first
+    | with_reducible apply TernarySymmetric.add
+    | with_reducible exact internalPairWeight_symmetric p _ _ g hs
+    | with_reducible exact repeatedPairWeight_symmetric p _ _ g
     | exact internalPairWeight_symmetric p _ _ g hs
     | exact repeatedPairWeight_symmetric p _ _ g
     | apply TernarySymmetric.add
@@ -263,6 +274,7 @@ theorem zeroRowWeightKT3_supported (p : V → Fin 4) (g : V → V → ℝ) :
     TernarySupported p KT3 (zeroRowWeightKT3 p g) := by
   unfold zeroRowWeightKT3
   repeat' first
+    | with_reducible apply TernarySupported.add
     | exact aabLift_supported p KT3 _ _ (by decide) (by unfold Link KT3; decide) _
     | apply TernarySupported.add
 

@@ -178,7 +178,7 @@ theorem bal_library_chi (p : W → Fin t) (G : SimpleGraph W) [DecidableRel G.Ad
   have hUd : ∀ w, (incidentLoad U w : ℝ) ≤ θ + g + g * N := by
     intro w
     have h := hUload w
-    split_ifs at h <;> nlinarith [show (0 : ℝ) ≤ g * N by positivity]
+    split_ifs at h <;> linarith [show (0 : ℝ) ≤ g * N by positivity]
   -- signed degrees of the pieces after the vertex layers
   have hbal1 : ∀ j ∈ E1.lib, ∀ v, p v ∈ Bc → vcharge (σc (p v)) p v (E1.P j) = 0 := by
     intro j hj v hv

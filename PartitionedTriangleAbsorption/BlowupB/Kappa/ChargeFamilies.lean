@@ -88,8 +88,12 @@ theorem scalar_KCa (u : Fin 4 → Fin 4 → ℤ) (hs : ∀ i j, u i j = u j i)
     ({0,1,1}, u 1 1 - u 1 3 / 2),
     ({1,1,3}, u 1 3 / 2)], ?_⟩
   intro i j
+  rw [KCa]
+  repeat rw [Finset.sum_insert (by decide)]
+  rw [Finset.sum_singleton]
+  simp (config := {decide := true}) only [coeffList, ite_true, ite_false]
   fin_cases i <;> fin_cases j <;>
-    simp (config := {decide := true}) [KCa, coeffList, typeEdgeVec, sum_insert] <;> omega
+    simp (config := {decide := true}) only [typeEdgeVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
 
 set_option maxHeartbeats 4000000 in
 theorem lower_KCa (u : Fin 4 → Fin 4 → ℤ) (c : Multiset (Fin 4) → ℤ)
@@ -97,7 +101,7 @@ theorem lower_KCa (u : Fin 4 → Fin 4 → ℤ) (c : Multiset (Fin 4) → ℤ)
     ∀ τ ∈ KCa, -(totalU u) ≤ c τ := by
   have e00 := h 0 0; have e01 := h 0 1; have e02 := h 0 2; have e11 := h 1 1
   have e13 := h 1 3; have e22 := h 2 2; have e33 := h 3 3
-  simp (config := {decide := true}) [KCa, typeEdgeVec, sum_insert] at e00 e01 e02 e11 e13 e22 e33
+  simp (config := {decide := true}) only [KCa, Finset.sum_insert, Finset.mem_insert, Finset.mem_singleton, Finset.sum_singleton, typeEdgeVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] at e00 e01 e02 e11 e13 e22 e33
   unfold totalU
   simp only [Fin.sum_univ_four, Fin.isValue, Fin.reduceLE, ite_true, ite_false, le_refl]
   have s10 := hs 1 0; have s20 := hs 2 0; have s30 := hs 3 0
@@ -226,8 +230,12 @@ theorem scalar_KCb (u : Fin 4 → Fin 4 → ℤ) (hs : ∀ i j, u i j = u j i)
     ({0,2,2}, u 2 2),
     ({1,1,3}, u 1 3 / 2)], ?_⟩
   intro i j
+  rw [KCb]
+  repeat rw [Finset.sum_insert (by decide)]
+  rw [Finset.sum_singleton]
+  simp (config := {decide := true}) only [coeffList, ite_true, ite_false]
   fin_cases i <;> fin_cases j <;>
-    simp (config := {decide := true}) [KCb, coeffList, typeEdgeVec, sum_insert] <;> omega
+    simp (config := {decide := true}) only [typeEdgeVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
 
 set_option maxHeartbeats 4000000 in
 theorem lower_KCb (u : Fin 4 → Fin 4 → ℤ) (c : Multiset (Fin 4) → ℤ)
@@ -235,7 +243,7 @@ theorem lower_KCb (u : Fin 4 → Fin 4 → ℤ) (c : Multiset (Fin 4) → ℤ)
     ∀ τ ∈ KCb, -(totalU u) ≤ c τ := by
   have e00 := h 0 0; have e01 := h 0 1; have e02 := h 0 2; have e11 := h 1 1
   have e13 := h 1 3; have e22 := h 2 2; have e33 := h 3 3
-  simp (config := {decide := true}) [KCb, typeEdgeVec, sum_insert] at e00 e01 e02 e11 e13 e22 e33
+  simp (config := {decide := true}) only [KCb, Finset.sum_insert, Finset.mem_insert, Finset.mem_singleton, Finset.sum_singleton, typeEdgeVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] at e00 e01 e02 e11 e13 e22 e33
   unfold totalU
   simp only [Fin.sum_univ_four, Fin.isValue, Fin.reduceLE, ite_true, ite_false, le_refl]
   have s10 := hs 1 0; have s20 := hs 2 0; have s30 := hs 3 0

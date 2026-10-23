@@ -52,11 +52,11 @@ theorem bal_base_t (L : ℕ) (hL6 : 6 ≤ L) (ω δ ρ n : ℝ) (hfl : FlexScale
     exact mul_right_cancel₀ hω.ne' e
   have h1153 : (1153 : ℝ) ≤ b * ω := by
     have := h0.a12
-    nlinarith
+    linarith
   have hNω : (N : ℝ) ≤ 2 ^ 27 * b * ω := by
     have e : 576 * Λ0 + 1 = 576 * 12288 * (lam * n) + 1152 * Q + 1153 := by rw [hΛdef]; ring
     rw [e, hQbω] at hN2
-    nlinarith
+    linarith
   have hθω : θ * ω = 2 ^ 6 * (g + 1) * N := by rw [hθdef]; field_simp
   have hNpos : (1 : ℝ) ≤ N := by have := h0.Λpos; linarith
   have h2L6 : (2 : ℝ) ^ 6 ≤ 2 ^ L := pow_le_pow_right₀ (by norm_num) hL6
@@ -67,26 +67,26 @@ theorem bal_base_t (L : ℕ) (hL6 : 6 ≤ L) (ω δ ρ n : ℝ) (hfl : FlexScale
   · rw [h0.D]; ring
   · -- N ≤ 2^21 (64 b)
     have : b * ω ≤ b := by nlinarith [h0.ω_le]
-    nlinarith
+    linarith
   · rw [hθdef]; positivity
   · -- θ ≤ 2^27 (g + 1) (64 b)
     rw [← mul_le_mul_iff_of_pos_right hω, hθω]
     have h1 : 2 ^ 6 * ((g : ℝ) + 1) * N ≤ 2 ^ 6 * (g + 1) * (2 ^ 27 * b * ω) :=
       mul_le_mul_of_nonneg_left hNω (by positivity)
-    nlinarith
+    linarith
   · -- 2 g N n / θ ≤ ω n / 32
     have e : 2 * (g : ℝ) * N * n / θ = 2 * g * (ω * n) / (2 ^ 6 * (g + 1)) := by
       rw [hθdef]; field_simp
     rw [e, div_le_div_iff₀ (by positivity) (by norm_num)]
     have hWn : (0 : ℝ) ≤ ω * n := by positivity
-    nlinarith [mul_nonneg hg0 hWn]
+    linarith [mul_nonneg hg0 hWn]
   · have := h0.lnn; have : (0 : ℝ) ≤ b * (ω * n) := by positivity
-    nlinarith
+    linarith
   · have := h0.rnn; have : (0 : ℝ) ≤ b * (ω * n) := by positivity
-    nlinarith
+    linarith
   · -- N n ≤ 2^21 (64 b) (ω n)
     have := mul_le_mul_of_nonneg_right hNω hn.le
-    nlinarith
+    linarith
 
 /-- The numerical hypotheses of `component_bal_walk_tors`, for `n` vertices and `γ = ω`. -/
 structure TorsNumeric (ω δ ρ n lam Q θ lamT ρT : ℝ) (N g m C t q : ℕ) : Prop where
@@ -149,7 +149,7 @@ theorem tors_scales (L : ℕ) (ω δ ρ n : ℝ) (hfl : FlexScalesL L ω δ ρ n
       have h1 : (1 : ℝ) ≤ (30 * C + 1) * (g + 1) := by nlinarith
       have h2 : (1 : ℝ) ≤ (m + 2) * (t + 1) := by nlinarith
       nlinarith
-    nlinarith
+    linarith
   have hΛ0 : 0 ≤ Λ0 := by
     have := hfl.n_nonneg; have := hfl.ω_pos
     have hlam : 0 ≤ lam := by rw [hlamdef]; have := hfl.δ_pos; positivity
@@ -165,7 +165,7 @@ theorem tors_scales (L : ℕ) (ω δ ρ n : ℝ) (hfl : FlexScalesL L ω δ ρ n
   have hb0 : 0 ≤ b := by linarith
   have hDb : δ * n = P * b := h.D
   have hPL : (2 : ℝ) ^ 40 * ((30 * C + 1) * (g + 1) * (m + 2) * (t + 1)) ≤ P := by
-    rw [hP, le_div_iff₀ (by norm_num)]; nlinarith
+    rw [hP, le_div_iff₀ (by norm_num)]; linarith
   have hA1 : (1 : ℝ) ≤ (30 * C + 1) * (g + 1) := by nlinarith
   have hA2 : (1 : ℝ) ≤ (m + 2) * (t + 1) := by nlinarith
   have hP1 : (2 : ℝ) ^ 40 * ((30 * C + 1) * (g + 1)) ≤ P := by
@@ -173,13 +173,13 @@ theorem tors_scales (L : ℕ) (ω δ ρ n : ℝ) (hfl : FlexScalesL L ω δ ρ n
       have e : (30 * (C : ℝ) + 1) * (g + 1) * (m + 2) * (t + 1) =
           ((30 * C + 1) * (g + 1)) * ((m + 2) * (t + 1)) := by ring
       rw [e]; nlinarith
-    nlinarith
+    linarith
   have hP2 : (2 : ℝ) ^ 40 * ((g + 1) * (m + 2)) ≤ P := by
     have : ((g : ℝ) + 1) * (m + 2) ≤ (30 * C + 1) * (g + 1) * (m + 2) * (t + 1) := by
       have h0 : (0 : ℝ) ≤ (g + 1) * (m + 2) := by positivity
       have h1 : (1 : ℝ) ≤ (30 * C + 1) * (t + 1) := by nlinarith
       nlinarith
-    nlinarith
+    linarith
   have hP3 : (2 : ℝ) ^ 40 * (((g : ℝ) + 1) * (t + 1) + C) ≤ P := by
     have : ((g : ℝ) + 1) * (t + 1) + C ≤ (30 * C + 1) * (g + 1) * (m + 2) * (t + 1) := by
       have e : (30 * (C : ℝ) + 1) * (g + 1) * (m + 2) * (t + 1) =
@@ -188,7 +188,7 @@ theorem tors_scales (L : ℕ) (ω δ ρ n : ℝ) (hfl : FlexScalesL L ω δ ρ n
       have h0 : (1 : ℝ) ≤ (g + 1) * (t + 1) := by nlinarith
       have h1 : 2 + (C : ℝ) ≤ (30 * C + 1) * (m + 2) := by nlinarith
       nlinarith
-    nlinarith
+    linarith
   have hlamTn : lamT * n = Λ0 := by rw [hlamTdef, div_mul_cancel₀ _ hn.ne']
   have hΛb := h.Λb
   have hQb := h.Qb
@@ -197,7 +197,7 @@ theorem tors_scales (L : ℕ) (ω δ ρ n : ℝ) (hfl : FlexScalesL L ω δ ρ n
     rw [hΛdef]
     have := mul_le_mul_of_nonneg_right h.rho_lam hn.le
     have := h.a12
-    nlinarith
+    linarith
   have hW : 2 ^ 63 * (δ * n) ≤ ω * n := h.W
   have hgN : (g : ℝ) * N ≤ g * (2 ^ 21 * b) := mul_le_mul_of_nonneg_left h.Nb hg0
   -- the first-order quantity
@@ -205,7 +205,7 @@ theorem tors_scales (L : ℕ) (ω δ ρ n : ℝ) (hfl : FlexScalesL L ω δ ρ n
       (θ + g + g * N) ≤ 2 ^ 29 * (g + 1) * b := by
     rw [hlamTn]
     have := h.θb
-    nlinarith [mul_le_mul_of_nonneg_left hb1 hg0, mul_nonneg hg0 hb0]
+    linarith [mul_le_mul_of_nonneg_left hb1 hg0, mul_nonneg hg0 hb0]
   refine ⟨h.lam_pos, by linarith [h.lam_ω, h.ω_le], h.rho_pos, h.scale, h.rho_n,
     by linarith [h.a12], h.δ_pos, h.Qpos, h.θpos, h.lam_ω, est_path h, h.ω_le, ?_, ?_, ?_, ?_, ?_, ?_, ?_,
     ?_, ?_, ?_, ?_, ?_⟩
@@ -214,9 +214,9 @@ theorem tors_scales (L : ℕ) (ω δ ρ n : ℝ) (hfl : FlexScalesL L ω δ ρ n
     rw [hlamTdef, mul_div_assoc', div_le_iff₀ hn]
     have : 1024 * (2 ^ 17 * b) ≤ ω * n := by
       have h1 : 2 ^ 63 * (P * b) ≤ ω * n := by rw [← hDb]; exact hW
-      have h2 : (1 : ℝ) ≤ P := le_trans (by nlinarith) hP1
+      have h2 : (1 : ℝ) ≤ P := le_trans (by linarith) hP1
       nlinarith
-    nlinarith
+    linarith
   · rw [hρTdef]; have := h.rho_pos; positivity
   · -- 2^32 ρT ≤ lamT²
     rw [hρTdef]
@@ -226,13 +226,13 @@ theorem tors_scales (L : ℕ) (ω δ ρ n : ℝ) (hfl : FlexScalesL L ω δ ρ n
       have hQ' : 2 ^ 15 * (lam * n) ≤ Q := by
         have := h.ω_le; have := h.Qpos
         nlinarith
-      nlinarith [h.lam_pos]
+      linarith [h.lam_pos]
     have h1 : (2 ^ 16 * lam) ^ 2 ≤ lamT ^ 2 := by
       have : 0 ≤ 2 ^ 16 * lam := by have := h.lam_pos; positivity
       nlinarith
     have := h.scale
     nlinarith
-  · rw [hρTdef]; nlinarith [h.rho_n]
+  · rw [hρTdef]; linarith [h.rho_n]
   · -- d6
     rw [show 6 * lamT * n = 6 * (lamT * n) by ring, hlamTn]
     linarith
@@ -252,7 +252,7 @@ theorem tors_scales (L : ℕ) (ω δ ρ n : ℝ) (hfl : FlexScalesL L ω δ ρ n
         2 * (Q + (4096 * lam * n + 1)))) + lamT * n + θ + g + 2 * g * N) ≤
         2 ^ 31 * ((g + 1) * (m + 2)) * b := by
       have hx : (2 * ρ * n + (4 * lam * n + 2 * (Q + (4096 * lam * n + 1)))) + lamT * n + θ + g +
-          2 * g * N ≤ 2 ^ 30 * (g + 1) * b := by nlinarith [mul_nonneg hg0 hb0]
+          2 * g * N ≤ 2 ^ 30 * (g + 1) * b := by linarith [mul_nonneg hg0 hb0]
       have hm2 : (0 : ℝ) ≤ m + 1 := by positivity
       have := mul_le_mul_of_nonneg_left hx hm2
       nlinarith [mul_nonneg hm0 hb0, mul_nonneg hg0 hb0, mul_nonneg (mul_nonneg hm0 hg0) hb0]
@@ -261,17 +261,17 @@ theorem tors_scales (L : ℕ) (ω δ ρ n : ℝ) (hfl : FlexScalesL L ω δ ρ n
       have h2 : 2 ^ 40 * (((g : ℝ) + 1) * (m + 2)) * b ≤ P * b :=
         mul_le_mul_of_nonneg_right hP2 hb0
       have hpos : 0 < ((g : ℝ) + 1) * (m + 2) * b := by positivity
-      nlinarith
+      linarith
     have hωn : 0 < ω * n := mul_pos h.ω_pos hn
     linarith
   · -- embed
     push_cast
     have hcons : 2 * ((168 + 3 * (q : ℝ) * 6) + g * (168 + 3 * q * 6)) + 5 * t + 9 * C ≤
         2 ^ 10 * (((g : ℝ) + 1) * (t + 1) + C) := by
-      nlinarith [mul_nonneg hg0 ht0, mul_le_mul_of_nonneg_left hqc hg0]
+      linarith [mul_nonneg hg0 ht0, mul_le_mul_of_nonneg_left hqc hg0]
     have hD0 : 0 ≤ δ * n := by rw [hDb]; positivity
     have hDP : 2 ^ 40 * (((g : ℝ) + 1) * (t + 1) + C) ≤ δ * n := by
-      rw [hDb]; nlinarith [mul_le_mul_of_nonneg_left hb1 (le_trans (by positivity) hP3)]
+      rw [hDb]; linarith [mul_le_mul_of_nonneg_left hb1 (le_trans (by positivity) hP3)]
     nlinarith
   · -- deg
     push_cast
@@ -281,13 +281,13 @@ theorem tors_scales (L : ℕ) (ω δ ρ n : ℝ) (hfl : FlexScalesL L ω δ ρ n
       have : 2 ^ 29 * ((g : ℝ) + 1) * b ≤ 2 ^ 40 * ((30 * (C : ℝ) + 1) * (g + 1)) * b := by
         have hx : 0 ≤ (g + 1) * b := by positivity
         nlinarith
-      nlinarith [mul_le_mul_of_nonneg_right hP1 hb0]
+      linarith [mul_le_mul_of_nonneg_right hP1 hb0]
     have hC30 : 30 * (C : ℝ) ≤ δ * n / 2 := by
       rw [hDb]
       have : 30 * (C : ℝ) * 2 ≤ 2 ^ 40 * ((30 * (C : ℝ) + 1) * (g + 1)) * b := by
         have hx : 1 ≤ (g + 1) * b := by nlinarith
         nlinarith
-      nlinarith [mul_le_mul_of_nonneg_right hP1 hb0]
+      linarith [mul_le_mul_of_nonneg_right hP1 hb0]
     have hmax : max ((2 * ρ * n + (4 * lam * n + 2 * (Q + (4096 * lam * n + 1))) + lamT * n) +
         (θ + g + g * N)) (δ * n + 30 * C) ≤ δ * n + 30 * C :=
       max_le (by linarith) le_rfl
@@ -296,7 +296,7 @@ theorem tors_scales (L : ℕ) (ω δ ρ n : ℝ) (hfl : FlexScalesL L ω δ ρ n
       rw [hlamTn, ← hΛdef]
       have := h.θb
       have : (q : ℝ) * Λ0 ≤ 12 * (2 ^ 17 * b) := by nlinarith
-      nlinarith [mul_le_mul_of_nonneg_left hb1 hg0, mul_nonneg hg0 hb0]
+      linarith [mul_le_mul_of_nonneg_left hb1 hg0, mul_nonneg hg0 hb0]
     have hprod : 30 * (C : ℝ) * ((q * (4096 * lam * n + 2 * (Q + (4096 * lam * n + 1))) +
         4 * q * (lamT * n)) + 44 * (θ + g + g * N)) ≤ δ * n / 2 := by
       have h1 := mul_le_mul_of_nonneg_left hload (by positivity : (0 : ℝ) ≤ 30 * C)
@@ -305,7 +305,7 @@ theorem tors_scales (L : ℕ) (ω δ ρ n : ℝ) (hfl : FlexScalesL L ω δ ρ n
           2 ^ 40 * ((30 * (C : ℝ) + 1) * (g + 1)) * b / 2 := by
         have hx : 0 ≤ (g + 1) * b := by positivity
         nlinarith
-      nlinarith [mul_le_mul_of_nonneg_right hP1 hb0]
+      linarith [mul_le_mul_of_nonneg_right hP1 hb0]
     linarith
   · -- count
     push_cast
@@ -316,26 +316,26 @@ theorem tors_scales (L : ℕ) (ω δ ρ n : ℝ) (hfl : FlexScalesL L ω δ ρ n
     have hl := h.lnn
     have h1 : (g : ℝ) * N * n ≤ g * (2 ^ 21 * X) := by
       have := mul_le_mul_of_nonneg_left h.Nn hg0
-      rw [hX]; nlinarith
+      rw [hX]; linarith
     have hq1224 : (q : ℝ) * (1224 * ρ * n ^ 2) ≤ 12 * (1224 * X) := by
       have : 0 ≤ ρ * n ^ 2 := by have := h.rho_pos; positivity
       nlinarith
     have h2 : 2 * q * (1224 * ρ * n ^ 2) + 11 * N * n ≤ 24 * (1224 * X) + 11 * (2 ^ 21 * X) := by
       have := h.Nn
-      rw [hX]; nlinarith
+      rw [hX]; linarith
     have h3 : (2 * q * (1224 * ρ * n ^ 2) + 11 * N * n) * (30 * C) ≤
         (24 * (1224 * X) + 11 * (2 ^ 21 * X)) * (30 * C) :=
       mul_le_mul_of_nonneg_right h2 (by positivity)
     have hsum : 4 * (2 * ρ * n ^ 2 + 16 * lam * n ^ 2 + 6 * (q * (1224 * ρ * n ^ 2)) + g * N * n +
         (2 * q * (1224 * ρ * n ^ 2) + 11 * N * n) * (30 * C)) ≤
         2 ^ 35 * ((30 * C + 1) * (g + 1)) * X := by
-      nlinarith [mul_nonneg hg0 hX0, mul_nonneg hC0 hX0, mul_nonneg (mul_nonneg hC0 hg0) hX0]
+      linarith [mul_nonneg hg0 hX0, mul_nonneg hC0 hX0, mul_nonneg (mul_nonneg hC0 hg0) hX0]
     have hfin : 2 ^ 35 * ((30 * (C : ℝ) + 1) * (g + 1)) * X ≤ (δ * n) * (ω * n) := by
       rw [hDb]
       have : 2 ^ 35 * ((30 * (C : ℝ) + 1) * (g + 1)) * X ≤ P * X :=
-        mul_le_mul_of_nonneg_right (by nlinarith) hX0
+        mul_le_mul_of_nonneg_right (by linarith) hX0
       rw [hX] at this ⊢
-      nlinarith
+      linarith
     linarith
 
 end PartitionedTriangleAbsorption.BlowupB.BalFixer

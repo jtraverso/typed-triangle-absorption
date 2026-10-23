@@ -181,7 +181,7 @@ theorem component_bal_walk_tors (F : Finset (Multiset (Fin t))) (c : Fin t → F
         ((∑ w, ∑ i ∈ indices, incidentLoad (P i) w : ℕ) : ℝ) := by exact_mod_cast h1
     rw [hsum]
     change _ ≤ n * (4 * lam * n) at h3
-    nlinarith
+    linarith
   have hwalkR : ∀ e ∈ R, ∃ c1 c2 c3, (∃ l, Link F (p (endU e)) c1 l) ∧ (∃ l, Link F c2 c1 l) ∧
       (∃ l, Link F c2 c3 l) ∧ (∃ l, Link F (p (endV e)) c3 l) := by
     intro e he
@@ -312,9 +312,9 @@ theorem component_bal_walk_tors (F : Finset (Multiset (Fin t))) (c : Fin t → F
       mul_le_mul_of_nonneg_right hl1 hC0
     have hmain : ((X ∪ R1).card : ℝ) ≤
         2 * rho * n ^ 2 + 16 * lam * n ^ 2 + 6 * (q * (1224 * rho * n ^ 2)) + g * N * n := by
-      nlinarith
+      linarith
     have := hcountB
-    nlinarith
+    linarith
   have hdegree : max ((d0 + lamT * n) + (θ + g + g * N)) (δ * n + C30) +
       C30 * ((q * Λ0 + 4 * q * (lamT * n)) + 44 * (θ + g + g * N)) ≤ 2 * δ * n := by
     have h := hdegB

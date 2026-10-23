@@ -57,8 +57,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({0, 0, 0}, (d 0 - (0)) / 2)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 1
     have z0 : d 0 = 0 := by
       by_contra h
@@ -84,8 +88,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({0, 0, 0}, 0)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 2
     have z0 : d 0 = 0 := by
       by_contra h
@@ -111,8 +119,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({0, 0, 0}, 0)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 3
     have z0 : d 0 = 0 := by
       by_contra h
@@ -138,8 +150,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({0, 0, 0}, 0)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 4
     have z0 : d 0 = 0 := by
       by_contra h
@@ -165,8 +181,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({0, 0, 0}, 0)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 5
     have z0 : d 0 = 0 := by
       by_contra h
@@ -192,8 +212,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({0, 0, 0}, 0)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 6
     have z0 : d 0 = 0 := by
       by_contra h
@@ -219,8 +243,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({0, 0, 0}, 0)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
 
 def canon (u : Fin 7 → Fin 7 → ℤ) : Multiset (Fin 7) → ℤ :=
   FinT.coeffList [({0, 0, 0}, (u 0 0 - (0)) / 3)]
@@ -289,8 +317,15 @@ theorem scalar : ∀ u, BalFixer.BalScalarHyp K σ B (fun _ _ => 0) u →
   have s65 := hs 6 5
   refine ⟨canon u, ?_⟩
   intro i j
+  rw [K]
+  repeat rw [Finset.sum_insert (by decide)]
+  rw [Finset.sum_singleton]
+  simp (config := {decide := true}) only [canon, FinT.coeffList, ite_true, ite_false]
+  have hqv0 : (u 0 0 - (0)) / 3 * 3 = u 0 0 - (0) := Int.ediv_mul_cancel (by omega)
+  generalize (u 0 0 - (0)) / 3 = qv0 at *
+  clear p0 p1 p2 p3 p4 p5 p6 h3
   fin_cases i <;> fin_cases j <;>
-    simp (config := {decide := true}) [K, canon, FinT.coeffList, typeEdgeVec, Finset.sum_insert] <;>
+    simp (config := {decide := true}) only [typeEdgeVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;>
     omega
 
 def data : StarCertificateData K c 0 where
@@ -372,8 +407,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({2, 2, 2}, 0)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 1
     have z0 : d 0 = 0 := by
       by_contra h
@@ -399,8 +438,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({2, 2, 2}, 0)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 2
     have z0 : d 0 = 0 := by
       by_contra h
@@ -423,8 +466,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({2, 2, 2}, (d 2 - (0)) / 2)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 3
     have z0 : d 0 = 0 := by
       by_contra h
@@ -450,8 +497,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({2, 2, 2}, 0)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 4
     have z0 : d 0 = 0 := by
       by_contra h
@@ -477,8 +528,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({2, 2, 2}, 0)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 5
     have z0 : d 0 = 0 := by
       by_contra h
@@ -504,8 +559,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({2, 2, 2}, 0)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 6
     have z0 : d 0 = 0 := by
       by_contra h
@@ -531,8 +590,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({2, 2, 2}, 0)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
 
 def canon (u : Fin 7 → Fin 7 → ℤ) : Multiset (Fin 7) → ℤ :=
   FinT.coeffList [({2, 2, 2}, (u 2 2 - (0)) / 3)]
@@ -601,8 +664,15 @@ theorem scalar : ∀ u, BalFixer.BalScalarHyp K σ B (fun _ _ => 0) u →
   have s65 := hs 6 5
   refine ⟨canon u, ?_⟩
   intro i j
+  rw [K]
+  repeat rw [Finset.sum_insert (by decide)]
+  rw [Finset.sum_singleton]
+  simp (config := {decide := true}) only [canon, FinT.coeffList, ite_true, ite_false]
+  have hqv0 : (u 2 2 - (0)) / 3 * 3 = u 2 2 - (0) := Int.ediv_mul_cancel (by omega)
+  generalize (u 2 2 - (0)) / 3 = qv0 at *
+  clear p0 p1 p2 p3 p4 p5 p6 h3
   fin_cases i <;> fin_cases j <;>
-    simp (config := {decide := true}) [K, canon, FinT.coeffList, typeEdgeVec, Finset.sum_insert] <;>
+    simp (config := {decide := true}) only [typeEdgeVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;>
     omega
 
 def data : StarCertificateData K c 2 where
@@ -684,8 +754,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({5, 6, 6}, 0)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 1
     have z0 : d 0 = 0 := by
       by_contra h
@@ -711,8 +785,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({5, 6, 6}, 0)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 2
     have z0 : d 0 = 0 := by
       by_contra h
@@ -738,8 +816,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({5, 6, 6}, 0)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 3
     have z0 : d 0 = 0 := by
       by_contra h
@@ -765,8 +847,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({5, 6, 6}, 0)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 4
     have z0 : d 0 = 0 := by
       by_contra h
@@ -792,8 +878,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({5, 6, 6}, 0)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 5
     have z0 : d 0 = 0 := by
       by_contra h
@@ -816,8 +906,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({5, 6, 6}, d 6 / 2)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 6
     have z0 : d 0 = 0 := by
       by_contra h
@@ -839,8 +933,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp [σ, sum_fin] at hb
     refine ⟨FinT.coeffList [({5, 6, 6}, d 5)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
 
 def canon (u : Fin 7 → Fin 7 → ℤ) : Multiset (Fin 7) → ℤ :=
   FinT.coeffList [({5, 6, 6}, u 6 5 / 2)]
@@ -910,8 +1008,12 @@ theorem scalar : ∀ u, BalFixer.BalScalarHyp K σ B (fun _ _ => 0) u →
   have s65 := hs 6 5
   refine ⟨canon u, ?_⟩
   intro i j
+  rw [K]
+  repeat rw [Finset.sum_insert (by decide)]
+  rw [Finset.sum_singleton]
+  simp (config := {decide := true}) only [canon, FinT.coeffList, ite_true, ite_false]
   fin_cases i <;> fin_cases j <;>
-    simp (config := {decide := true}) [K, canon, FinT.coeffList, typeEdgeVec, Finset.sum_insert] <;>
+    simp (config := {decide := true}) only [typeEdgeVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;>
     omega
 
 def TP (_ : Fin 7) : BalFixer.RootedTemplate 7 4 5 :=
@@ -1023,8 +1125,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({0, 0, 0}, (d 0 - (d 1)) / 2), ({0, 0, 1}, d 1)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 1
     have z1 : d 1 = 0 := by
       by_contra h
@@ -1047,8 +1153,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({0, 0, 0}, 0), ({0, 0, 1}, d 0 / 2)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 2
     have z0 : d 0 = 0 := by
       by_contra h
@@ -1074,8 +1184,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({0, 0, 0}, 0), ({0, 0, 1}, 0)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 3
     have z0 : d 0 = 0 := by
       by_contra h
@@ -1101,8 +1215,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({0, 0, 0}, 0), ({0, 0, 1}, 0)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 4
     have z0 : d 0 = 0 := by
       by_contra h
@@ -1128,8 +1246,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({0, 0, 0}, 0), ({0, 0, 1}, 0)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 5
     have z0 : d 0 = 0 := by
       by_contra h
@@ -1155,8 +1277,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({0, 0, 0}, 0), ({0, 0, 1}, 0)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 6
     have z0 : d 0 = 0 := by
       by_contra h
@@ -1182,8 +1308,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({0, 0, 0}, 0), ({0, 0, 1}, 0)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
 
 def canon (u : Fin 7 → Fin 7 → ℤ) : Multiset (Fin 7) → ℤ :=
   FinT.coeffList [({0, 0, 0}, (u 0 0 - (u 0 1 / 2)) / 3), ({0, 0, 1}, u 0 1 / 2)]
@@ -1251,8 +1381,12 @@ theorem scalar : ∀ u, BalFixer.BalScalarHyp K σ B (fun _ _ => 0) u →
   have s65 := hs 6 5
   refine ⟨canon u, ?_⟩
   intro i j
+  rw [K]
+  repeat rw [Finset.sum_insert (by decide)]
+  rw [Finset.sum_singleton]
+  simp (config := {decide := true}) only [canon, FinT.coeffList, ite_true, ite_false]
   fin_cases i <;> fin_cases j <;>
-    simp (config := {decide := true}) [K, canon, FinT.coeffList, typeEdgeVec, Finset.sum_insert] <;>
+    simp (config := {decide := true}) only [typeEdgeVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;>
     omega
 
 def data : StarCertificateData K c 0 where
@@ -1334,8 +1468,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({3, 3, 3}, 0)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 1
     have z0 : d 0 = 0 := by
       by_contra h
@@ -1361,8 +1499,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({3, 3, 3}, 0)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 2
     have z0 : d 0 = 0 := by
       by_contra h
@@ -1388,8 +1530,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({3, 3, 3}, 0)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 3
     have z0 : d 0 = 0 := by
       by_contra h
@@ -1412,8 +1558,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({3, 3, 3}, (d 3 - (0)) / 2)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 4
     have z0 : d 0 = 0 := by
       by_contra h
@@ -1439,8 +1589,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({3, 3, 3}, 0)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 5
     have z0 : d 0 = 0 := by
       by_contra h
@@ -1466,8 +1620,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({3, 3, 3}, 0)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 6
     have z0 : d 0 = 0 := by
       by_contra h
@@ -1493,8 +1651,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({3, 3, 3}, 0)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
 
 def canon (u : Fin 7 → Fin 7 → ℤ) : Multiset (Fin 7) → ℤ :=
   FinT.coeffList [({3, 3, 3}, (u 3 3 - (0)) / 3)]
@@ -1563,8 +1725,15 @@ theorem scalar : ∀ u, BalFixer.BalScalarHyp K σ B (fun _ _ => 0) u →
   have s65 := hs 6 5
   refine ⟨canon u, ?_⟩
   intro i j
+  rw [K]
+  repeat rw [Finset.sum_insert (by decide)]
+  rw [Finset.sum_singleton]
+  simp (config := {decide := true}) only [canon, FinT.coeffList, ite_true, ite_false]
+  have hqv0 : (u 3 3 - (0)) / 3 * 3 = u 3 3 - (0) := Int.ediv_mul_cancel (by omega)
+  generalize (u 3 3 - (0)) / 3 = qv0 at *
+  clear p0 p1 p2 p3 p4 p5 p6 h3
   fin_cases i <;> fin_cases j <;>
-    simp (config := {decide := true}) [K, canon, FinT.coeffList, typeEdgeVec, Finset.sum_insert] <;>
+    simp (config := {decide := true}) only [typeEdgeVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;>
     omega
 
 def data : StarCertificateData K c 3 where
@@ -1646,8 +1815,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({6, 6, 6}, 0)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 1
     have z0 : d 0 = 0 := by
       by_contra h
@@ -1673,8 +1846,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({6, 6, 6}, 0)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 2
     have z0 : d 0 = 0 := by
       by_contra h
@@ -1700,8 +1877,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({6, 6, 6}, 0)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 3
     have z0 : d 0 = 0 := by
       by_contra h
@@ -1727,8 +1908,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({6, 6, 6}, 0)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 4
     have z0 : d 0 = 0 := by
       by_contra h
@@ -1754,8 +1939,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({6, 6, 6}, 0)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 5
     have z0 : d 0 = 0 := by
       by_contra h
@@ -1781,8 +1970,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({6, 6, 6}, 0)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 6
     have z0 : d 0 = 0 := by
       by_contra h
@@ -1805,8 +1998,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({6, 6, 6}, (d 6 - (0)) / 2)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
 
 def canon (u : Fin 7 → Fin 7 → ℤ) : Multiset (Fin 7) → ℤ :=
   FinT.coeffList [({6, 6, 6}, (u 6 6 - (0)) / 3)]
@@ -1875,8 +2072,15 @@ theorem scalar : ∀ u, BalFixer.BalScalarHyp K σ B (fun _ _ => 0) u →
   have s65 := hs 6 5
   refine ⟨canon u, ?_⟩
   intro i j
+  rw [K]
+  repeat rw [Finset.sum_insert (by decide)]
+  rw [Finset.sum_singleton]
+  simp (config := {decide := true}) only [canon, FinT.coeffList, ite_true, ite_false]
+  have hqv0 : (u 6 6 - (0)) / 3 * 3 = u 6 6 - (0) := Int.ediv_mul_cancel (by omega)
+  generalize (u 6 6 - (0)) / 3 = qv0 at *
+  clear p0 p1 p2 p3 p4 p5 p6 h3
   fin_cases i <;> fin_cases j <;>
-    simp (config := {decide := true}) [K, canon, FinT.coeffList, typeEdgeVec, Finset.sum_insert] <;>
+    simp (config := {decide := true}) only [typeEdgeVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;>
     omega
 
 def data : StarCertificateData K c 6 where
@@ -1955,8 +2159,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({0, 0, 0}, (d 0 - (0)) / 2)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 1
     have z0 : d 0 = 0 := by
       by_contra h
@@ -1982,8 +2190,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({0, 0, 0}, 0)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 2
     have z0 : d 0 = 0 := by
       by_contra h
@@ -2009,8 +2221,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({0, 0, 0}, 0)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 3
     have z0 : d 0 = 0 := by
       by_contra h
@@ -2036,8 +2252,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({0, 0, 0}, 0)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 4
     have z0 : d 0 = 0 := by
       by_contra h
@@ -2063,8 +2283,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({0, 0, 0}, 0)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 5
     have z0 : d 0 = 0 := by
       by_contra h
@@ -2090,8 +2314,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({0, 0, 0}, 0)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 6
     have z0 : d 0 = 0 := by
       by_contra h
@@ -2117,8 +2345,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({0, 0, 0}, 0)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
 
 def canon (u : Fin 7 → Fin 7 → ℤ) : Multiset (Fin 7) → ℤ :=
   FinT.coeffList [({0, 0, 0}, (u 0 0 - (0)) / 3)]
@@ -2187,8 +2419,15 @@ theorem scalar : ∀ u, BalFixer.BalScalarHyp K σ B (fun _ _ => 0) u →
   have s65 := hs 6 5
   refine ⟨canon u, ?_⟩
   intro i j
+  rw [K]
+  repeat rw [Finset.sum_insert (by decide)]
+  rw [Finset.sum_singleton]
+  simp (config := {decide := true}) only [canon, FinT.coeffList, ite_true, ite_false]
+  have hqv0 : (u 0 0 - (0)) / 3 * 3 = u 0 0 - (0) := Int.ediv_mul_cancel (by omega)
+  generalize (u 0 0 - (0)) / 3 = qv0 at *
+  clear p0 p1 p2 p3 p4 p5 p6 h3
   fin_cases i <;> fin_cases j <;>
-    simp (config := {decide := true}) [K, canon, FinT.coeffList, typeEdgeVec, Finset.sum_insert] <;>
+    simp (config := {decide := true}) only [typeEdgeVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;>
     omega
 
 def data : StarCertificateData K c 0 where
@@ -2270,8 +2509,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({2, 2, 2}, 0)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 1
     have z0 : d 0 = 0 := by
       by_contra h
@@ -2297,8 +2540,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({2, 2, 2}, 0)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 2
     have z0 : d 0 = 0 := by
       by_contra h
@@ -2321,8 +2568,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({2, 2, 2}, (d 2 - (0)) / 2)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 3
     have z0 : d 0 = 0 := by
       by_contra h
@@ -2348,8 +2599,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({2, 2, 2}, 0)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 4
     have z0 : d 0 = 0 := by
       by_contra h
@@ -2375,8 +2630,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({2, 2, 2}, 0)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 5
     have z0 : d 0 = 0 := by
       by_contra h
@@ -2402,8 +2661,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({2, 2, 2}, 0)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 6
     have z0 : d 0 = 0 := by
       by_contra h
@@ -2429,8 +2692,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({2, 2, 2}, 0)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
 
 def canon (u : Fin 7 → Fin 7 → ℤ) : Multiset (Fin 7) → ℤ :=
   FinT.coeffList [({2, 2, 2}, (u 2 2 - (0)) / 3)]
@@ -2499,8 +2766,15 @@ theorem scalar : ∀ u, BalFixer.BalScalarHyp K σ B (fun _ _ => 0) u →
   have s65 := hs 6 5
   refine ⟨canon u, ?_⟩
   intro i j
+  rw [K]
+  repeat rw [Finset.sum_insert (by decide)]
+  rw [Finset.sum_singleton]
+  simp (config := {decide := true}) only [canon, FinT.coeffList, ite_true, ite_false]
+  have hqv0 : (u 2 2 - (0)) / 3 * 3 = u 2 2 - (0) := Int.ediv_mul_cancel (by omega)
+  generalize (u 2 2 - (0)) / 3 = qv0 at *
+  clear p0 p1 p2 p3 p4 p5 p6 h3
   fin_cases i <;> fin_cases j <;>
-    simp (config := {decide := true}) [K, canon, FinT.coeffList, typeEdgeVec, Finset.sum_insert] <;>
+    simp (config := {decide := true}) only [typeEdgeVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;>
     omega
 
 def data : StarCertificateData K c 2 where
@@ -2582,8 +2856,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({5, 5, 5}, 0)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 1
     have z0 : d 0 = 0 := by
       by_contra h
@@ -2609,8 +2887,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({5, 5, 5}, 0)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 2
     have z0 : d 0 = 0 := by
       by_contra h
@@ -2636,8 +2918,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({5, 5, 5}, 0)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 3
     have z0 : d 0 = 0 := by
       by_contra h
@@ -2663,8 +2949,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({5, 5, 5}, 0)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 4
     have z0 : d 0 = 0 := by
       by_contra h
@@ -2690,8 +2980,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({5, 5, 5}, 0)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 5
     have z0 : d 0 = 0 := by
       by_contra h
@@ -2714,8 +3008,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({5, 5, 5}, (d 5 - (0)) / 2)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 6
     have z0 : d 0 = 0 := by
       by_contra h
@@ -2741,8 +3039,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({5, 5, 5}, 0)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
 
 def canon (u : Fin 7 → Fin 7 → ℤ) : Multiset (Fin 7) → ℤ :=
   FinT.coeffList [({5, 5, 5}, (u 5 5 - (0)) / 3)]
@@ -2811,8 +3113,15 @@ theorem scalar : ∀ u, BalFixer.BalScalarHyp K σ B (fun _ _ => 0) u →
   have s65 := hs 6 5
   refine ⟨canon u, ?_⟩
   intro i j
+  rw [K]
+  repeat rw [Finset.sum_insert (by decide)]
+  rw [Finset.sum_singleton]
+  simp (config := {decide := true}) only [canon, FinT.coeffList, ite_true, ite_false]
+  have hqv0 : (u 5 5 - (0)) / 3 * 3 = u 5 5 - (0) := Int.ediv_mul_cancel (by omega)
+  generalize (u 5 5 - (0)) / 3 = qv0 at *
+  clear p0 p1 p2 p3 p4 p5 p6 h3
   fin_cases i <;> fin_cases j <;>
-    simp (config := {decide := true}) [K, canon, FinT.coeffList, typeEdgeVec, Finset.sum_insert] <;>
+    simp (config := {decide := true}) only [typeEdgeVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;>
     omega
 
 def data : StarCertificateData K c 5 where
@@ -2894,8 +3203,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({6, 6, 6}, 0)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 1
     have z0 : d 0 = 0 := by
       by_contra h
@@ -2921,8 +3234,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({6, 6, 6}, 0)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 2
     have z0 : d 0 = 0 := by
       by_contra h
@@ -2948,8 +3265,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({6, 6, 6}, 0)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 3
     have z0 : d 0 = 0 := by
       by_contra h
@@ -2975,8 +3296,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({6, 6, 6}, 0)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 4
     have z0 : d 0 = 0 := by
       by_contra h
@@ -3002,8 +3327,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({6, 6, 6}, 0)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 5
     have z0 : d 0 = 0 := by
       by_contra h
@@ -3029,8 +3358,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({6, 6, 6}, 0)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
   · -- root 6
     have z0 : d 0 = 0 := by
       by_contra h
@@ -3053,8 +3386,12 @@ theorem localSol : BalFixer.LocalSol K σ B := by
     simp only [sum_fin] at hpar
     refine ⟨FinT.coeffList [({6, 6, 6}, (d 6 - (0)) / 2)], ?_⟩
     funext j
+    rw [Finset.sum_apply, Finset.sum_filter, K]
+    repeat rw [Finset.sum_insert (by decide)]
+    rw [Finset.sum_singleton]
+    simp (config := {decide := true}) only [FinT.coeffList, Pi.smul_apply, smul_eq_mul, ite_true, ite_false]
     fin_cases j <;>
-      simp (config := {decide := true}) [K, FinT.coeffList, typeDegVec, Finset.sum_filter, sum_fin] at * <;> omega
+      simp (config := {decide := true}) only [typeDegVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;> omega
 
 def canon (u : Fin 7 → Fin 7 → ℤ) : Multiset (Fin 7) → ℤ :=
   FinT.coeffList [({6, 6, 6}, (u 6 6 - (0)) / 3)]
@@ -3123,8 +3460,15 @@ theorem scalar : ∀ u, BalFixer.BalScalarHyp K σ B (fun _ _ => 0) u →
   have s65 := hs 6 5
   refine ⟨canon u, ?_⟩
   intro i j
+  rw [K]
+  repeat rw [Finset.sum_insert (by decide)]
+  rw [Finset.sum_singleton]
+  simp (config := {decide := true}) only [canon, FinT.coeffList, ite_true, ite_false]
+  have hqv0 : (u 6 6 - (0)) / 3 * 3 = u 6 6 - (0) := Int.ediv_mul_cancel (by omega)
+  generalize (u 6 6 - (0)) / 3 = qv0 at *
+  clear p0 p1 p2 p3 p4 p5 p6 h3
   fin_cases i <;> fin_cases j <;>
-    simp (config := {decide := true}) [K, canon, FinT.coeffList, typeEdgeVec, Finset.sum_insert] <;>
+    simp (config := {decide := true}) only [typeEdgeVec, Multiset.insert_eq_cons, Multiset.count_cons, Multiset.count_singleton, Fin.reduceFinMk, Fin.isValue, ite_true, ite_false, Nat.reduceAdd, Nat.cast_ofNat, Nat.cast_one, Nat.cast_zero, Int.reduceMul, Int.reduceSub, mul_zero, mul_one, zero_add, add_zero] <;>
     omega
 
 def data : StarCertificateData K c 6 where
